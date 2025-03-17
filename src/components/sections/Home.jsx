@@ -4,32 +4,51 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import image1 from "../../assets/Images/image1.jpg";
+import image2 from "../../assets/Images/image2.jpg";
+import image3 from "../../assets/Images/image3.jpg";
 
 export const Home = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center relative">
+    <section
+      id="home"
+      className="min-h-screen flex flex-col items-center justify-center relative bg-white"
+    >
       {/* Image Slider */}
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         slidesPerView={1}
         loop={true}
         autoplay={{ delay: 3000 }}
-        pagination={{ clickable: true }}
-        navigation
-        className="w-full max-w-4xl mb-8"
+        pagination={false}
+        
+        navigation ={false}
+        className="w-full h-full" // Cover the full section
       >
         <SwiperSlide>
-          <img src="/images/image1.jpg" alt="Slide 1" className="w-full h-[400px] object-cover rounded-lg" />
+          <img
+            src={image1}
+            alt="Slide 1"
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/image2.jpg" alt="Slide 2" className="w-full h-[400px] object-cover rounded-lg" />
+          <img
+            src={image2}
+            alt="Slide 2"
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/image3.jpg" alt="Slide 3" className="w-full h-[400px] object-cover rounded-lg" />
+          <img
+            src={image3}
+            alt="Slide 3"
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
       </Swiper>
 
-      <RevealOnScroll>
+      {/* <RevealOnScroll>
         <div className="text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
             Hi, I'm Pedro Tech
@@ -57,7 +76,22 @@ export const Home = () => {
             </a>
           </div>
         </div>
-      </RevealOnScroll>
+      
+      </RevealOnScroll> */}
+
+      <style>
+        {`
+    .swiper-button-next, .swiper-button-prev {
+      color: white !important; /* Change to grey if needed */
+    }
+    .swiper-pagination-bullet {
+      background-color: white !important; /* Change to grey if needed */
+    }
+      .swiper-pagination-bullet-active {
+      background-color: white !important; /* Change to grey if needed */
+    }
+  `}
+      </style>
     </section>
   );
 };

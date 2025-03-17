@@ -8,6 +8,7 @@ import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
+import ChatWidget from "./components/chatwidget";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,9 +25,10 @@ function App() {
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
-        <About />
+        {/* <About />
         <Projects />
-        <Contact />
+        <Contact /> */}
+        <ChatWidget />
       </div>
     </>
   );
