@@ -11,6 +11,7 @@ import { Contact } from "./components/sections/Contact";
 import ChatWidget from "./components/chatwidget";
 import Portfolio from "./components/sections/Protfolio";
 import GoToTopButton from "./components/GotoTop";
+import TestimonialSwipe from "./components/sections/Testimonials";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,6 +29,7 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <Portfolio />
+        <TestimonialSwipe />
         {/* <About />
         <Projects />
         <Contact /> */}

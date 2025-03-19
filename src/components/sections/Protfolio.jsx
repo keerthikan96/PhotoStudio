@@ -6,10 +6,10 @@ const Portfolio = () => {
   return (
     <section
     id="portfolio"
-    className="min-h-screen flex items-center justify-center py-20 mt-20"
+    className="min-h-screen flex items-center justify-center py-20 mt-30"
   >  <RevealOnScroll>
-    <div className="max-w-7xl mx-auto px-4">
-    <div className="flex flex-col md:flex-row items-center justify-center bg-gray-100  ">
+    <div className="max-w-7xl mx-auto px-4  p-8 rounded-lg shadow-lg  bg-gray-100">
+    <div className="flex flex-col md:flex-row items-center justify-center  ">
       <div className="w-full md:w-1/2 p-8">
         <img src={image3} alt="Capturing Moments" className="w-full h-auto rounded-lg shadow-lg" />
       </div>
@@ -26,14 +26,17 @@ const Portfolio = () => {
             <span className="text-3xl font-bold">10k+</span>
             <span className="block text-sm">Portraits</span>
           </div>
+          <span className="text-3xl font-bold">|</span>
           <div>
             <span className="text-3xl font-bold">10+</span>
             <span className="block text-sm">Awards</span>
           </div>
+          <span className="text-3xl font-bold">|</span>
           <div>
             <span className="text-3xl font-bold">4.9</span>
             <span className="block text-sm">Rating</span>
           </div>
+          <span className="text-3xl font-bold">|</span>
           <div>
             <span className="text-3xl font-bold">8</span>
             <span className="block text-sm">Years</span>
