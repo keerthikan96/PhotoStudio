@@ -30,7 +30,7 @@ const ChatWidget = () => {
       {/* Main Chat Button */}
       <div className="relative flex items-center group">
         {!isOpen && (
-          <span className="absolute -left-30 bg-white px-3 py-2 rounded-lg shadow-md text-sm text-gray-800 font-medium transition-all duration-300 ">
+          <span className="absolute -left-30 bg-white px-4 py-3 rounded-3xl shadow-md text-sm text-gray-800 font-medium transition-all duration-300 ">
             Chat with us
           </span>
         )}
@@ -41,7 +41,7 @@ const ChatWidget = () => {
           {isOpen ? (
             <X className="w-6 h-6 transition-transform duration-300 transform rotate-180" />
           ) : (
-            <MessageSquare className="w-6 h-6 transition-transform duration-300" color="white" />
+            <MessageSquare className="w-6 h-6 transition-transform duration-300" color="white" fill="white" />
           )}
         </button>
       </div>
