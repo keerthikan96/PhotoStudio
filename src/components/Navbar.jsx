@@ -27,11 +27,11 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       {/* Navbar */}
 
       <div
-        className={`fixed top-0 left-0 right-0 flex justify-center z-30 transition-transform duration-300  ${
-          scrolling ? "translate-y-full" : "-translate-y-0"
+        className={`fixed top-0 left-0 right-0 flex justify-center z-30 transition-transform duration-300    ${
+          scrolling ? "translate-y-1" : "-translate-y-0"
         }`}
       >
-        <div className="w-[80%] max-w-5xl bg-[#ffffff] p-2 flex justify-between items-center">
+        <div className="w-[80%] max-w-7xl  p-2 flex justify-between items-center rounded-lg">
           <a href="#blogs" className="hover:underline">
             See our most recent blogs &gt;
           </a>
@@ -45,9 +45,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           </div>
         </div>
       </div>
-      <nav className="fixed top-10 left-0 right-0 flex justify-center z-40">
-        <div className="w-[80%] max-w-4xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
-          <div className="flex justify-between items-center h-20 px-6">
+      <nav className={`fixed  left-0 right-0 flex justify-center z-40 ${atTop?"top-10":"top-0"} `}>
+        <div className="w-[80%] max-w-7xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
+          <div className="flex justify-between items-center h-15 px-6">
             {/* Logo */}
             <div className="flex items-center">
               <img src={logo} alt="Logo" className="w-32 h-auto" />
@@ -108,11 +108,11 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       </nav>
 
       <div
-        className={`fixed top-30 left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
+        className={`fixed  ${atTop?"top-25":"top-2"} left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
           atTop ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="w-[80%] max-w-4xl bg-[#ffffff] p-2 flex justify-between items-center">
+        <div className="w-[80%] max-w-6xl  p-2 flex justify-between items-center">
           {/* Contact Info */}
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">

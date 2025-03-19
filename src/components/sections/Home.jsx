@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-45"
+      className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-40"
     >
       {/* White Space Over Slider */}
       {/* <div  className="top-30  bg-white "></div> */}
@@ -50,7 +50,7 @@ export const Home = () => {
         </SwiperSlide>
       </Swiper>
 
-      <RevealOnScroll>
+      {/* <RevealOnScroll>
         <div className="text-center z-10 px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
             Hi, I'm Pedro Tech
@@ -78,7 +78,7 @@ export const Home = () => {
             </a>
           </div>
         </div>
-      </RevealOnScroll>
+      </RevealOnScroll> */}
 
       <style>
         {`
