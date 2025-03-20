@@ -1,5 +1,5 @@
 import React from 'react';
-import image3 from "../../assets/Images/image3.jpg";
+import image3 from "../../assets/Images/image5.jpg";
 import { RevealOnScroll } from '../RevealOnScroll';
 
 const Portfolio = () => {
@@ -8,7 +8,7 @@ const Portfolio = () => {
     id="portfolio"
     className="min-h-screen flex items-center justify-center py-20 mt-30"
   >  <RevealOnScroll>
-    <div className="max-w-7xl mx-auto px-4  p-8 rounded-lg shadow-lg  bg-gray-100">
+    <div className="max-w-7xl mx-auto px-4  p-8 rounded-lg  ">
     <div className="flex flex-col md:flex-row items-center justify-center  ">
       <div className="w-full md:w-1/2 p-8">
         <img src={image3} alt="Capturing Moments" className="w-full h-auto rounded-lg shadow-lg" />

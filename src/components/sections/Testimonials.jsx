@@ -36,41 +36,40 @@ const testimonials = [
 
 const TestimonialSwipe = () => {
   const [current, setCurrent] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
   const testimonialsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
-  const nextTestimonial = () => {
-    setCurrent((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
-  };
-
-  const prevTestimonial = () => {
-    setCurrent((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
-  };
-
   return (
-    <section
-      id="testimonials"
-      className="min-h-80 flex items-center justify-center "
-    >
+    <section id="testimonials" className="flex items-center justify-center pb-20">
       <RevealOnScroll>
-        <div className="relative bg-gray-100 p-8 rounded-lg shadow-lg max-w-7xl mx-auto min-h-[500px]">
+        <div className="relative  p-8 rounded-lg  max-w-7xl mx-auto min-h-[500px] flex flex-col justify-center">
           <h2 className="text-2xl font-bold text-center mb-6">Words From Our Clients</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-center">
             {testimonials.slice(current * testimonialsPerPage, (current + 1) * testimonialsPerPage).map((testimonial) => (
-              <div key={testimonial.id} className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                key={testimonial.id}
+                className={`bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-between h-full transition-transform duration-300 ease-in-out ${
+                  selectedCard === testimonial.id ? 'transform scale-105 border-2 border-blue-400' : 'hover:scale-105 hover:shadow-xl'
+                }`}
+                //onClick={() => setSelectedCard(testimonial.id)}
+              >
                 <p className="text-gray-700 italic">"{testimonial.content}"</p>
-                <p className="text-gray-900 font-semibold mt-4">{testimonial.name}</p>
-                <p className="text-gray-600">{testimonial.role}</p>
+                <div className="mt-4">
+                  <p className="text-gray-900 font-semibold">{testimonial.name}</p>
+                  <p className="text-gray-600">{testimonial.role}</p>
+                </div>
               </div>
             ))}
           </div>
           <div className="flex justify-center mt-6 space-x-2">
-            <button onClick={prevTestimonial} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
-              Prev
-            </button>
-            <button onClick={nextTestimonial} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-              Next
-            </button>
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                //onClick={() => setCurrent(index)}
+                className={`w-3 h-3 rounded-full ${current === index ? 'bg-gray-800' : 'bg-gray-400'}`}
+              />
+            ))}
           </div>
         </div>
       </RevealOnScroll>

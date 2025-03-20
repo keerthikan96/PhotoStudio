@@ -4,9 +4,9 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import image1 from "../../assets/Images/image1.jpg";
-import image2 from "../../assets/Images/image2.jpg";
-import image3 from "../../assets/Images/image3.jpg";
+import image1 from "../../assets/Images/image6.jpg";
+import image2 from "../../assets/Images/image8.jpg";
+import image3 from "../../assets/Images/image9.jpg";
 
 export const Home = () => {
   return (
@@ -31,21 +31,21 @@ export const Home = () => {
           <img
             src={image1}
             alt="Slide 1"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-2xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={image2}
             alt="Slide 2"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-2xl"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={image3}
             alt="Slide 3"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-2xl"
           />
         </SwiperSlide>
       </Swiper>
