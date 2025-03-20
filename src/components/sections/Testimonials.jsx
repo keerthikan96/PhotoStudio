@@ -43,16 +43,19 @@ const TestimonialSwipe = () => {
   return (
     <section id="testimonials" className="flex items-center justify-center pb-20">
       <RevealOnScroll>
-        <div className="relative  p-8 rounded-lg  max-w-7xl mx-auto min-h-[500px] flex flex-col justify-center">
-          <h2 className="text-2xl font-bold text-center mb-6">Words From Our Clients</h2>
+      <p className="text-center text-gray-600 mb-6">600+ Happy Clients</p>
+      <h2 className="text-2xl font-bold text-center mb-2">Words From Our Clients</h2>
+     
+        <div className="relative p-8 rounded-lg max-w-7xl mx-auto min-h-[500px] flex flex-col justify-center">
+         
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-center">
             {testimonials.slice(current * testimonialsPerPage, (current + 1) * testimonialsPerPage).map((testimonial) => (
               <div
                 key={testimonial.id}
-                className={`bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-between h-full transition-transform duration-300 ease-in-out ${
-                  selectedCard === testimonial.id ? 'transform scale-105 border-2 border-blue-400' : 'hover:scale-105 hover:shadow-xl'
+                className={`bg-white p-6 rounded-lg shadow-2xl text-center flex flex-col justify-between h-full transition-transform duration-300 ease-in-out ${
+                  selectedCard === testimonial.id ? 'transform scale-105 border-2 border-blue-400' : 'hover:scale-105 hover:shadow-2xl'
                 }`}
-                //onClick={() => setSelectedCard(testimonial.id)}
+                // onClick={() => setSelectedCard(testimonial.id)}
               >
                 <p className="text-gray-700 italic">"{testimonial.content}"</p>
                 <div className="mt-4">
@@ -66,7 +69,7 @@ const TestimonialSwipe = () => {
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
                 key={index}
-                //onClick={() => setCurrent(index)}
+                // onClick={() => setCurrent(index)}
                 className={`w-3 h-3 rounded-full ${current === index ? 'bg-gray-800' : 'bg-gray-400'}`}
               />
             ))}
