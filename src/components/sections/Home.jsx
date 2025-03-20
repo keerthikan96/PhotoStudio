@@ -10,6 +10,8 @@ import image3 from "../../assets/Images/image9.jpg";
 
 export const Home = () => {
   return (
+    
+    
     <section
       id="home"
       className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-40"
@@ -94,5 +96,6 @@ export const Home = () => {
   `}
       </style>
     </section>
+    
   );
 };
