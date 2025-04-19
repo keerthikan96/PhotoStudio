@@ -5,10 +5,26 @@ const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const chatOptions = [
-    { icon: <Phone className="w-6 h-6 text-white" />, bgColor: "bg-green-500 hover:bg-green-600" },
-    { icon: <MessageSquare className="w-6 h-6 text-white" />, bgColor: "bg-blue-500 hover:bg-blue-600" },
-    { icon: <Facebook className="w-6 h-6 text-white" />, bgColor: "bg-[#1877F2] hover:bg-[#166FE5]" }, // Facebook blue
-    { icon: <Mail className="w-6 h-6 text-white" />, bgColor: "bg-red-500 hover:bg-red-600" },
+    {
+      icon: <MessageSquare className="w-6 h-6 text-white" />,
+      bgColor: "bg-green-500 hover:bg-green-600",
+      link: "https://wa.me/94766581620?text=Hello%2C%20I%20am%20interested%20in%20your%20services"
+    },
+    {
+      icon: <Phone className="w-6 h-6 text-white" />,
+      bgColor: "bg-blue-500 hover:bg-blue-600",
+      link: "tel:+94766581620"
+    },
+    {
+      icon: <Facebook className="w-6 h-6 text-white" />,
+      bgColor: "bg-[#1877F2] hover:bg-[#166FE5]",
+      link: "https://web.facebook.com/ChamodhDelpearachchi/?_rdc=1&_rdr" 
+    },
+    {
+      icon: <Mail className="w-6 h-6 text-white" />,
+      bgColor: "bg-red-500 hover:bg-red-600",
+      link: "mailto:chamodh@gmail.com" 
+    }
   ];
 
   return (
@@ -17,12 +33,15 @@ const ChatWidget = () => {
       {isOpen && (
         <div className="mb-3 flex flex-col items-end gap-3">
           {chatOptions.map((option, index) => (
-            <button
+            <a
               key={index}
+              href={option.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 ${option.bgColor}`}
             >
               {option.icon}
-            </button>
+            </a>
           ))}
         </div>
       )}

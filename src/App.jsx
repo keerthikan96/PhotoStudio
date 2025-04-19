@@ -3,15 +3,18 @@ import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
-import { Home } from "./components/sections/Home";
-import { About } from "./components/sections/About";
-import { Projects } from "./components/sections/Projects";
+
 import "./index.css";
 import { Contact } from "./components/sections/Contact";
 import ChatWidget from "./components/chatwidget";
 import Portfolio from "./components/sections/Protfolio";
 import GoToTopButton from "./components/GotoTop";
 import TestimonialSwipe from "./components/sections/Testimonials";
+import HomePage from "./components/pages/homePage";
+import PricingPage from "./components/pages/pricingPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ContactUs from "./components/pages/contactUS";
+import BookingPage from "./components/pages/bookingPage";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,12 +30,12 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home />
-        <Portfolio />
-        <TestimonialSwipe />
-        {/* <About />
-        <Projects />
-        <Contact /> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/booking" element={<BookingPage />} />
+        </Routes>
         <ChatWidget />
         <GoToTopButton />
       </div>

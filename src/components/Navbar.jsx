@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import logo from "../assets/chm.svg";
 import { Phone, Search, MapPin, Mail } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const [atTop, setAtTop] = useState(true);
@@ -64,7 +65,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-6">
               <a
-                href="#home"
+                href="/"
                 className="text-gray-700 hover:text-gray-900 transition"
               >
                 Home
@@ -75,12 +76,18 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               >
                 Portfolio
               </a>
-              <a
-                href="#pricing"
-                className="text-gray-700 hover:text-gray-900 transition"
+              <NavLink
+               to={"/pricing"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-black font-bold"
+                    : "text-gray-700 hover:text-gray-900 transition"
+                }
+                //className="text-gray-700 hover:text-gray-900 transition"
+
               >
                 Pricing
-              </a>
+              </NavLink>
               <a
                 href="#faq"
                 className="text-gray-700 hover:text-gray-900 transition"
@@ -94,14 +101,14 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                 Careers
               </a>
               <a
-                href="#contact"
+                href="/contactus"
                 className="text-gray-700 hover:text-gray-900 transition"
               >
                 Contact
               </a>
-              <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition">
+              <a className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" href="/booking">
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
         </div>
