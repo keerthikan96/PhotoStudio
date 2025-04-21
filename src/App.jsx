@@ -26,16 +26,18 @@ function App() {
       <div
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-white text-black`}
+        } bg-white text-black overflow-x-hidden`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/booking" element={<BookingPage />} />
-        </Routes>
+        <main className="pt-16 md:pt-20 lg:pt-24">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/booking" element={<BookingPage />} />
+          </Routes>
+        </main>
         <ChatWidget />
         <GoToTopButton />
       </div>

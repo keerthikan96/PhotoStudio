@@ -42,70 +42,83 @@ const testimonials = [
 const TestimonialSwipe = () => {
   const [current, setCurrent] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
-  const testimonialsPerPage = 3;
+  
+  // Responsive testimonials per page
+  const getTestimonialsPerPage = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 1; // Mobile
+      if (window.innerWidth < 1024) return 2; // Tablet
+      return 3; // Desktop
+    }
+    return 3; // Default for SSR
+  };
+  
+  const [testimonialsPerPage, setTestimonialsPerPage] = useState(
+    typeof window !== 'undefined' ? getTestimonialsPerPage() : 3
+  );
+  
+  // Update testimonialsPerPage on window resize
+  React.useEffect(() => {
+    const handleResize = () => {
+      setTestimonialsPerPage(getTestimonialsPerPage());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
   return (
     <section
       id="testimonials"
-      className="flex items-center justify-center pb-20"
+      className="py-10 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8"
     >
       <RevealOnScroll>
-        <p className="text-center text-gray-600 mb-2">600+ Happy Clients</p>
-        <h2 className="text-3xl font-bold text-center mb-2">
+        <p className="text-center text-gray-600 mb-1 sm:mb-2 text-sm sm:text-base">600+ Happy Clients</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-1 sm:mb-2">
           Words From Our Clients
         </h2>
-        <p className="text-gray-600 text-center mb-8">-CD Testimonials-</p>
+        <p className="text-gray-600 text-center mb-6 sm:mb-8 text-sm sm:text-base">-CD Testimonials-</p>
 
-        <div className="relative p-8 rounded-lg max-w-7xl mx-auto min-h-[500px] flex flex-col justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center justify-center">
+        <div className="relative p-4 sm:p-8 rounded-lg max-w-7xl mx-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex flex-col justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-center justify-center">
             {testimonials
               .slice(
                 current * testimonialsPerPage,
-                (current + 1) * testimonialsPerPage
+                current * testimonialsPerPage + testimonialsPerPage
               )
               .map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className={`bg-white p-6 rounded-lg shadow-lg text-center flex flex-col justify-between h-[380px] w-[330px] transition-transform duration-300 ease-in-out ${
+                  className={`bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center flex flex-col justify-between h-[250px] sm:h-[300px] md:h-[350px] max-w-[330px] mx-auto transition-transform duration-300 ease-in-out ${
                     selectedCard === testimonial.id
                       ? "transform scale-105 border-2 border-blue-400"
                       : "hover:scale-105 hover:shadow-xl"
                   }`}
                   onClick={() => setSelectedCard(testimonial.id)}
                 >
-                  <p className="text-gray-700 italic">
-                    "{testimonial.content}"
+                  <p className="text-gray-700 italic text-sm sm:text-base">
+                    "{testimonial.content.length > 150 && window.innerWidth < 640 
+                      ? testimonial.content.substring(0, 150) + '...' 
+                      : testimonial.content}"
                   </p>
-                  <div className="mt-4">
-                    <p className="text-gray-900 font-semibold">
+                  <div className="mt-3 sm:mt-4">
+                    <p className="text-gray-900 font-semibold text-sm sm:text-base">
                       {testimonial.name}
                     </p>
-                    <p className="text-gray-600">{testimonial.role}</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">{testimonial.role}</p>
                   </div>
                 </div>
               ))}
           </div>
 
-          {/* Custom Pagination */}
-          {/* <div className="flex justify-center mt-6 space-x-3">
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                  current === index ? 'bg-gray-800 border-gray-800 scale-125' : 'bg-gray-300 border-gray-500 hover:bg-gray-500'
-                }`}
-              />
-            ))}
-          </div> */}
-
-          <div className="flex items-center justify-center space-x-2 mt-6">
+          <div className="flex items-center justify-center space-x-2 mt-4 sm:mt-6">
             {Array.from({ length: totalPages }).map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 ${
-                  current === index ? "w-6 bg-gray-700" : "bg-gray-300"
+                className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gray-300 transition-all duration-300 cursor-pointer ${
+                  current === index ? "w-4 sm:w-6 bg-gray-700" : "bg-gray-300"
                 }`}
                 onClick={() => setCurrent(index)}
               />
