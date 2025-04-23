@@ -15,6 +15,8 @@ import PricingPage from "./components/pages/pricingPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ContactUs from "./components/pages/contactUS";
 import BookingPage from "./components/pages/bookingPage";
+import PortfolioPage from "./components/pages/portfolioPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,18 +28,20 @@ function App() {
       <div
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-white text-black overflow-x-hidden`}
+        } bg-white text-black overflow-x-hidden flex flex-col`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <main className="pt-16 md:pt-20 lg:pt-24">
+        <main className="pt-16 md:pt-20 lg:pt-24 flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/booking" element={<BookingPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
           </Routes>
         </main>
+        <Footer />
         <ChatWidget />
         <GoToTopButton />
       </div>

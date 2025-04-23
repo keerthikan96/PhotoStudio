@@ -69,7 +69,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-6">
               <NavLink
-                href="/"
+               to="/"
                 className="text-gray-700 hover:text-gray-900 transition"
               >
                 Home
@@ -83,12 +83,12 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                 //onMouseLeave={() => setPortfolioHover(false)}
               >
                 <div className="flex items-center space-x-1 cursor-pointer group">
-                  <a
-                    href="#portfolio"
+                  <NavLink
+                    to="/portfolio"
                     className="text-gray-700 group-hover:text-gray-900 transition"
                   >
                     Portfolio
-                  </a>
+                  </NavLink>
                   <FaChevronDown className="text-xs transition-transform duration-200 group-hover:rotate-180" />
                 </div>
                 
