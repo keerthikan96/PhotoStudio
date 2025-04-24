@@ -188,16 +188,17 @@ const ContactUs = () => {
         <div className="mt-10 md:mt-16 max-w-6xl mx-auto">
           <h3 className="text-xl font-semibold mb-4">Find us on map</h3>
           <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31105.15165023199!2d80.1881878!3d13.1112486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5261d2e1fc27fb%3A0x8098ab4ffbb1d5b6!2sFocuz%20Studios%E2%84%A2!5e0!3m2!1sen!2sin!4v1687680735471!5m2!1sen!2sin"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full rounded-2xl shadow-md"
-          ></iframe>
+  title="Google Map"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126664.54338492748!2d79.9430194!3d7.0439914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2ff94b9bdb28d%3A0xa84e5e7bdf4b8f3b!2sNo.%204%2F7%2F1%20Suhada%20Mawatha%2C%20Ganemulla%2011020%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1713957112345!5m2!1sen!2slk"
+  width="100%"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full rounded-2xl shadow-md"
+/>
+
         </div>
       </div>
     </div>

@@ -5,18 +5,69 @@ import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
 
 import "./index.css";
-import { Contact } from "./components/sections/Contact";
 import ChatWidget from "./components/chatwidget";
-import Portfolio from "./components/sections/Protfolio";
 import GoToTopButton from "./components/GotoTop";
-import TestimonialSwipe from "./components/sections/Testimonials";
 import HomePage from "./components/pages/homePage";
 import PricingPage from "./components/pages/pricingPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import ContactUs from "./components/pages/contactUS";
 import BookingPage from "./components/pages/bookingPage";
 import PortfolioPage from "./components/pages/portfolioPage";
 import Footer from "./components/Footer";
+import { AnimatePresence } from "framer-motion";
+import PageTransition from "./components/transitions/PageTransition";
+
+// Create a wrapper component to handle AnimatePresence since it needs useLocation
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route 
+          path="/" 
+          element={
+            <PageTransition>
+              <HomePage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/pricing" 
+          element={
+            <PageTransition>
+              <PricingPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/contactus" 
+          element={
+            <PageTransition>
+              <ContactUs />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/booking" 
+          element={
+            <PageTransition>
+              <BookingPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/portfolio" 
+          element={
+            <PageTransition>
+              <PortfolioPage />
+            </PageTransition>
+          } 
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -33,13 +84,7 @@ function App() {
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <main className="pt-16 md:pt-20 lg:pt-24 flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/booking" element={<BookingPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
         <Footer />
         <ChatWidget />

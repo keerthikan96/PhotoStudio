@@ -14,7 +14,7 @@ export const Home = () => {
     
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-40"
+      className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-20"
     >
       {/* White Space Over Slider */}
       {/* <div  className="top-30  bg-white "></div> */}
