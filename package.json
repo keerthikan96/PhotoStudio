@@ -24,7 +24,7 @@
     "react-slick": "^0.30.3",
     "react-sticky": "^6.0.3",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.2.5",
+    "swiper": "^11.2.6",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {

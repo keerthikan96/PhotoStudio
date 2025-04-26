@@ -97,11 +97,7 @@ const PortfolioPage = () => {
                     alt={item.category}
                     className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
                   />
-                  {item.price && (
-                    <div className="absolute top-3 right-3 bg-black text-white text-xs px-2 py-1 rounded">
-                      {item.price}
-                    </div>
-                  )}
+                 
                 </div>
                 <div className="p-4">
                   <h3 className="text-sm font-medium text-center">{item.category}</h3>

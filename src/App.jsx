@@ -13,6 +13,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import ContactUs from "./components/pages/contactUS";
 import BookingPage from "./components/pages/bookingPage";
 import PortfolioPage from "./components/pages/portfolioPage";
+import FaqPage from "./components/pages/faqPage";
 import Footer from "./components/Footer";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/transitions/PageTransition";
@@ -61,6 +62,14 @@ const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <PortfolioPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/faq" 
+          element={
+            <PageTransition>
+              <FaqPage />
             </PageTransition>
           } 
         />

@@ -55,6 +55,16 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       </Link>
       
       <Link
+        to="/faq"
+        onClick={() => setMenuOpen(false)}
+        className={`text-xl sm:text-2xl font-semibold text-white my-3 sm:my-4 transform transition-transform duration-300
+                    ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}        
+                  `}
+      >
+        FAQ
+      </Link>
+      
+      <Link
         to="/contactus"
         onClick={() => setMenuOpen(false)}
         className={`text-xl sm:text-2xl font-semibold text-white my-3 sm:my-4 transform transition-transform duration-300

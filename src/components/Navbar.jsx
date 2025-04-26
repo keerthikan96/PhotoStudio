@@ -113,7 +113,11 @@ export const Navbar = ({ setMenuOpen }) => {
             <div className="hidden md:flex items-center space-x-6">
               <NavLink
                 to="/"
-                className="text-gray-700 hover:text-gray-900 transition"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-black font-bold"
+                    : "text-gray-700 hover:text-gray-900 transition"
+                }
               >
                 Home
               </NavLink>
@@ -128,7 +132,11 @@ export const Navbar = ({ setMenuOpen }) => {
                 <div className="flex items-center space-x-1 cursor-pointer group">
                   <NavLink
                     to="/portfolio"
-                    className="text-gray-700 group-hover:text-gray-900 transition"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-black font-bold"
+                        : "text-gray-700 hover:text-gray-900 transition"
+                    }
                   >
                     Portfolio
                   </NavLink>
@@ -307,21 +315,29 @@ export const Navbar = ({ setMenuOpen }) => {
               >
                 Pricing
               </NavLink>
-              <a
-                href="#faq"
-                className="text-gray-700 hover:text-gray-900 transition"
+              <NavLink
+                to={"/faq"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-black font-bold"
+                    : "text-gray-700 hover:text-gray-900 transition"
+                }
               >
                 FAQ
-              </a>
+              </NavLink>
               <a
                 href="#careers"
                 className="text-gray-700 hover:text-gray-900 transition"
               >
-                Careers
+                We
               </a>
               <NavLink
                 to="/contactus"
-                className="text-gray-700 hover:text-gray-900 transition"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-black font-bold"
+                    : "text-gray-700 hover:text-gray-900 transition"
+                }
               >
                 Contact
               </NavLink>
