@@ -6,4 +6,5 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/",
+  assetsInclude: ["**/*.JPG"], // Adding support for uppercase JPG files
 });

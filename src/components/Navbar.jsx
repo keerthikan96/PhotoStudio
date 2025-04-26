@@ -113,11 +113,7 @@ export const Navbar = ({ setMenuOpen }) => {
             <div className="hidden md:flex items-center space-x-6">
               <NavLink
                 to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-black font-bold"
-                    : "text-gray-700 hover:text-gray-900 transition"
-                }
+                className="text-gray-700 hover:text-gray-900 transition"
               >
                 Home
               </NavLink>
@@ -162,12 +158,12 @@ export const Navbar = ({ setMenuOpen }) => {
                       </h3>
                       <ul className="space-y-2">
                         <li>
-                          <a
-                            href="#"
+                          <NavLink
+                            to={"/portfolio/wedding-vows"}
                             className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
                           >
                             Tamil
-                          </a>
+                          </NavLink>
                         </li>
                         <li>
                           <a

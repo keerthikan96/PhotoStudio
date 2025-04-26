@@ -17,6 +17,7 @@ import FaqPage from "./components/pages/faqPage";
 import Footer from "./components/Footer";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/transitions/PageTransition";
+import WeddingVows from "./components/pages/WeddingVows";
 
 // Create a wrapper component to handle AnimatePresence since it needs useLocation
 const AnimatedRoutes = () => {
@@ -72,6 +73,14 @@ const AnimatedRoutes = () => {
               <FaqPage />
             </PageTransition>
           } 
+        />
+        <Route 
+          path="/portfolio/wedding-vows" 
+          element={
+            <PageTransition>
+              <WeddingVows />
+            </PageTransition>
+          }
         />
       </Routes>
     </AnimatePresence>
