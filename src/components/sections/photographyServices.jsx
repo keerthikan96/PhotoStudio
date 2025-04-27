@@ -22,7 +22,7 @@ const PhotographyServices = () => {
   }, [images.length]);
 
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <div className="text-center mb-12">
@@ -33,12 +33,12 @@ const PhotographyServices = () => {
           </div>
         </RevealOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Left Side - Image Slideshow with Transitions */}
           <RevealOnScroll>
-            <div className="overflow-hidden rounded-lg shadow-lg relative h-[400px] md:h-[500px]">
+            <div className="overflow-hidden rounded-lg shadow-lg relative h-full">
               {/* Image Slideshow */}
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full min-h-[400px]">
                 {images.map((image, index) => (
                   <div 
                     key={index} 
@@ -73,7 +73,7 @@ const PhotographyServices = () => {
 
           {/* Right Side - Text Content */}
           <RevealOnScroll>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center h-full">
               <p className="text-gray-600 mb-6">
                 At Focuz Studios, we are proud to be known as the best wedding
                 photographer in Chennai. At <span className="font-semibold">Focuz Studios</span>, we proudly stand as the{" "}
@@ -83,11 +83,17 @@ const PhotographyServices = () => {
                 destinations like Paris, London, Australia, Singapore, Sri Lanka, and Thailand.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/enquire" className="inline-flex items-center px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition">
-                  <span className="mr-2">→</span> Enquire Now
+                <Link 
+                  to="/enquire" 
+                  className="group inline-flex items-center px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                >
+                  <span className="mr-2 transition-transform duration-300 group-hover:translate-x-1">→</span> Enquire Now
                 </Link>
-                <Link to="/contact" className="inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition">
-                  Make a call <span className="ml-1">→</span>
+                <Link 
+                  to="/contact" 
+                  className="group inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                >
+                  Make a call <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
             </div>
@@ -98,9 +104,9 @@ const PhotographyServices = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
           {/* Candid/Artistic Photography */}
           <RevealOnScroll>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -116,9 +122,9 @@ const PhotographyServices = () => {
 
           {/* Traditional Photography */}
           <RevealOnScroll>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
                 </svg>
               </div>
@@ -135,9 +141,9 @@ const PhotographyServices = () => {
 
           {/* Wedding Film */}
           <RevealOnScroll>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1V9h-1v2zm1-4V5h-1v2h1zM5 5v2H4V5h1zm0 4H4v2h1V9zm-1 4h1v2H4v-2z" clipRule="evenodd" />
                 </svg>
               </div>

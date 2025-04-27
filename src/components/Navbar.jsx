@@ -71,7 +71,7 @@ export const Navbar = ({ setMenuOpen }) => {
           scrolling ? "translate-y-1" : "-translate-y-0"
         }`}
       >
-        <div className="w-[80%] max-w-7xl  p-2 flex justify-between items-center rounded-lg">
+        <div className="w-[80%] max-w-6xl p-2 flex justify-between items-center rounded-lg">
           <a href="#blogs" className="hover:underline">
             See our most recent blogs &gt;
           </a>
@@ -90,7 +90,7 @@ export const Navbar = ({ setMenuOpen }) => {
           atTop ? "top-10" : "top-0"
         } `}
       >
-        <div className="w-[80%] max-w-7xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
+        <div className="w-[80%] max-w-6xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
           <div className="flex justify-between items-center h-15 px-6">
             {/* Logo */}
             <div className="flex items-center">
@@ -113,7 +113,11 @@ export const Navbar = ({ setMenuOpen }) => {
             <div className="hidden md:flex items-center space-x-6">
               <NavLink
                 to="/"
-                className="text-gray-700 hover:text-gray-900 transition"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-black font-bold border-b-2 border-black"
+                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                }
               >
                 Home
               </NavLink>
@@ -130,8 +134,8 @@ export const Navbar = ({ setMenuOpen }) => {
                     to="/portfolio"
                     className={({ isActive }) =>
                       isActive
-                        ? "text-black font-bold"
-                        : "text-gray-700 hover:text-gray-900 transition"
+                        ? "text-black font-bold border-b-2 border-black"
+                        : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
                     }
                   >
                     Portfolio
@@ -305,8 +309,8 @@ export const Navbar = ({ setMenuOpen }) => {
                 to={"/pricing"}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-black font-bold"
-                    : "text-gray-700 hover:text-gray-900 transition"
+                    ? "text-black font-bold border-b-2 border-black"
+                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
                 }
               >
                 Pricing
@@ -315,15 +319,15 @@ export const Navbar = ({ setMenuOpen }) => {
                 to={"/faq"}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-black font-bold"
-                    : "text-gray-700 hover:text-gray-900 transition"
+                    ? "text-black font-bold border-b-2 border-black"
+                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
                 }
               >
                 FAQ
               </NavLink>
               <a
                 href="#careers"
-                className="text-gray-700 hover:text-gray-900 transition"
+                className="text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
               >
                 We
               </a>
@@ -331,8 +335,8 @@ export const Navbar = ({ setMenuOpen }) => {
                 to="/contactus"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-black font-bold"
-                    : "text-gray-700 hover:text-gray-900 transition"
+                    ? "text-black font-bold border-b-2 border-black"
+                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
                 }
               >
                 Contact
