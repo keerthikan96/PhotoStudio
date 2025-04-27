@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { PagesUI } from '../PagesUI';
+import TextTransition from "../TextTransition"
 
 const ContactUs = () => {
   const [otpSent, setOtpSent] = useState(false);
@@ -25,14 +27,32 @@ const ContactUs = () => {
   };
 
   return (
-    <div
-      id="contactus"
-      className="min-h-screen flex flex-col py-10 sm:py-12 md:py-16 bg-gray-50 mt-16 sm:mt-20 md:mt-24"
-    >
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
-          Contact Us
+    <div id="contactus" className="min-h-screen bg-[#f0f2f4] mt-10">
+    <div className="flex flex-col items-center justify-center w-full mx-auto py-4 sm:py-6 md:py-8 text-gray-900">
+      {/* Hero Section */}
+      <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
+          <TextTransition
+            text={"Contact Us"}
+          />
         </h1>
+        <p className="text-xs sm:text-sm mt-2">
+        Home / Contact Us
+        </p>
+        {/* <p className="text-gray-600 mb-4">
+                It is important for me as a professional that every problem
+                has a solution,
+              </p>
+              <p className="text-gray-600">
+                you just need to start working for it! Here are answers.
+              </p> */}
+      </div>
+        <PagesUI>
+
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
+        {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+          Contact Us
+        </h1> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14 mx-auto max-w-5xl">
           <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
@@ -257,8 +277,12 @@ const ContactUs = () => {
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full rounded-2xl shadow-md"
           ></iframe>
+
         </div>
+
       </div>
+      </PagesUI>
+    </div>
     </div>
   );
 };

@@ -154,7 +154,7 @@ export const Navbar = ({ setMenuOpen }) => {
                 />
               </div>
 
-              {/* Desktop Navigation Links */}
+           
               <div className="hidden md:flex items-center space-x-6">
                 <NavLink
                   to="/"
@@ -164,8 +164,8 @@ export const Navbar = ({ setMenuOpen }) => {
                   <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
                 </NavLink>
 
-                {/* Portfolio with Dropdown */}
-                <div
+             
+                {/* <div
                   className="relative"
                   onMouseEnter={handlePortfolioMouseEnter}
                   onMouseLeave={handlePortfolioMouseLeave}
@@ -195,7 +195,7 @@ export const Navbar = ({ setMenuOpen }) => {
                     />
                   </div>
 
-                  {/* Dropdown Menu */}
+                 
                   {portfolioDropdownOpen && (
                     <div
                       className="absolute left-0 mt-2 w-[500px] bg-white shadow-xl rounded-lg p-5 z-50 border border-gray-200 grid grid-cols-2 gap-6"
@@ -203,7 +203,7 @@ export const Navbar = ({ setMenuOpen }) => {
                       onMouseEnter={() => setPortfolioDropdownOpen(true)}
                       onMouseLeave={() => setPortfolioDropdownOpen(false)}
                     >
-                      {/* Column 1 */}
+                      
                       <div>
                         <h3 className="font-bold text-gray-800 mb-3 text-lg">
                           Weddings
@@ -263,7 +263,7 @@ export const Navbar = ({ setMenuOpen }) => {
                         </ul>
                       </div>
 
-                      {/* Column 2 */}
+                   
                       <div>
                         <h3 className="font-bold text-gray-800 mb-3 text-lg">
                           Other Categories
@@ -351,7 +351,24 @@ export const Navbar = ({ setMenuOpen }) => {
                       </div>
                     </div>
                   )}
-                </div>
+                </div> */}
+
+                <NavLink
+                  to={"/portfolio"}
+                  className={({ isActive }) =>
+                    `text-gray-700 hover:text-gray-900 relative group pb-1 ${
+                      isActive ? "font-medium" : ""
+                    }`
+                  }
+                >
+                  Portfolio
+                  <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                  {({ isActive }) =>
+                    isActive && (
+                      <span className="absolute bottom-0 left-0 h-0.5 bg-black w-full"></span>
+                    )
+                  }
+                </NavLink>
 
                 <NavLink
                   to={"/pricing"}

@@ -97,7 +97,7 @@ function App() {
       <div
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
-        } bg-white text-black overflow-x-hidden flex flex-col`}
+        } bg-[#f0f2f4] text-black overflow-x-hidden flex flex-col`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
