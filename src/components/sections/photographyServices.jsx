@@ -10,6 +10,7 @@ import weddingImage4 from '../../assets/Images/serviceview4.jpg';
 
 const PhotographyServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [expandedItem, setExpandedItem] = useState(null);
   const images = [weddingImage1, weddingImage2, weddingImage3, weddingImage4];
   
   // Effect to handle automatic image transitions
@@ -20,6 +21,33 @@ const PhotographyServices = () => {
     
     return () => clearInterval(interval);
   }, [images.length]);
+
+  const whyFocuzItems = [
+    {
+      id: 1,
+      title: "How to Prepare for Your Wedding Photoshoot",
+      content: "We guide you through every step to ensure you're fully prepared for your special day, from outfit selection to timeline planning."
+    },
+    {
+      id: 2,
+      title: "Couple, Makeup Team & Photographer",
+      content: "Our team works in perfect harmony with you and your makeup artists to create stunning, cohesive looks that photograph beautifully."
+    },
+    {
+      id: 3,
+      title: "What You Can Expect from Us?",
+      content: "Professionalism, creativity, and dedication to capturing every precious moment of your wedding day with artistic excellence."
+    },
+    {
+      id: 4,
+      title: "A Team by Photo Mentor & Canon EOS Influencer Mr. Chandru Bharathy",
+      content: "Learn from the best! Our team is mentored by renowned photography expert and Canon influencer Chandru Bharathy."
+    }
+  ];
+
+  const toggleItem = (id) => {
+    setExpandedItem(expandedItem === id ? null : id);
+  };
 
   return (
     <section id="services" className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24">
@@ -53,20 +81,6 @@ const PhotographyServices = () => {
                     />
                   </div>
                 ))}
-                
-                {/* Navigation Dots */}
-                {/* <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        index === currentImageIndex ? "bg-white scale-125" : "bg-white/50"
-                      }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div> */}
               </div>
             </div>
           </RevealOnScroll>
@@ -156,6 +170,44 @@ const PhotographyServices = () => {
               </p>
             </div>
           </RevealOnScroll>
+        </div>
+
+        {/* Why Focus Studios? Section */}
+        <div className="mt-24 bg-gray-50 rounded-xl p-8 md:p-12">
+          <RevealOnScroll>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Focus Studios?</h2>
+            </div>
+          </RevealOnScroll>
+
+          <div className="space-y-4">
+            {whyFocuzItems.map((item) => (
+              <RevealOnScroll key={item.id}>
+                <div 
+                  className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+                >
+                  <button
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
+                    onClick={() => toggleItem(item.id)}
+                  >
+                    <h3 className="text-xl font-semibold">{item.title}</h3>
+                    <span className={`transform transition-transform duration-300 ${expandedItem === item.id ? 'rotate-180' : ''}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div 
+                    className={`transition-all duration-300 overflow-hidden ${
+                      expandedItem === item.id ? 'max-h-40 p-6 pt-0' : 'max-h-0'
+                    }`}
+                  >
+                    <p className="text-gray-600">{item.content}</p>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
         </div>
       </div>
     </section>
