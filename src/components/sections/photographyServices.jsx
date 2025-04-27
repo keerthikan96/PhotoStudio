@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
 import { Link } from 'react-router-dom';
 
 // Importing multiple wedding images
-import weddingImage1 from '../../assets/Images/serviceview1.jpg';
-import weddingImage2 from '../../assets/Images/serviceview2.JPG';
-import weddingImage3 from '../../assets/Images/serviceview3.jpg';
-import weddingImage4 from '../../assets/Images/serviceview4.jpg';
+import weddingImage1 from '../../assets/Images/img1.jpg';
+import weddingImage2 from '../../assets/Images/img2.JPG';
+import weddingImage3 from '../../assets/Images/img3.jpg';
+import weddingImage4 from '../../assets/Images/img4.jpg';
 
 const PhotographyServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -51,7 +51,7 @@ const PhotographyServices = () => {
 
   return (
     <section id="services" className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4">
         <RevealOnScroll>
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-md mb-4">
