@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaChevronDown } from "react-icons/fa";
-import logo from "../assets/logo3.png";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   // State for mobile dropdown
   const [portfolioExpanded, setPortfolioExpanded] = useState(false);
+  const navigate = useNavigate();
+  
+  // Function to navigate and scroll to top
+  const scrollToTop = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setMenuOpen(false);
+  };
   
   // Prevent body scrolling when menu is open
   useEffect(() => {
@@ -33,9 +40,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     >
       <div className="absolute top-0 left-0 right-0 flex justify-between items-center p-4 sm:p-6 border-b border-gray-800">
         <div className="flex flex-col">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src={logo} alt="Photo Dynamic Logo" className="h-40 sm:h-10 invert w-40" />
-          </Link>
+          <div onClick={() => scrollToTop("/")} className="cursor-pointer">
+            <img src="/CDLogo1.svg" alt="Photo Dynamic Logo" className="h-8 sm:h-10 invert" />
+          </div>
         </div>
         <button
           onClick={() => setMenuOpen(false)}
@@ -47,13 +54,12 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       </div>
       
       <div className="flex flex-col items-center justify-center min-h-screen py-16 px-6">
-        <Link
-          to="/"
-          onClick={() => setMenuOpen(false)}
-          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
+        <div
+          onClick={() => scrollToTop("/")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           Home
-        </Link>
+        </div>
         
         {/* Portfolio with dropdown */}
         <div className="relative w-full flex flex-col items-center">
@@ -71,26 +77,25 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 <h4 className="text-gray-400 text-sm uppercase mb-2">Weddings</h4>
                 <ul className="space-y-2 pl-2">
                   <li>
-                    <Link
-                      to="/portfolio/wedding-vows"
-                      onClick={() => setMenuOpen(false)}
-                      className="text-white hover:text-gray-300 transition-colors block"
+                    <div
+                      onClick={() => scrollToTop("/portfolio/wedding-vows")}
+                      className="text-white hover:text-gray-300 transition-colors block cursor-pointer"
                     >
                       Tamil
-                    </Link>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" className="text-white hover:text-gray-300 transition-colors flex items-center">
+                    <div className="text-white hover:text-gray-300 transition-colors flex items-center cursor-pointer">
                       Tamil Brahmin
                       <span className="text-xs bg-orange-800 text-orange-200 px-1.5 py-0.5 rounded-full ml-2">
                         Trending
                       </span>
-                    </a>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" className="text-white hover:text-gray-300 transition-colors block">
+                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
                       Christian
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -99,14 +104,14 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 <h4 className="text-gray-400 text-sm uppercase mb-2">Other Categories</h4>
                 <ul className="space-y-2 pl-2">
                   <li>
-                    <a href="#" className="text-white hover:text-gray-300 transition-colors block">
+                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
                       Destination Wedding
-                    </a>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" className="text-white hover:text-gray-300 transition-colors block">
+                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
                       International Weddings
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -114,37 +119,33 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
           )}
         </div>
         
-        <Link
-          to="/pricing"
-          onClick={() => setMenuOpen(false)}
-          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
+        <div
+          onClick={() => scrollToTop("/pricing")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           Pricing
-        </Link>
+        </div>
         
-        <Link
-          to="/faq"
-          onClick={() => setMenuOpen(false)}
-          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
+        <div
+          onClick={() => scrollToTop("/faq")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           FAQ
-        </Link>
+        </div>
         
-        <Link
-          to="/contactus"
-          onClick={() => setMenuOpen(false)}
-          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
+        <div
+          onClick={() => scrollToTop("/contactus")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           Contact
-        </Link>
+        </div>
         
-        <Link
-          to="/booking"
-          onClick={() => setMenuOpen(false)}
-          className={`bg-white text-black px-6 py-2 rounded-md font-medium mt-3 hover:bg-gray-200 transition-all duration-200`}
+        <div
+          onClick={() => scrollToTop("/booking")}
+          className={`bg-white text-black px-6 py-2 rounded-md font-medium mt-3 hover:bg-gray-200 transition-all duration-200 cursor-pointer`}
         >
           Book Now
-        </Link>
+        </div>
         
         {/* Contact Info */}
         <div className="mt-8 w-full max-w-xs border-t border-gray-800 pt-6 flex flex-col items-center">
