@@ -17,7 +17,7 @@ import TextTransition from "../TextTransition";
 
 const PortfolioPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 12;
+  const imagesPerPage = 10;
   const gridRef = useRef(null);
 
   // Portfolio items array with categories
@@ -180,10 +180,8 @@ const PortfolioPage = () => {
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    // Reset scroll position when page changes
-    if (gridRef.current) {
-      gridRef.current.scrollTop = 0;
-    }
+    // Scroll to top of the page when changing pages
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const text = "text-gray-500 font-extralight ";
@@ -194,7 +192,7 @@ const PortfolioPage = () => {
         <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
           <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
             <TextTransition
-              text={"The Best Wedding Candid Photographers in Colombo"}
+              text={"Portfolio of Wedding Photography"}
             />
           </h1>
           <p className="text-xs sm:text-sm mt-2">Home / Portfolio</p>
@@ -204,6 +202,9 @@ const PortfolioPage = () => {
           {/* Introduction Text */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
+            <p className="text-gray-700 font-bold text-lg sm:text-xl mb-4">
+                <TextTransition text={"The Best Wedding Candid Photographers in Colombo"} />
+              </p>
               <RevealOnScroll>
                 <p className={text + "text-sm sm:text-base mb-4"}>
                   Stories are what shape us — often without us even realizing
@@ -224,17 +225,18 @@ const PortfolioPage = () => {
                 </p>
               </RevealOnScroll>
               <p className="text-gray-700 font-bold text-lg sm:text-xl mb-4">
-  <TextTransition text={"Stories through the picture"} />
-</p>
+                <TextTransition text={"Stories through the picture"} />
+              </p>
 
-<RevealOnScroll>
-  <p className={text + "text-sm sm:text-base mb-2"}>
-    At <a href="">Chamodh Delpearachchi Photography</a>, we deeply value <b>your stories</b>. 
-    That’s why we put immense care and passion into every shot — because your photographs aren’t just images, 
-    they are stories that deserve to be captured with heart, preserved for a lifetime, and cherished forever.
-  </p>
-</RevealOnScroll>
-
+              <RevealOnScroll>
+                <p className={text + "text-sm sm:text-base mb-2"}>
+                  At <a href="">Chamodh Delpearachchi Photography</a>, we deeply
+                  value <b>your stories</b>. That’s why we put immense care and
+                  passion into every shot — because your photographs aren’t just
+                  images, they are stories that deserve to be captured with
+                  heart, preserved for a lifetime, and cherished forever.
+                </p>
+              </RevealOnScroll>
 
               <RevealOnScroll>
                 <p className={text + "text-sm sm:text-base mb-2"}>
@@ -276,7 +278,7 @@ const PortfolioPage = () => {
           <RevealOnScroll>
             <div className=" flex flex-col items-center justify-center">
               <div className="max-w-7xl px-4 sm:px-6 md:px-8 flex md:flex-row md:justify-between flex-col justify-center">
-                <div className="md:basis-[30%] md:pt-20 md:pb-0 pt-2 pb-4">
+                <div className="md:basis-[30%] md:sticky md:top-4 md:self-start md:pt-20 md:pb-0 pt-2 pb-4">
                   <p className="text-gray-700 font-bold text-lg sm:text-2xl mb-4">
                     <TextTransition text={"Pictures = Stories"} />
                   </p>
@@ -302,8 +304,7 @@ const PortfolioPage = () => {
                 <div className="md:basis-[65%] flex flex-col justify-center items-center">
                   <div
                     ref={gridRef}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 h-[800px] overflow-auto"
-                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full"
                   >
                     {currentImages.map((item, index) => (
                       <RevealOnScroll
@@ -316,16 +317,13 @@ const PortfolioPage = () => {
                             <img
                               src={item.image}
                               alt={item.category}
-                              className="w-full h-64 object-cover transition-transform duration-700 hover:scale-105"
+                              className="w-full object-cover transition-transform duration-700 hover:scale-105"
                             />
                           </div>
                           <div className="p-4">
                             <h3 className="text-sm font-medium text-center">
                               {item.category}
                             </h3>
-                            {/* <h4 className="text-sm font-light text-center pt-2">
-                              {item.price}
-                            </h4> */}
                           </div>
                         </div>
                       </RevealOnScroll>
