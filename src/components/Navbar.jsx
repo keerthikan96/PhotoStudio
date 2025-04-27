@@ -7,7 +7,7 @@ import {
   FaInstagram,
   FaChevronDown,
 } from "react-icons/fa";
-import logo from "../assets/chm.svg";
+import logo from "../assets/logo3.png";
 import { Phone, Search } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -97,7 +97,7 @@ export const Navbar = ({ setMenuOpen }) => {
               <img
                 src={logo}
                 alt="Logo"
-                className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto"
+                className="w-40 sm:w-40 md:w-40 lg:w-40 h-auto"
               />
             </div>
 
@@ -382,7 +382,7 @@ export const Navbar = ({ setMenuOpen }) => {
                 className="bg-black text-white px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded hover:bg-gray-800 transition"
                 to="/booking"
               >
-                Book Now
+                Enquire Now
               </NavLink>
             </div>
           </div>

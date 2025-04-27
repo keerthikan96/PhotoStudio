@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaChevronDown } from "react-icons/fa";
+import logo from "../assets/logo3.png";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   // State for mobile dropdown
@@ -33,7 +34,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       <div className="absolute top-0 left-0 right-0 flex justify-between items-center p-4 sm:p-6 border-b border-gray-800">
         <div className="flex flex-col">
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/CDLogo1.svg" alt="Photo Dynamic Logo" className="h-8 sm:h-10 invert" />
+            <img src={logo} alt="Photo Dynamic Logo" className="h-40 sm:h-10 invert w-40" />
           </Link>
         </div>
         <button
