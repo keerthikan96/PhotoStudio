@@ -25,7 +25,7 @@ const PortfolioPage = () => {
     {
       id: 1,
       image: image1,
-      category: "Luxury Wedding Photography in Chennai",
+      category: "Luxury Wedding Photography in Sri Lanka",
       price: "₹55,000",
     },
     {
@@ -49,7 +49,7 @@ const PortfolioPage = () => {
     {
       id: 5,
       image: image5,
-      category: "Best Budget Wedding Photography in Chennai",
+      category: "Best Budget Wedding Photography in Sri Lanka",
       price: "₹20,000",
     },
     {
@@ -67,7 +67,7 @@ const PortfolioPage = () => {
     {
       id: 8,
       image: image8,
-      category: "Brahmin Wedding Photography in Chennai",
+      category: "Brahmin Wedding Photography in Sri Lanka",
       price: "₹28,000",
     },
     {
@@ -79,7 +79,7 @@ const PortfolioPage = () => {
     {
       id: 10,
       image: image10,
-      category: "Luxury Wedding Photography in Chennai",
+      category: "Luxury Wedding Photography in Sri Lanka",
       price: "₹45,000",
     },
     {
@@ -133,7 +133,7 @@ const PortfolioPage = () => {
     {
       id: 19,
       image: image9,
-      category: "Artistic Wedding Photography in Chennai",
+      category: "Artistic Wedding Photography in Sri Lanka",
       price: "₹40,000",
     },
     {
@@ -185,7 +185,7 @@ const PortfolioPage = () => {
       gridRef.current.scrollTop = 0;
     }
   };
-  
+
   const text = "text-gray-500 font-extralight ";
   return (
     <div className="min-h-screen bg-[#f0f2f4] mt-10">
@@ -194,7 +194,7 @@ const PortfolioPage = () => {
         <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
           <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
             <TextTransition
-              text={"The Best Wedding Candid Photographers in Chennai"}
+              text={"The Best Wedding Candid Photographers in Colombo"}
             />
           </h1>
           <p className="text-xs sm:text-sm mt-2">Home / Portfolio</p>
@@ -206,47 +206,47 @@ const PortfolioPage = () => {
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
               <RevealOnScroll>
                 <p className={text + "text-sm sm:text-base mb-4"}>
-                  Stories are really how the world works. Stories are what
-                  shapes us, and what continues to shape us – most times, we
-                  don’t even recognize that we are part of a story and we are
-                  building our own story – and that is why Photography continues
-                  to be as important as living the story itself. The picture of
-                  a grandmother smiling at her daughter and granddaughter
-                  reveals more than a smile. The curve of her smile is answer to
-                  the life wisdom she has accrued over years, the twinkling in
-                  her eyes is a reflection of her warmth, her memories and all
-                  the world’s love.. the picture of her smiling at her children
-                  is not just her smile, it is the story of three generations of
-                  women – straight down the root, cheering for each other. That
-                  one picture is the story of passing the baton in a clan,{" "}
-                  <a href="">the story of memory</a>, the story of a family.
+                  Stories are what shape us — often without us even realizing
+                  it. Each moment, each memory, becomes part of a bigger story
+                  we are continuously building. That is why photography holds
+                  such profound importance — it captures not just moments, but
+                  the very essence of life’s story. Imagine a photograph of a
+                  grandmother smiling at her daughter and granddaughter. It’s
+                  more than just a smile. The curve of her lips speaks of wisdom
+                  earned over a lifetime. The twinkle in her eyes reflects
+                  warmth, memories, and boundless love. That single image is
+                  more than a frozen moment; it’s the story of three generations
+                  of women — rooted together, celebrating each other. It’s the
+                  passing of the baton across time, the spirit of a family
+                  captured forever. At Chamodh Delpearachchi Photography, we
+                  don’t just take pictures — we preserve stories that live on
+                  for generations.
                 </p>
               </RevealOnScroll>
               <p className="text-gray-700 font-bold text-lg sm:text-xl mb-4">
-                <TextTransition text={"Stories through the picture"} />
-              </p>
+  <TextTransition text={"Stories through the picture"} />
+</p>
 
-              <RevealOnScroll>
-                <p className={text + "text-sm sm:text-base mb-2"}>
-                  At <a href="">Focuz studios</a>, we pay attention to{" "}
-                  <b>YOUR stories</b>. That is why we take immense effort in
-                  getting a shot right – because your pictures are your stories
-                  and it is our responsibility to capture a moment to make it a
-                  story that will be worth remembering for a lifetime.
-                </p>
-              </RevealOnScroll>
+<RevealOnScroll>
+  <p className={text + "text-sm sm:text-base mb-2"}>
+    At <a href="">Chamodh Delpearachchi Photography</a>, we deeply value <b>your stories</b>. 
+    That’s why we put immense care and passion into every shot — because your photographs aren’t just images, 
+    they are stories that deserve to be captured with heart, preserved for a lifetime, and cherished forever.
+  </p>
+</RevealOnScroll>
+
 
               <RevealOnScroll>
                 <p className={text + "text-sm sm:text-base mb-2"}>
                   When it comes to snapping the best shots at your wedding,
                   photographers play an important role. But choosing the{" "}
-                  <a href="">best candid wedding photographers</a> in chennai or
-                  all over world for the big day can be overwhelming, especially
-                  if you’re planning something big or are just stepping into the
-                  world of weddings. That’s why it’s important to find someone
-                  who can capture the spirit of your wedding and tell a story
-                  that will be worth remembering forever through their
-                  photography.
+                  <a href="">best candid wedding photographers</a> in Sri Lanka
+                  or all over world for the big day can be overwhelming,
+                  especially if you’re planning something big or are just
+                  stepping into the world of weddings. That’s why it’s important
+                  to find someone who can capture the spirit of your wedding and
+                  tell a story that will be worth remembering forever through
+                  their photography.
                 </p>
               </RevealOnScroll>
 
@@ -282,7 +282,9 @@ const PortfolioPage = () => {
                   </p>
 
                   <RevealOnScroll>
-                    <p className={text + "text-lg sm:text-xl mb-2 text-justify"}>
+                    <p
+                      className={text + "text-lg sm:text-xl mb-2 text-justify"}
+                    >
                       It is often said that stories are what shape us. But it is
                       also through stories that we continue to shape ourselves,
                       and each other- whether or not we realize it at the time.
@@ -291,10 +293,9 @@ const PortfolioPage = () => {
                       unfolds.
                     </p>
 
-        
-                      <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition duration-300 mt-4">
+                    <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition duration-300 mt-4">
                       Book Now
-                </button>
+                    </button>
                   </RevealOnScroll>
                 </div>
 
@@ -305,7 +306,11 @@ const PortfolioPage = () => {
                     style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
                   >
                     {currentImages.map((item, index) => (
-                      <RevealOnScroll key={item.id} threshold={0.1} delay={index % 2 === 0 ? 0 : 0.2}>
+                      <RevealOnScroll
+                        key={item.id}
+                        threshold={0.1}
+                        delay={index % 2 === 0 ? 0 : 0.2}
+                      >
                         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                           <div className="relative">
                             <img
@@ -318,9 +323,9 @@ const PortfolioPage = () => {
                             <h3 className="text-sm font-medium text-center">
                               {item.category}
                             </h3>
-                            <h4 className="text-sm font-light text-center pt-2">
+                            {/* <h4 className="text-sm font-light text-center pt-2">
                               {item.price}
-                            </h4>
+                            </h4> */}
                           </div>
                         </div>
                       </RevealOnScroll>

@@ -7,37 +7,38 @@ const testimonials = [
     name: "Rathi Priya",
     role: "Quality Output",
     content:
-      "I had a great experience working with Chandru & his team for a wedding. They captured each and every moment beautifully and were really flexible towards their approach. I think great pictures are achieved when you have a good teamwork and Focusstudios were super fun as made us really comfortable.",
+      "I had a wonderful experience working with Chamodh and his team for our wedding. They captured every moment beautifully and made us feel so comfortable throughout. Great teamwork and a truly memorable experience!",
   },
   {
     id: 2,
     name: "Lalith Kumar",
-    role: "Simply amazing!",
+    role: "Simply Amazing!",
     content:
-      "Had a great experience with Focus Studios Team. Right from the date of confirmation of my wedding till the date of handing over the deliverables, things were completely taken care by Surya Lakshmi. I would like to appreciate her client handling skills. Had a very good journey with Team Focus.",
+      "Working with Chamodh Delpearachchi Photography was an absolute delight. From our first meeting to the final delivery of the photos and videos, everything was handled with great professionalism and care. Highly recommend them!",
   },
   {
     id: 3,
     name: "Dhinesh Ram",
     role: "Great Experience",
     content:
-      "Wonderful job Focus. Especially during Covid times, the way the dedicated team stretched themselves to deliver a quality output is amazing. Good People and Quality Output... What more needed for a customer? Thanks very much... This is on Rathipriya Vignesh Wedding Photo shoot.",
+      "Chamodh and the team went above and beyond to ensure that every detail was captured perfectly. Their dedication, passion, and quality of work truly made our special day even more memorable. Thank you so much!",
   },
   {
     id: 4,
-    name: "Anjali Mehta",
+    name: "Anjali Meera",
     role: "Highly Recommend",
     content:
-      "The entire experience with Focus Studios was seamless. Their attention to detail and creative approach made my wedding album truly special.",
+      "The entire experience with Chamodh Delpearachchi Photography was seamless. Their attention to detail and creative vision made our wedding album truly one of a kind.",
   },
   {
     id: 5,
-    name: "Vikram Singh",
+    name: "Sanjana Kumar",
     role: "Fantastic Work",
     content:
-      "From the first discussion to the final delivery, everything was perfect. Focus Studios team is truly passionate about their work.",
+      "From our very first conversation, Chamodh and his team made us feel confident and excited. Every step was smooth, and the final results exceeded our expectations. Truly passionate professionals!",
   },
 ];
+
 
 const TestimonialSwipe = () => {
   const [current, setCurrent] = useState(0);

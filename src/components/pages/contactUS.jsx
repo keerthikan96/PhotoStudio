@@ -41,13 +41,13 @@ const ContactUs = () => {
             </div>
             <h2 className="text-lg font-semibold mb-2">Address</h2>
             <p className="text-gray-600 text-sm">
-              Focuz Studios™
+              CD Photography
               <br />
-              #39, Second Floor, 2nd St,
+              No. 4/7/1 Suhada Mawatha, 
               <br />
-              Thirumalai Nagar, Kolathur,
+              Ganemulla 11020
               <br />
-              Chennai, Tamil Nadu 600099
+              Colombo, Sri Lanka
             </p>
           </div>
 
@@ -56,7 +56,7 @@ const ContactUs = () => {
               <span className="text-xl">✉️</span>
             </div>
             <h2 className="text-lg font-semibold mb-2">Email</h2>
-            <p className="text-gray-600 text-sm">hello@focuzstudios.in</p>
+            <p className="text-gray-600 text-sm">chamodh@gmail.com</p>
           </div>
 
           <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
@@ -64,7 +64,7 @@ const ContactUs = () => {
               <span className="text-xl">📱</span>
             </div>
             <h2 className="text-lg font-semibold mb-2">Phone</h2>
-            <p className="text-gray-600 text-sm">+91 96009 01721</p>
+            <p className="text-gray-600 text-sm">+94 76658 1620</p>
           </div>
         </div>
 
@@ -120,7 +120,7 @@ const ContactUs = () => {
                   <input
                     className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                     type="tel"
-                    placeholder="Eg: +919876543210"
+                    placeholder="Eg: +94766581620"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
@@ -196,7 +196,7 @@ const ContactUs = () => {
                 <span className="text-sm font-medium">
                   Contact our support team
                   <br />
-                  +91 96009 01721
+                  +94 76658 1620
                 </span>
               </button>
             </div>
@@ -206,27 +206,27 @@ const ContactUs = () => {
               <div className="flex justify-between">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600 hover:text-blue-600"
                 >
-                  <i className="fab fa-facebook-f"></i>
+                  <i className="fa-brands fa-facebook text-xl"></i>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600 hover:text-pink-600"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <i className="fa-brands fa-instagram text-xl"></i>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600 hover:text-red-600"
                 >
-                  <i className="fab fa-pinterest-p"></i>
+                  <i className="fa-brands fa-pinterest text-xl"></i>
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors text-gray-600 hover:text-red-600"
                 >
-                  <i className="fab fa-youtube"></i>
+                  <i className="fa-brands fa-youtube text-xl"></i>
                 </a>
               </div>
             </div>

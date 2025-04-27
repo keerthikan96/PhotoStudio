@@ -72,28 +72,29 @@ const Portfolio = () => {
     };
   }, [isVisible]);
 
-  const whyFocuzItems = [
+  const whyChamodhItems = [
     {
       id: 1,
       title: "How to Prepare for Your Wedding Photoshoot",
-      content: "We guide you through every step to ensure you're fully prepared for your special day, from outfit selection to timeline planning."
+      content: "We guide you through every step to ensure you're fully prepared for your special day — from selecting outfits to planning your photography timeline."
     },
     {
       id: 2,
       title: "Couple, Makeup Team & Photographer",
-      content: "Our team works in perfect harmony with you and your makeup artists to create stunning, cohesive looks that photograph beautifully."
+      content: "Our team works closely with you and your makeup artists to create stunning, natural looks that shine beautifully through every photograph."
     },
     {
       id: 3,
-      title: "What You Can Expect from Us?",
-      content: "Professionalism, creativity, and dedication to capturing every precious moment of your wedding day with artistic excellence."
+      title: "What You Can Expect from Us",
+      content: "Professionalism, creativity, and a heartfelt dedication to capturing every precious moment of your wedding with true artistic excellence."
     },
     {
       id: 4,
-      title: "A Team by Photo Mentor & Canon EOS Influencer Mr. Chandru Bharathy",
-      content: "Learn from the best! Our team is mentored by renowned photography expert and Canon influencer Chandru Bharathy."
+      title: "Led by Passion, Creativity, and Expertise",
+      content: "At Chamodh Delpearachchi Photography, our work is driven by passion, artistic vision, and years of professional experience in wedding storytelling."
     }
   ];
+  
 
   const toggleItem = (id) => {
     setExpandedItem(expandedItem === id ? null : id);
@@ -153,7 +154,7 @@ const Portfolio = () => {
           </RevealOnScroll>
 
           <div className="space-y-4">
-            {whyFocuzItems.map((item) => (
+            {whyChamodhItems.map((item) => (
               <RevealOnScroll key={item.id}>
                 <div 
                   className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
