@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
 import { Link } from 'react-router-dom';
 
 // Importing multiple wedding images
-import weddingImage1 from '../../assets/Images/img1.jpg';
-import weddingImage2 from '../../assets/Images/img2.JPG';
-import weddingImage3 from '../../assets/Images/img3.jpg';
-import weddingImage4 from '../../assets/Images/img4.jpg';
+import weddingImage1 from '../../assets/Images/serviceview1.jpg';
+import weddingImage2 from '../../assets/Images/serviceview2.JPG';
+import weddingImage3 from '../../assets/Images/serviceview3.jpg';
+import weddingImage4 from '../../assets/Images/serviceview4.jpg';
 
 const PhotographyServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -50,16 +50,9 @@ const PhotographyServices = () => {
   };
 
   return (
-    <section id="services" className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4">
-        <RevealOnScroll>
-          <div className="text-center mb-12">
-            <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-md mb-4">
-              Wedding Photography
-            </span>
-            <h2 className="text-4xl font-bold text-gray-800 mb-2">Services</h2>
-          </div>
-        </RevealOnScroll>
+    <section id="services" className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24 mt-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+     
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           {/* Left Side - Image Slideshow with Transitions */}
@@ -88,6 +81,14 @@ const PhotographyServices = () => {
           {/* Right Side - Text Content */}
           <RevealOnScroll>
             <div className="flex flex-col justify-center h-full">
+           
+          <div className="text-left mb-12">
+            <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-md mb-4">
+              Wedding Photography
+            </span>
+            <h2 className="text-4xl font-bold text-gray-800 mb-2">Services</h2>
+          </div>
+       
               <p className="text-gray-600 mb-6">
                 At Focuz Studios, we are proud to be known as the best wedding
                 photographer in Chennai. At <span className="font-semibold">Focuz Studios</span>, we proudly stand as the{" "}
@@ -172,43 +173,7 @@ const PhotographyServices = () => {
           </RevealOnScroll>
         </div>
 
-        {/* Why Focus Studios? Section */}
-        <div className="mt-24 bg-gray-50 rounded-xl p-8 md:p-12">
-          <RevealOnScroll>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Focus Studios?</h2>
-            </div>
-          </RevealOnScroll>
-
-          <div className="space-y-4">
-            {whyFocuzItems.map((item) => (
-              <RevealOnScroll key={item.id}>
-                <div 
-                  className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
-                >
-                  <button
-                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
-                    onClick={() => toggleItem(item.id)}
-                  >
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <span className={`transform transition-transform duration-300 ${expandedItem === item.id ? 'rotate-180' : ''}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div 
-                    className={`transition-all duration-300 overflow-hidden ${
-                      expandedItem === item.id ? 'max-h-40 p-6 pt-0' : 'max-h-0'
-                    }`}
-                  >
-                    <p className="text-gray-600">{item.content}</p>
-                  </div>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </div>
+      
       </div>
     </section>
   );

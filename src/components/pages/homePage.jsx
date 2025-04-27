@@ -12,8 +12,9 @@ function HomePage() {
     <div>
 
         <Home />
-        <Portfolio />
         <PhotographyServices />
+        <Portfolio />
+     
         <GoogleReviews />
         <TestimonialSwipe />
         {/* <About />
