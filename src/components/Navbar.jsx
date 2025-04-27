@@ -21,8 +21,8 @@ export const Navbar = ({ setMenuOpen }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setAtTop(window.pageYOffset === 0);
-      setScrolling(window.scrollY > 80);
+      setAtTop(window.pageYOffset < 10);
+      setScrolling(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -69,45 +69,60 @@ export const Navbar = ({ setMenuOpen }) => {
       <div
         className={`fixed top-0 left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
           scrolling ? "translate-y-1" : "-translate-y-0"
-        }`}
+        } hidden sm:flex`}
       >
-        <div className="w-[80%] max-w-6xl p-2 flex justify-between items-center rounded-lg">
-          <a href="#blogs" className="hover:underline">
+        <div className="w-[90%] md:w-[80%] max-w-6xl p-2 flex justify-between items-center rounded-lg">
+          <a href="#blogs" className="text-sm hover:underline">
             See our most recent blogs &gt;
           </a>
           <div className="flex items-center space-x-4">
-            <span className="flex items-center">
-              <Phone className="mr-1" /> +94 75838 3145
+            <span className="flex items-center text-xs md:text-sm">
+              <Phone className="mr-1 w-3 h-3 md:w-4 md:h-4" /> +94 75838 3145
             </span>
             <a href="#" className="text-gray-600 hover:text-gray-900">
-              <Search className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Search className="w-3 h-3 md:w-4 md:h-4" />
             </a>
           </div>
         </div>
       </div>
       <nav
-        className={`fixed  left-0 right-0 flex justify-center z-40 ${
+        className={`fixed left-0 right-0 flex justify-center z-40 ${
           atTop ? "top-10" : "top-0"
         } `}
       >
-        <div className="w-[80%] max-w-6xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
-          <div className="flex justify-between items-center h-15 px-6">
+        <div className="w-[95%] sm:w-[90%] md:w-[80%] max-w-6xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
+          <div className="flex justify-between items-center h-15 px-3 sm:px-6">
             {/* Logo */}
             <div className="flex items-center">
               <img
                 src={logo}
                 alt="Logo"
-                className="w-24 sm:w-28 md:w-32 h-auto"
+                className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto"
               />
             </div>
 
             {/* Mobile Menu Button */}
-            <div
-              className="w-6 h-5 cursor-pointer md:hidden"
+            <button
+              className="flex items-center justify-center w-8 h-8 rounded-md cursor-pointer md:hidden focus:outline-none"
               onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label="Toggle menu"
             >
-              &#9776;
-            </div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 6H20M4 12H20M4 18H20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
 
             {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-6">
@@ -364,7 +379,7 @@ export const Navbar = ({ setMenuOpen }) => {
                 }
               </NavLink>
               <NavLink
-                className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+                className="bg-black text-white px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base rounded hover:bg-gray-800 transition"
                 to="/booking"
               >
                 Book Now
@@ -375,27 +390,27 @@ export const Navbar = ({ setMenuOpen }) => {
       </nav>
 
       <div
-        className={`fixed  ${atTop ? "top-25" : "top-2"} left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
+        className={`fixed ${atTop ? "top-25" : "top-2"} left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
           atTop ? "translate-y-0" : "-translate-y-full"
-        }`}
+        } hidden sm:flex`}
       >
-        <div className="w-[80%] max-w-6xl  p-2 flex justify-between items-center">
+        <div className="w-[95%] sm:w-[90%] md:w-[80%] max-w-6xl p-2 flex flex-wrap justify-between items-center">
           {/* Contact Info */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <FaMapMarkerAlt className="text-gray-600" />
-              <span className="text-sm text-gray-600">Colombo</span>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <FaMapMarkerAlt className="text-gray-600 text-xs sm:text-sm" />
+              <span className="text-xs sm:text-sm text-gray-600">Colombo</span>
             </div>
 
-            <div className="flex items-center space-x-2">
-              <FaEnvelope className="text-gray-600" />
-              <span className="text-sm text-gray-600">keer@studio.com</span>
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <FaEnvelope className="text-gray-600 text-xs sm:text-sm" />
+              <span className="text-xs sm:text-sm text-gray-600">keer@studio.com</span>
             </div>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">Follow us on</span>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <span className="text-xs sm:text-sm text-gray-600">Follow us on</span>
             <a href="#" className="text-gray-600 hover:text-gray-800">
               <FaFacebook className="text-xs sm:text-sm" />
             </a>
