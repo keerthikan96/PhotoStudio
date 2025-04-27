@@ -266,17 +266,12 @@ const PortfolioPage = () => {
           {/* Portfolio Section Title */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 text-center my-8">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">
-                Stories through the pictures
-              </h2>
-              <p className="text-gray-600 mt-2">
-                A collection of our finest wedding photography work
-              </p>
+              
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className=" flex flex-col items-center justify-center">
+            <div className=" flex flex-col items-center justify-center ">
               <div className="max-w-7xl px-4 sm:px-6 md:px-8 flex md:flex-row md:justify-between flex-col justify-center">
                 <div className="md:basis-[30%] md:sticky md:top-4 md:self-start md:pt-20 md:pb-0 pt-2 pb-4">
                   <p className="text-gray-700 font-bold text-lg sm:text-2xl mb-4">
