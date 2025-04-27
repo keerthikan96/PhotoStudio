@@ -113,13 +113,10 @@ export const Navbar = ({ setMenuOpen }) => {
             <div className="hidden md:flex items-center space-x-6">
               <NavLink
                 to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-black font-bold border-b-2 border-black"
-                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
-                }
+                className="text-gray-700 hover:text-gray-900 relative group pb-1"
               >
                 Home
+                <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
               </NavLink>
 
               {/* Portfolio with Dropdown */}
@@ -133,12 +130,18 @@ export const Navbar = ({ setMenuOpen }) => {
                   <NavLink
                     to="/portfolio"
                     className={({ isActive }) =>
-                      isActive
-                        ? "text-black font-bold border-b-2 border-black"
-                        : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                      `text-gray-700 hover:text-gray-900 relative group pb-1 ${
+                        isActive ? "font-medium" : ""
+                      }`
                     }
                   >
                     Portfolio
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                    {({ isActive }) =>
+                      isActive && (
+                        <span className="absolute bottom-0 left-0 h-0.5 bg-black w-full"></span>
+                      )
+                    }
                   </NavLink>
                   <FaChevronDown
                     className={`text-xs transition-transform duration-200 ${
@@ -308,38 +311,57 @@ export const Navbar = ({ setMenuOpen }) => {
               <NavLink
                 to={"/pricing"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-black font-bold border-b-2 border-black"
-                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                  `text-gray-700 hover:text-gray-900 relative group pb-1 ${
+                    isActive ? "font-medium" : ""
+                  }`
                 }
               >
                 Pricing
+                <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                {({ isActive }) =>
+                  isActive && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-black w-full"></span>
+                  )
+                }
               </NavLink>
               <NavLink
                 to={"/faq"}
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-black font-bold border-b-2 border-black"
-                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                  `text-gray-700 hover:text-gray-900 relative group pb-1 ${
+                    isActive ? "font-medium" : ""
+                  }`
                 }
               >
                 FAQ
+                <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                {({ isActive }) =>
+                  isActive && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-black w-full"></span>
+                  )
+                }
               </NavLink>
               <a
                 href="#careers"
-                className="text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                className="text-gray-700 hover:text-gray-900 relative group pb-1"
               >
                 We
+                <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
               </a>
               <NavLink
                 to="/contactus"
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-black font-bold border-b-2 border-black"
-                    : "text-gray-700 hover:text-gray-900 hover:border-b-2 hover:border-gray-900 transition-all pb-1"
+                  `text-gray-700 hover:text-gray-900 relative group pb-1 ${
+                    isActive ? "font-medium" : ""
+                  }`
                 }
               >
                 Contact
+                <span className="absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-out w-0 group-hover:w-full"></span>
+                {({ isActive }) =>
+                  isActive && (
+                    <span className="absolute bottom-0 left-0 h-0.5 bg-black w-full"></span>
+                  )
+                }
               </NavLink>
               <NavLink
                 className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
