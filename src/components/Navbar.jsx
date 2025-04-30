@@ -8,7 +8,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import logo from "../assets/chm.svg";
-import { Phone, Search, MapPin, Mail } from "lucide-react";
+import { Phone, Search } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
@@ -29,14 +29,13 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <>
-      {/* Navbar */}
-
+      {/* Top Strip */}
       <div
         className={`fixed top-0 left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
           scrolling ? "translate-y-1" : "-translate-y-0"
         }`}
       >
-        <div className="w-[80%] max-w-7xl  p-2 flex justify-between items-center rounded-lg">
+        <div className="w-[80%] max-w-7xl p-2 flex justify-between items-center rounded-lg">
           <a href="#blogs" className="hover:underline">
             See our most recent blogs &gt;
           </a>
@@ -50,7 +49,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           </div>
         </div>
       </div>
-      <nav className={`fixed  left-0 right-0 flex justify-center z-40 ${atTop?"top-10":"top-0"} `}>
+
+      {/* Navbar */}
+      <nav className={`fixed left-0 right-0 flex justify-center z-40 ${atTop ? "top-10" : "top-0"}`}>
         <div className="w-[80%] max-w-7xl bg-white shadow-lg rounded-lg border border-gray-200 backdrop-blur-md">
           <div className="flex justify-between items-center h-15 px-6">
             {/* Logo */}
@@ -58,7 +59,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               <img src={logo} alt="Logo" className="w-24 sm:w-28 md:w-32 h-auto" />
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu */}
             <div
               className="w-6 h-5 cursor-pointer md:hidden"
               onClick={() => setMenuOpen((prev) => !prev)}
@@ -66,101 +67,85 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               &#9776;
             </div>
 
-            {/* Desktop Navigation Links */}
+            {/* Nav Links */}
             <div className="hidden md:flex items-center space-x-6">
-              <NavLink
-                href="/"
-                className="text-gray-700 hover:text-gray-900 transition"
-              >
+              <NavLink to="/" className="text-gray-700 hover:text-gray-900 transition">
                 Home
               </NavLink>
-              
-              {/* Portfolio with Dropdown */}
-              <div 
+
+              {/* Portfolio Dropdown */}
+              <div
                 className="relative"
-                
                 onMouseEnter={() => setPortfolioHover(true)}
-                //onMouseLeave={() => setPortfolioHover(false)}
               >
                 <div className="flex items-center space-x-1 cursor-pointer group">
                   <a
-                    href="#portfolio"
+                    href="portfolio"
                     className="text-gray-700 group-hover:text-gray-900 transition"
                   >
                     Portfolio
                   </a>
                   <FaChevronDown className="text-xs transition-transform duration-200 group-hover:rotate-180" />
                 </div>
-                
-                {/* Dropdown Menu */}
+
                 {portfolioHover && (
-                  <div 
-                    className="absolute left-0 mt-2 w-[500px] bg-white shadow-xl rounded-lg p-5 z-50 border border-gray-200 grid grid-cols-2 gap-6"
+                  <div
+                    className="absolute left-0 mt-2 w-64 bg-white shadow-xl rounded-lg p-5 z-50 border border-gray-200"
                     onMouseEnter={() => setDropdownHover(true)}
                     onMouseLeave={() => {
                       setDropdownHover(false);
                       setPortfolioHover(false);
                     }}
                   >
-                    {/* Column 1 */}
-                    <div>
-                      {/* <h3 className="font-bold text-gray-800 mb-3 text-lg">WEDDINGS</h3> */}
-                      <ul className="space-y-2">
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Tamil</a></li>
-                        <li>
-                          <a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">
-                            Tamil Brahmin 
-                            <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full ml-2">Trending</span>
-                          </a>
-                        </li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Chettinad</a></li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Christian</a></li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Muslim</a></li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Telugu</a></li>
-                      </ul>
-                    </div>
-                    
-                    {/* Column 2 */}
-                    <div>
-                      <h3 className="font-bold text-gray-800 mb-3 text-lg">Other Categories</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">
-                            Kerala
-                            <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full ml-2">Trending</span>
-                          </a>
-                        </li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Srilankan</a></li>
-                        <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Konkani</a></li>
-                        
-                        <li className="mt-3">
-                          <h4 className="font-bold text-gray-800 mb-1 text-md">North Indian Wedding</h4>
-                          <ul className="ml-2 space-y-1">
-                            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Marwari</a></li>
-                            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Destination Wedding</a></li>
-                          </ul>
-                        </li>
-                        
-                        <li className="mt-3">
-                          <h4 className="font-bold text-gray-800 mb-1 text-md">International Weddings</h4>
-                          <ul className="ml-2 space-y-1">
-                            <li>
-                              <a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">
-                                London UK
-                                <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full ml-2">Trending</span>
-                              </a>
-                            </li>
-                            <li><a href="#" className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50">Srilanka</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
+                    <ul className="space-y-2">
+                      <li>
+                        <NavLink
+                          to="/wedding" // Updated to NavLink
+                          className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
+                        >
+                          Wedding
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/birthdays" // Add similar routes as needed
+                          className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
+                        >
+                          Birthdays
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/maternity" // Add similar routes as needed
+                          className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
+                        >
+                          Maternity
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/preshoot" // Add similar routes as needed
+                          className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
+                        >
+                          Preshoot
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/puberty" // Add similar routes as needed
+                          className="text-gray-600 hover:text-gray-900 hover:font-medium transition flex items-center py-1 px-2 rounded hover:bg-gray-50"
+                        >
+                          Puberty Ceremony
+                        </NavLink>
+                      </li>
+                      
+                    </ul>
                   </div>
                 )}
               </div>
 
               <NavLink
-                to={"/pricing"}
+                to="/pricing"
                 className={({ isActive }) =>
                   isActive
                     ? "text-black font-bold"
@@ -169,25 +154,19 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               >
                 Pricing
               </NavLink>
-              <a
-                href="#faq"
-                className="text-gray-700 hover:text-gray-900 transition"
-              >
+              <a href="#faq" className="text-gray-700 hover:text-gray-900 transition">
                 FAQ
               </a>
-              <a
-                href="#careers"
-                className="text-gray-700 hover:text-gray-900 transition"
-              >
+              <a href="#careers" className="text-gray-700 hover:text-gray-900 transition">
                 Careers
               </a>
-              <NavLink
-                to="/contactus"
-                className="text-gray-700 hover:text-gray-900 transition"
-              >
+              <NavLink to="/contactus" className="text-gray-700 hover:text-gray-900 transition">
                 Contact
               </NavLink>
-              <NavLink className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition" to="/booking">
+              <NavLink
+                to="/booking"
+                className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition"
+              >
                 Book Now
               </NavLink>
             </div>
@@ -195,26 +174,24 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         </div>
       </nav>
 
+      {/* Bottom Strip */}
       <div
-        className={`fixed  ${atTop?"top-25":"top-2"} left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
+        className={`fixed ${atTop ? "top-25" : "top-2"} left-0 right-0 flex justify-center z-30 transition-transform duration-300 ${
           atTop ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="w-[80%] max-w-6xl  p-2 flex justify-between items-center">
-          {/* Contact Info */}
+        <div className="w-[80%] max-w-6xl p-2 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <FaMapMarkerAlt className="text-gray-600" />
               <span className="text-sm text-gray-600">Colombo</span>
             </div>
-
             <div className="flex items-center space-x-2">
               <FaEnvelope className="text-gray-600" />
               <span className="text-sm text-gray-600">keer@studio.com</span>
             </div>
           </div>
 
-          {/* Social Media Icons */}
           <div className="flex items-center space-x-4">
             <span className="text-sm text-gray-600">Follow us on</span>
             <a href="#" className="text-gray-600 hover:text-gray-800">
