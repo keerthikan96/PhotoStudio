@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { PagesUI } from '../PagesUI';
-import TextTransition from "../TextTransition"
+import TextTransition from "../TextTransition";
+import emailjs from "emailjs-com";
+import otpGenerator from "otp-generator";
+import { SmsClient } from "@azure/communication-sms";
 
 const ContactUs = () => {
   const [otpSent, setOtpSent] = useState(false);
@@ -11,19 +14,106 @@ const ContactUs = () => {
     otp: "",
     message: "",
   });
+  const [isVerified, setIsVerified] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [generatedOtp, setGeneratedOtp] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleVerify = () => {
-    // Simulate OTP sent
-    setOtpSent(true);
+  const sendSmsMessage = async (phoneNumber, message) => {
+    try {
+      // Initialize the SMS client with your connection string
+      const smsClient = new SmsClient(import.meta.env.VITE_AZURE_COMMUNICATION_CONNECTION_STRING);
+      
+      const sendResult = await smsClient.send({
+        from: import.meta.env.VITE_AZURE_PHONE_NUMBER, // Your Azure Communication Services phone number
+        to: phoneNumber,
+        message: message
+      });
+
+      // Message sent successfully
+      return true;
+    } catch (error) {
+      console.error("Error sending SMS:", error);
+      return false;
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleVerify = async () => {
+    if (!formData.phone) {
+      alert("Please enter your phone number first");
+      return;
+    }
+    const otp = otpGenerator.generate(6, { 
+      digits: true, 
+      alphabets: false, 
+      upperCase: false, 
+      specialChars: false 
+    });
+    setGeneratedOtp(otp);
+    
+    // Send OTP via SMS
+    const smsSent = await sendSmsMessage(
+      formData.phone,
+      `Your CD Photography verification code is: ${otp}`
+    );
+    
+    if (smsSent) {
+      setOtpSent(true);
+      alert("OTP sent to your phone number");
+    } else {
+      alert("Failed to send OTP. Please try again.");
+    }
+  };
+
+  const verifyOtp = () => {
+    if (formData.otp === generatedOtp) {
+      setIsVerified(true);
+      alert("Phone number verified successfully!");
+    } else {
+      alert("Invalid OTP. Please try again.");
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+    if (!isVerified) {
+      alert("Please verify your phone number first");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_email: "keerthikan.invorgsl@gmail.com",
+          from_name: formData.fullName,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_USER_ID
+      );
+
+      alert("Message sent successfully!");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        otp: "",
+        message: "",
+      });
+      setOtpSent(false);
+      setIsVerified(false);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again.");
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -39,20 +129,10 @@ const ContactUs = () => {
         <p className="text-xs sm:text-sm mt-2">
         Home / Contact Us
         </p>
-        {/* <p className="text-gray-600 mb-4">
-                It is important for me as a professional that every problem
-                has a solution,
-              </p>
-              <p className="text-gray-600">
-                you just need to start working for it! Here are answers.
-              </p> */}
       </div>
         <PagesUI>
 
       <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
-        {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
-          Contact Us
-        </h1> */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14 mx-auto max-w-5xl">
           <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
@@ -114,6 +194,7 @@ const ContactUs = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -129,6 +210,7 @@ const ContactUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -145,30 +227,48 @@ const ContactUs = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                    disabled={isLoading || isVerified}
                   />
                   <button
                     type="button"
-                    className="bg-black text-white px-5 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                    className={`${
+                      isVerified
+                        ? "bg-green-500 hover:bg-green-600"
+                        : "bg-black hover:bg-gray-800"
+                    } text-white px-5 py-3 rounded-lg text-sm font-medium transition-colors`}
                     onClick={handleVerify}
+                    disabled={isLoading || isVerified}
                   >
-                    Verify
+                    {isVerified ? "Verified ✓" : "Verify"}
                   </button>
                 </div>
               </div>
 
-              {otpSent && (
+              {otpSent && !isVerified && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Enter OTP*
                   </label>
-                  <input
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
-                    type="text"
-                    placeholder="Enter OTP"
-                    name="otp"
-                    value={formData.otp}
-                    onChange={handleChange}
-                  />
+                  <div className="flex gap-2">
+                    <input
+                      className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                      type="text"
+                      placeholder="Enter OTP"
+                      name="otp"
+                      value={formData.otp}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                    />
+                    <button
+                      type="button"
+                      className="bg-black text-white px-5 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                      onClick={verifyOtp}
+                      disabled={isLoading}
+                    >
+                      Verify OTP
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -184,14 +284,16 @@ const ContactUs = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-black text-white py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                className="w-full bg-black text-white py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading || !isVerified}
               >
-                Submit form
+                {isLoading ? "Sending..." : "Submit form"}
               </button>
             </div>
           </form>
@@ -255,17 +357,6 @@ const ContactUs = () => {
 
         <div className="mt-10 md:mt-16 max-w-6xl mx-auto">
           <h3 className="text-xl font-semibold mb-4">Find us on map</h3>
-          {/* <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126664.54338492748!2d79.9430194!3d7.0439914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2ff94b9bdb28d%3A0xa84e5e7bdf4b8f3b!2sNo.%204%2F7%2F1%20Suhada%20Mawatha%2C%20Ganemulla%2011020%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1713957112345!5m2!1sen!2slk"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full rounded-2xl shadow-md"
-          /> */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d506827.0521913008!2d79.37596321105961!3d7.057793435205112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f968b92af321%3A0xcf0849422cc21294!2sChamodh%20Delpearachchi%20Photography!5e0!3m2!1sen!2slk!4v1745660507287!5m2!1sen!2slk"
             width="100%"
