@@ -181,16 +181,33 @@ const FaqPage = () => {
     },
   ];
   return (
-    <div id="faq" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div id="faq" className="min-h-screen bg-[#f0f2f4] ">
+      <div
+        className="absolute inset-0 opacity-3"
+        style={{
+          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
       {/* Hero Section */}
-      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative h-[60vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
             <TextTransition text="FAQ" />
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Easily find solutions and answers to your questions
+          <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+            Capturing life&apos;s most precious moments with passion and
+            artistry
           </p>
         </div>
       </div>
@@ -201,9 +218,9 @@ const FaqPage = () => {
         description="Frequently Asked Questions"
         keywords="FAQ, Photography, Wedding Photography, Sri Lanka, Chamodh Delpearachchi Photography"
       >
-          <PageTransition>
-            <div className="container mx-auto px-4 py-16 max-w-6xl">
-              {/* <div className="text-center mb-12">
+        <PageTransition>
+          <div className="container mx-auto px-4 py-16 max-w-6xl">
+            {/* <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold mb-6">
                   Easily find solutions and answers.
                 </h1>
@@ -216,26 +233,27 @@ const FaqPage = () => {
                 </p>
               </div> */}
 
-              <FAQSection title="Photography" faqs={photographyFAQs} />
-              <FAQSection title="Pricing" faqs={pricingFAQs} />
-              <FAQSection title="Booking" faqs={bookingFAQs} />
-              <FAQSection title="Miscellaneous" faqs={miscFAQs} />
-              <FAQSection title="Contact" faqs={contactFAQs} />
-            </div>
-          </PageTransition>
-          <div className="bg-gray-100 py-8">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-gray-600">
-                If you have any other questions, feel free to reach out!
-              </p>
-              <a
-                href="/contact"
-                className="mt-4 inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition duration-300"
-              >
-                Contact Us
-              </a>            </div>
+            <FAQSection title="Photography" faqs={photographyFAQs} />
+            <FAQSection title="Pricing" faqs={pricingFAQs} />
+            <FAQSection title="Booking" faqs={bookingFAQs} />
+            <FAQSection title="Miscellaneous" faqs={miscFAQs} />
+            <FAQSection title="Contact" faqs={contactFAQs} />
           </div>
-        </PagesUI>
+        </PageTransition>
+        <div className="bg-gray-100 py-8">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-gray-600">
+              If you have any other questions, feel free to reach out!
+            </p>
+            <a
+              href="/contact"
+              className="mt-4 inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition duration-300"
+            >
+              Contact Us
+            </a>{" "}
+          </div>
+        </div>
+      </PagesUI>
     </div>
   );
 };

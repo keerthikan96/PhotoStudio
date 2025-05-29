@@ -1,29 +1,38 @@
-import creatorImage from '../../assets/Images/chamodProfile.jpg'; 
-import creatorImageProtrait from '../../assets/Images/chamodMain.jpg';
-import backgroundImage from '../../assets/Images/bg-1.jpg';
+import creatorImage from "../../assets/Images/chamodProfile.jpg";
+import creatorImageProtrait from "../../assets/Images/chamodMain.jpg";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 mb-10">
+    <div className="min-h-screen bg-[#f0f2f4] ">
+      <div
+        className="absolute inset-0 opacity-3"
+        style={{
+          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>
+
       {/* Hero Section */}
-      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
-        {/* Faded background image */}
-        <img 
-          src={backgroundImage} 
-          alt="Studio background" 
-          className="absolute inset-0 w-full h-full object-cover opacity-30 z-0" 
-          style={{ pointerEvents: 'none' }}
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
+      <div className="relative h-[60vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
             <TextTransition text="About Us" />
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Capturing life&apos;s most precious moments with passion and artistry
+          <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
+            Capturing life&apos;s most precious moments with passion and
+            artistry
           </p>
         </div>
       </div>
@@ -34,54 +43,60 @@ function AboutPage() {
           {/* Creator Section */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                  <TextTransition text="Meet the Creator" />
-                </h2>
-                <h3 className="text-xl font-semibold text-gray-700 mb-4">
-                  Chamodh Delpearachchi
-                </h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  With over 8 years of experience in photography, I specialize in capturing 
-                  the authentic emotions and candid moments that make each celebration unique. 
-                  My journey began with a simple passion for storytelling through imagery, 
-                  and has evolved into a dedicated craft of preserving life&apos;s most treasured memories.
-                </p>
-                <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                  I believe that every couple has a unique story to tell, and my mission is 
-                  to document that story with creativity, professionalism, and a keen eye for 
-                  the details that matter most. From intimate ceremonies to grand celebrations, 
-                  I&apos;m committed to delivering images that will be cherished for generations.
-                </p>
-                <div className="flex flex-wrap gap-4 mb-6">
-                  <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
-                    Wedding Photography
-                  </span>
-                  <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
-                    Portrait Sessions
-                  </span>
-                  <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
-                    Event Photography
-                  </span>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="order-2 md:order-1">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    <TextTransition text="Meet the Creator" />
+                  </h2>
+                  <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                    Chamodh Delpearachchi
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    With over 8 years of experience in photography, I specialize
+                    in capturing the authentic emotions and candid moments that
+                    make each celebration unique. My journey began with a simple
+                    passion for storytelling through imagery, and has evolved
+                    into a dedicated craft of preserving life&apos;s most
+                    treasured memories.
+                  </p>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    I believe that every couple has a unique story to tell, and
+                    my mission is to document that story with creativity,
+                    professionalism, and a keen eye for the details that matter
+                    most. From intimate ceremonies to grand celebrations,
+                    I&apos;m committed to delivering images that will be
+                    cherished for generations.
+                  </p>
+                  <div className="flex flex-wrap gap-4 mb-6">
+                    <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
+                      Wedding Photography
+                    </span>
+                    <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
+                      Portrait Sessions
+                    </span>
+                    <span className="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">
+                      Event Photography
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="relative">
-                  <img 
-                    src={creatorImage} 
-                    alt="Sarah Johnson - Photography Creator" 
-                    className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
-                  />
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-800">8+</div>
-                      <div className="text-xs text-gray-600">Years</div>
+                <div className="order-1 md:order-2">
+                  <div className="relative">
+                    <img
+                      src={creatorImage}
+                      alt="Sarah Johnson - Photography Creator"
+                      className="w-full h-[500px] object-cover rounded-lg shadow-2xl"
+                    />
+                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-gray-800">
+                          8+
+                        </div>
+                        <div className="text-xs text-gray-600">Years</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
           </RevealOnScroll>
 
@@ -100,39 +115,53 @@ function AboutPage() {
                       className="w-56 h-72 object-cover rounded-2xl shadow-lg border-4 border-white mb-4"
                     />
                     <blockquote className="italic text-gray-700 text-center text-base max-w-xs">
-                      &quot;Photography is the story I fail to put into words.&quot;
+                      &quot;Photography is the story I fail to put into
+                      words.&quot;
                     </blockquote>
-                    <div className="mt-1 text-gray-500 text-xs">- Chamodh Delpearachchi</div>
+                    <div className="mt-1 text-gray-500 text-xs">
+                      - Chamodh Delpearachchi
+                    </div>
                   </div>
                   <div className="md:col-span-2 grid md:grid-cols-2 gap-8 order-2 md:order-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-700 mb-4">Our Vision</h3>
+                      <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                        Our Vision
+                      </h3>
                       <p className="text-gray-600 leading-relaxed mb-6">
-                        We envision a world where every precious moment is preserved with 
-                        artistic excellence and emotional depth. Our studio exists to create 
-                        timeless imagery that tells your unique story and captures the essence 
-                        of your most important celebrations.
+                        We envision a world where every precious moment is
+                        preserved with artistic excellence and emotional depth.
+                        Our studio exists to create timeless imagery that tells
+                        your unique story and captures the essence of your most
+                        important celebrations.
                       </p>
-                      <h3 className="text-xl font-semibold text-gray-700 mb-4">Our Mission</h3>
+                      <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                        Our Mission
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        To provide exceptional photography services that exceed expectations, 
-                        combining technical expertise with creative vision to deliver stunning 
-                        visual narratives that will be treasured for a lifetime.
+                        To provide exceptional photography services that exceed
+                        expectations, combining technical expertise with
+                        creative vision to deliver stunning visual narratives
+                        that will be treasured for a lifetime.
                       </p>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-700 mb-4">Our Approach</h3>
+                      <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                        Our Approach
+                      </h3>
                       <p className="text-gray-600 leading-relaxed mb-6">
-                        We believe in building genuine connections with our clients, understanding 
-                        their vision, and creating a comfortable environment where authentic 
-                        moments can unfold naturally. Every photo session is a collaborative 
+                        We believe in building genuine connections with our
+                        clients, understanding their vision, and creating a
+                        comfortable environment where authentic moments can
+                        unfold naturally. Every photo session is a collaborative
                         journey toward creating something beautiful.
                       </p>
-                      <h3 className="text-xl font-semibold text-gray-700 mb-4">Our Promise</h3>
+                      <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                        Our Promise
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        We promise to deliver not just photographs, but lasting memories 
-                        crafted with passion, professionalism, and attention to every detail 
-                        that makes your story special.
+                        We promise to deliver not just photographs, but lasting
+                        memories crafted with passion, professionalism, and
+                        attention to every detail that makes your story special.
                       </p>
                     </div>
                   </div>
@@ -144,74 +173,112 @@ function AboutPage() {
           {/* Stats Section */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">500+</div>
-                <div className="text-gray-600">Weddings Captured</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    500+
+                  </div>
+                  <div className="text-gray-600">Weddings Captured</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    1000+
+                  </div>
+                  <div className="text-gray-600">Happy Clients</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    50+
+                  </div>
+                  <div className="text-gray-600">Awards Won</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    8+
+                  </div>
+                  <div className="text-gray-600">Years Experience</div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">1000+</div>
-                <div className="text-gray-600">Happy Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">50+</div>
-                <div className="text-gray-600">Awards Won</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">8+</div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
-            </div>
             </div>
           </RevealOnScroll>
 
           {/* Values Section */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    <TextTransition text="Passion" />
+                  </h3>
+                  <p className="text-gray-600">
+                    We pour our heart into every shoot, ensuring each image
+                    reflects the love and joy of your special moments.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  <TextTransition text="Passion" />
-                </h3>
-                <p className="text-gray-600">
-                  We pour our heart into every shoot, ensuring each image reflects 
-                  the love and joy of your special moments.
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    <TextTransition text="Quality" />
+                  </h3>
+                  <p className="text-gray-600">
+                    We maintain the highest standards in equipment, technique,
+                    and post-processing to deliver exceptional results.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  <TextTransition text="Quality" />
-                </h3>
-                <p className="text-gray-600">
-                  We maintain the highest standards in equipment, technique, and 
-                  post-processing to deliver exceptional results.
-                </p>
-              </div>
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+                <div className="text-center p-6">
+                  <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    <TextTransition text="Service" />
+                  </h3>
+                  <p className="text-gray-600">
+                    From the first consultation to final delivery, we provide
+                    personalized service that exceeds expectations.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  <TextTransition text="Service" />
-                </h3>
-                <p className="text-gray-600">
-                  From the first consultation to final delivery, we provide personalized 
-                  service that exceeds expectations.
-                </p>
               </div>
-            </div>
             </div>
           </RevealOnScroll>
         </div>

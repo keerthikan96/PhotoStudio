@@ -181,270 +181,440 @@ const PortfolioPage = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     // Scroll to top of the page when changing pages
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const text = "text-gray-500 font-extralight ";  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Hero Section */}
-      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+    window.scrollTo({ top: 0, behavior: "smooth" });  };
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-100">
+      {/* Modern Hero Section */}
+      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          style={{
+            backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
+        
+        {/* Floating elements for modern touch */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl">
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
+              Professional Photography
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight mb-6 tracking-tight">
             <TextTransition text="Portfolio" />
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Capturing life&apos;s most precious moments with passion and artistry
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
+            Capturing life&apos;s most precious moments with passion, artistry, and timeless elegance
           </p>
+          <div className="mt-12">
+            <button className="group relative px-8 py-4 bg-white text-black font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-500 overflow-hidden">
+              <span className="relative z-10">Explore Our Work</span>
+              <div className="absolute inset-0 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </button>
+          </div>
         </div>
-      </div>      {/* Main Content wrapped in PagesUI */}
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
+          <div className="animate-bounce">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      {/* Main Content wrapped in PagesUI */}
       <PagesUI>
-          {/* Introduction Text */}
-          <RevealOnScroll>
-            <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
-            <p className="text-gray-700 font-bold text-lg sm:text-xl mb-4">
-                <TextTransition text={"The Best Wedding Candid Photographers in Colombo"} />
-              </p>
+        {/* Modern Introduction Section */}
+        <div className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <RevealOnScroll>
-                <p className={text + "text-sm sm:text-base mb-4"}>
-                  Stories are what shape us — often without us even realizing
-                  it. Each moment, each memory, becomes part of a bigger story
-                  we are continuously building. That is why photography holds
-                  such profound importance — it captures not just moments, but
-                  the very essence of life’s story. Imagine a photograph of a
-                  grandmother smiling at her daughter and granddaughter. It’s
-                  more than just a smile. The curve of her lips speaks of wisdom
-                  earned over a lifetime. The twinkle in her eyes reflects
-                  warmth, memories, and boundless love. That single image is
-                  more than a frozen moment; it’s the story of three generations
-                  of women — rooted together, celebrating each other. It’s the
-                  passing of the baton across time, the spirit of a family
-                  captured forever. At Chamodh Delpearachchi Photography, we
-                  don’t just take pictures — we preserve stories that live on
-                  for generations.
-                </p>
-              </RevealOnScroll>
-              <p className="text-gray-700 font-bold text-lg sm:text-xl mb-4">
-                <TextTransition text={"Stories through the picture"} />
-              </p>
-
-              <RevealOnScroll>
-                <p className={text + "text-sm sm:text-base mb-2"}>
-                  At <a href="">Chamodh Delpearachchi Photography</a>, we deeply
-                  value <b>your stories</b>. That’s why we put immense care and
-                  passion into every shot — because your photographs aren’t just
-                  images, they are stories that deserve to be captured with
-                  heart, preserved for a lifetime, and cherished forever.
-                </p>
-              </RevealOnScroll>
-
-              <RevealOnScroll>
-                <p className={text + "text-sm sm:text-base mb-2"}>
-                  When it comes to snapping the best shots at your wedding,
-                  photographers play an important role. But choosing the{" "}
-                  <a href="">best candid wedding photographers</a> in Sri Lanka
-                  or all over world for the big day can be overwhelming,
-                  especially if you’re planning something big or are just
-                  stepping into the world of weddings. That’s why it’s important
-                  to find someone who can capture the spirit of your wedding and
-                  tell a story that will be worth remembering forever through
-                  their photography.
-                </p>
-              </RevealOnScroll>
-
-              <RevealOnScroll>
-                <p className={text + "text-sm sm:text-base mb-2"}>
-                  And if you want to create stories through our pictures, don’t
-                  forget to <a href="">contact us</a> for your big days. Let’s
-                  create magic together, just allow us to stitch your life story
-                  by capturing your big moments. A picture does speak volumes!
-                </p>
-              </RevealOnScroll>
-            </div>
-          </RevealOnScroll>
-
-          {/* Portfolio Section Title */}
-          <RevealOnScroll>
-            <div className="max-w-7xl px-4 sm:px-6 md:px-8 text-center my-8">
-              
-            </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll>
-            <div className=" flex flex-col items-center justify-center ">
-              <div className="max-w-7xl px-4 sm:px-6 md:px-8 flex md:flex-row md:justify-between flex-col justify-center">
-                <div className="md:basis-[30%] md:sticky md:top-4 md:self-start md:pt-20 md:pb-0 pt-2 pb-4">
-                  <p className="text-gray-700 font-bold text-lg sm:text-2xl mb-4">
-                    <TextTransition text={"Pictures = Stories"} />
-                  </p>
-
-                  <RevealOnScroll>
-                    <p
-                      className={text + "text-lg sm:text-xl mb-2 text-justify"}
-                    >
-                      It is often said that stories are what shape us. But it is
-                      also through stories that we continue to shape ourselves,
-                      and each other- whether or not we realize it at the time.
-                      This is why here we are the great candid wedding
-                      photographers to shape and preserve your moments as it
-                      unfolds.
+                <div className="space-y-8">
+                  <div>
+                    <span className="inline-block px-3 py-1 bg-gray-900 text-white text-sm font-medium tracking-wider uppercase rounded-full mb-4">
+                      Our Story
+                    </span>
+                    <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
+                      <TextTransition text="The Best Wedding Candid Photographers in Colombo" />
+                    </h2>
+                  </div>
+                  
+                  <div className="space-y-6 text-lg leading-relaxed">
+                    <p className="text-gray-700">
+                      Stories are what shape us — often without us even realizing it. Each moment, each memory, 
+                      becomes part of a bigger story we are continuously building. That is why photography holds 
+                      such profound importance — it captures not just moments, but the very essence of life&apos;s story.
                     </p>
-
-                    <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition duration-300 mt-4">
-                      Book Now
+                    
+                    <p className="text-gray-600">
+                      At <span className="font-semibold text-gray-900">Chamodh Delpearachchi Photography</span>, 
+                      we don&apos;t just take pictures — we preserve stories that live on for generations. Every image 
+                      tells a tale of love, joy, and the beautiful connections that bind us together.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="group px-8 py-4 bg-gray-900 text-white font-medium tracking-wide hover:bg-gray-800 transition-all duration-300">
+                      Book a Session
                     </button>
+                    <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-medium tracking-wide hover:bg-gray-900 hover:text-white transition-all duration-300">
+                      View Our Process
+                    </button>
+                  </div>
+                </div>
+              </RevealOnScroll>
+              
+              <RevealOnScroll>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src={image1} 
+                    alt="Wedding Photography" 
+                    className="relative rounded-2xl shadow-2xl w-full h-96 object-cover"
+                  />
+                  <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-gray-900">500+</div>
+                      <div className="text-sm text-gray-600">Weddings Captured</div>
+                    </div>
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
+          </div>
+        </div>
+
+        {/* Stories Through Pictures Section */}
+        <div className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <RevealOnScroll>
+              <h2 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8">
+                <TextTransition text="Stories through the picture" />
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                When it comes to capturing the best shots at your wedding, photographers play an important role. 
+                We specialize in finding the perfect moments that tell your unique love story.
+              </p>
+            </RevealOnScroll>
+          </div>
+        </div>
+
+        {/* Modern Portfolio Gallery Section */}
+        <div className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <RevealOnScroll>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+                  <TextTransition text="Our Portfolio" />
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Every wedding tells a unique story. Browse through our collection of captured moments 
+                  that showcase the artistry and emotion of each celebration.
+                </p>
+              </div>
+            </RevealOnScroll>
+
+            <div className="grid lg:grid-cols-12 gap-8">
+              {/* Sidebar */}
+              <div className="lg:col-span-3">
+                <div className="lg:sticky lg:top-8 space-y-8">
+                  <RevealOnScroll>
+                    <div className="bg-gray-50 rounded-2xl p-8">
+                      <h3 className="text-2xl font-light text-gray-900 mb-4">
+                        <TextTransition text="Pictures = Stories" />
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed mb-6">
+                        It is often said that stories are what shape us. We are here to shape and preserve 
+                        your moments as they unfold, creating timeless memories that last forever.
+                      </p>
+                      <button className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-all duration-300">
+                        Book Your Session
+                      </button>
+                    </div>
+                  </RevealOnScroll>
+                  
+                  <RevealOnScroll>
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-medium text-gray-900">Photography Styles</h4>
+                      <div className="space-y-2">
+                        {['Candid', 'Traditional', 'Artistic', 'Outdoor', 'Cinematic'].map((style) => (
+                          <button key={style} className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                            {style}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </RevealOnScroll>
                 </div>
+              </div>
 
-                <div className="md:basis-[65%] flex flex-col justify-center items-center">
-                  <div
-                    ref={gridRef}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full"
-                  >
-                    {currentImages.map((item, index) => (
-                      <RevealOnScroll
-                        key={item.id}
-                        threshold={0.1}
-                        delay={index % 2 === 0 ? 0 : 0.2}
-                      >
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                          <div className="relative">
-                            <img
-                              src={item.image}
-                              alt={item.category}
-                              className="w-full object-cover transition-transform duration-700 hover:scale-105"
-                            />
-                          </div>
-                          <div className="p-4">
-                            <h3 className="text-sm font-medium text-center">
-                              {item.category}
-                            </h3>
+              {/* Gallery */}
+              <div className="lg:col-span-9">
+                <div
+                  ref={gridRef}
+                  className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+                >
+                  {currentImages.map((item, index) => (
+                    <RevealOnScroll
+                      key={item.id}
+                      threshold={0.1}
+                      delay={index % 3 === 0 ? 0 : index % 3 === 1 ? 0.1 : 0.2}
+                    >
+                      <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div className="aspect-[4/5] overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.category}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          {/* Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                              <h3 className="text-white font-medium text-sm leading-tight mb-2">
+                                {item.category}
+                              </h3>
+                              <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                                {item.price}
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </RevealOnScroll>
-                    ))}
-                  </div>
-                  <div className=" flex flex-row w-full items-center justify-center my-8">
-                    <nav className="flex items-center space-x-2 font-medium">
-                      <button
-                        onClick={() =>
-                          currentPage > 1 && paginate(currentPage - 1)
-                        }
-                        disabled={currentPage === 1}
-                        className={`px-3 py-1 flex flex-row justify-center items-center ${
-                          currentPage === 1
-                            ? "text-gray-400 cursor-not-allowed"
-                            : "text-gray-700 hover:text-black"
-                        }`}
-                      >
-                        <span>Previous</span>
-                      </button>
+                        
+                        {/* Card content */}
+                        <div className="p-6">
+                          <h3 className="text-gray-900 font-medium text-sm leading-tight group-hover:text-gray-600 transition-colors">
+                            {item.category}
+                          </h3>
+                        </div>
+                      </div>
+                    </RevealOnScroll>
+                  ))}
+                </div>
 
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                        (number) => {
-                          // Show first 3 pages, current page, and last page
-                          if (
-                            number <= 3 ||
-                            number === currentPage ||
-                            number === totalPages
-                          ) {
-                            return (
-                              <button
-                                key={number}
-                                onClick={() => paginate(number)}
-                                className={`px-3 py-1 rounded-md ${
-                                  currentPage === number
-                                    ? "bg-black text-white"
-                                    : "text-gray-700 hover:bg-gray-100"
-                                }`}
-                              >
-                                {number}
-                              </button>
-                            );
-                          } else if (
-                            number === 4 &&
-                            currentPage > 4 &&
-                            totalPages > 5
-                          ) {
-                            // Show ellipsis after first 3 pages
-                            return (
-                              <span key="ellipsis" className="px-2">
-                                ...
-                              </span>
-                            );
-                          }
-                          return null;
-                        }
-                      )}
+                {/* Modern Pagination */}
+                <div className="flex justify-center mt-16">
+                  <nav className="flex items-center space-x-2">
+                    <button
+                      onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className={`flex items-center px-4 py-2 rounded-lg font-medium transition-all ${
+                        currentPage === 1
+                          ? "text-gray-400 cursor-not-allowed"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      Previous
+                    </button>
 
-                      <button
-                        onClick={() =>
-                          currentPage < totalPages && paginate(currentPage + 1)
+                    <div className="flex space-x-1">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => {
+                        if (number <= 3 || number === currentPage || number === totalPages) {
+                          return (
+                            <button
+                              key={number}
+                              onClick={() => paginate(number)}
+                              className={`w-10 h-10 rounded-lg font-medium transition-all ${
+                                currentPage === number
+                                  ? "bg-gray-900 text-white shadow-lg"
+                                  : "text-gray-700 hover:bg-gray-100"
+                              }`}
+                            >
+                              {number}
+                            </button>
+                          );
+                        } else if (number === 4 && currentPage > 4 && totalPages > 5) {
+                          return (
+                            <span key="ellipsis" className="w-10 h-10 flex items-center justify-center text-gray-400">
+                              ...
+                            </span>
+                          );
                         }
-                        disabled={currentPage === totalPages}
-                        className={`px-3 py-1 flex flex-row justify-center items-center ${
-                          currentPage === totalPages
-                            ? "text-gray-400 cursor-not-allowed"
-                            : "text-gray-700 hover:text-black"
-                        }`}
-                      >
-                        <span>Next</span>
-                      </button>
-                    </nav>
-                  </div>
+                        return null;
+                      })}
+                    </div>
+
+                    <button
+                      onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                      className={`flex items-center px-4 py-2 rounded-lg font-medium transition-all ${
+                        currentPage === totalPages
+                          ? "text-gray-400 cursor-not-allowed"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      Next
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </nav>
                 </div>
               </div>
             </div>
-          </RevealOnScroll>
+          </div>
+        </div>
 
-          {/* Stories Section */}
-          <RevealOnScroll>
-            <div className="max-w-4xl mx-auto my-12 bg-white shadow-lg rounded-lg overflow-hidden">
-              <h2 className="text-xl sm:text-2xl font-bold p-4 sm:p-6 border-b border-gray-200">
-                Pictures + Stories
-              </h2>
-
-              <div className="p-4 sm:p-6">
-                <p className="text-gray-700 text-sm sm:text-base mb-4">
-                  At our studio, we believe that wedding photography isn&apos;t
-                  just about taking pictures—it&apos;s about telling stories.
-                  Every image we capture is a chapter in your unique love story,
-                  carefully preserved for generations to come.
+        {/* Modern Stories Section */}
+        <div className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <RevealOnScroll>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+                  Pictures + Stories
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Every wedding has its own story. Here are some of the beautiful moments 
+                  we&apos;ve had the privilege to capture.
                 </p>
+              </div>
+            </RevealOnScroll>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-6">
-                  <div className="bg-white rounded-lg shadow overflow-hidden">
-                    <img
-                      src={image5}
-                      alt="Wedding Story"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-3">
-                      <h3 className="text-sm font-medium">
-                        Anusha and Vikram&apos;s Beachside Wedding
-                      </h3>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <RevealOnScroll>
+                <div className="space-y-8">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                      At our studio, we believe that wedding photography isn&apos;t just about taking pictures—it&apos;s about 
+                      telling stories. Every image we capture is a chapter in your unique love story, carefully 
+                      preserved for generations to come.
+                    </p>
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Professional Excellence</h4>
+                          <p className="text-gray-600 text-sm">Years of experience in capturing perfect moments</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">Story-Driven Approach</h4>
+                          <p className="text-gray-600 text-sm">Every photo tells part of your unique love story</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button className="mt-8 bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-all duration-300">
+                      Read More Stories
+                    </button>
+                  </div>
+                </div>
+              </RevealOnScroll>
+
+              <RevealOnScroll>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="space-y-6">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-500">
+                      <div className="aspect-[4/5] overflow-hidden">
+                        <img
+                          src={image5}
+                          alt="Wedding Story"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-medium text-gray-900 text-sm">
+                          Anusha and Vikram&apos;s Beachside Wedding
+                        </h3>
+                        <p className="text-gray-600 text-xs mt-1">Captured in Galle</p>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-500">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={image7}
+                          alt="Wedding Story"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-medium text-gray-900 text-sm">
+                          Pre-Wedding Session
+                        </h3>
+                        <p className="text-gray-600 text-xs mt-1">Kandy Hills</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-white rounded-lg shadow overflow-hidden">
-                    <img
-                      src={image6}
-                      alt="Wedding Story"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-3">
-                      <h3 className="text-sm font-medium">
-                        Priya and Rahul&apos;s Traditional Celebration
-                      </h3>
+                  <div className="space-y-6 pt-12">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-500">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={image6}
+                          alt="Wedding Story"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-medium text-gray-900 text-sm">
+                          Priya and Rahul&apos;s Traditional Celebration
+                        </h3>
+                        <p className="text-gray-600 text-xs mt-1">Temple Wedding</p>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all duration-500">
+                      <div className="aspect-[4/5] overflow-hidden">
+                        <img
+                          src={image8}
+                          alt="Wedding Story"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-medium text-gray-900 text-sm">
+                          Evening Reception
+                        </h3>
+                        <p className="text-gray-600 text-xs mt-1">Colombo City</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition duration-300">
-                  Read More Stories
+              </RevealOnScroll>
+            </div>
+          </div>
+        </div>
+        
+        {/* Call to Action Section */}
+        <div className="py-20 bg-gray-900">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <RevealOnScroll>
+              <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
+                Ready to Create Your Story?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let&apos;s capture the magic of your special day together. From intimate ceremonies 
+                to grand celebrations, we&apos;re here to preserve your precious moments.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-10 py-4 bg-white text-gray-900 font-medium tracking-wide rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg">
+                  Book Your Session
+                </button>
+                <button className="px-10 py-4 border-2 border-white text-white font-medium tracking-wide rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
+                  View Packages
                 </button>
               </div>
-            </div>          </RevealOnScroll>
-        </PagesUI>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </PagesUI>
     </div>
   );
 };
