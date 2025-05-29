@@ -149,7 +149,7 @@ const Portfolio = () => {
         <div className="mt-24 bg-gray-50 rounded-xl p-8 md:p-12">
           <RevealOnScroll>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Focus Studios?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why CD Photography Studios?</h2>
             </div>
           </RevealOnScroll>
 

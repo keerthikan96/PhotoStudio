@@ -101,7 +101,7 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <main className="pt-14 sm:pt-16 md:pt-20 lg:pt-24 flex-grow">
+        <main className="flex-grow">
           <AnimatedRoutes />
         </main>
         <Footer />

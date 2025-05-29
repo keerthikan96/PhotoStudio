@@ -17,7 +17,7 @@ export const Home = () => {
     <>
       <section
         id="home"
-        className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa] top-20"
+        className="min-h-screen flex flex-col items-center justify-center relative bg-[#f8f9fa]"
       >
         {/* White Space Over Slider */}
         {/* <div  className="top-30  bg-white "></div> */}
@@ -42,35 +42,35 @@ export const Home = () => {
             <img
               src={image1}
               alt="Slide 1"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover "
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={image2}
               alt="Slide 2"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover "
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={image3}
               alt="Slide 3"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover "
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={image4}
               alt="Slide 4"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover "
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={image5}
               alt="Slide 5"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover "
             />
           </SwiperSlide>
         </Swiper>
