@@ -26,145 +26,145 @@ const PortfolioPage = () => {
       id: 1,
       image: image1,
       category: "Luxury Wedding Photography in Sri Lanka",
-      price: "₹55,000",
+      type: "Cinematic",
     },
     {
       id: 2,
       image: image2,
       category: "Wedding Photography Packages",
-      price: "₹45,000",
+      type: "Artistic",
     },
     {
       id: 3,
       image: image3,
       category: "Top Wedding Outdoor Photography",
-      price: "₹30,000",
+      type: "Traditional",
     },
     {
       id: 4,
       image: image4,
       category: "Candid Wedding Photography",
-      price: "₹25,000",
+      type: "Traditional",
     },
     {
       id: 5,
       image: image5,
       category: "Best Budget Wedding Photography in Sri Lanka",
-      price: "₹20,000",
+      type: "Candid",
     },
     {
       id: 6,
       image: image6,
       category: "South Indian Wedding Photography Studio",
-      price: "₹35,000",
+      type: "Cinematic",
     },
     {
       id: 7,
       image: image7,
       category: "Pre-Wedding Photography in Scenic Locations",
-      price: "₹15,000",
+      type: "Artistic",
     },
     {
       id: 8,
       image: image8,
       category: "Brahmin Wedding Photography in Sri Lanka",
-      price: "₹28,000",
+      type: "Candid",
     },
     {
       id: 9,
       image: image9,
       category: "Outdoor Photography for Weddings",
-      price: "₹22,000",
+      type: "Traditional",
     },
     {
       id: 10,
       image: image10,
       category: "Luxury Wedding Photography in Sri Lanka",
-      price: "₹45,000",
+      type: "Candid",
     },
     {
       id: 11,
       image: image1,
       category: "Evening Reception Photography",
-      price: "₹18,000",
+      type: "Candid",
     },
     {
       id: 12,
       image: image2,
       category: "Traditional Wedding Photography",
-      price: "₹30,000",
+      type: "Cinematic",
     },
     {
       id: 13,
       image: image3,
       category: "Celebrity Style Wedding Photography",
-      price: "₹65,000",
+      type: "Artistic",
     },
     {
       id: 14,
       image: image4,
       category: "Destination Wedding Photography",
-      price: "₹80,000",
+      type: "Candid",
     },
     {
       id: 15,
       image: image5,
       category: "Intimate Wedding Photography Package",
-      price: "₹25,000",
+      type: "Candid",
     },
     {
       id: 16,
       image: image6,
       category: "Post-Wedding Photography Session",
-      price: "₹15,000",
+      type: "Traditional",
     },
     {
       id: 17,
       image: image7,
       category: "Engagement Photography Package",
-      price: "₹20,000",
+      type: "Traditional",
     },
     {
       id: 18,
       image: image8,
       category: "Wedding Portrait Photography",
-      price: "₹18,000",
+      type: "Candid",
     },
     {
       id: 19,
       image: image9,
       category: "Artistic Wedding Photography in Sri Lanka",
-      price: "₹40,000",
+      type: "Candid",
     },
     {
       id: 20,
       image: image10,
       category: "Cinematic Wedding Photography",
-      price: "₹50,000",
+      type: "Cinematic",
     },
     {
       id: 21,
       image: image1,
       category: "Full Day Wedding Coverage",
-      price: "₹35,000",
+      type: "Candid",
     },
     {
       id: 22,
       image: image2,
       category: "Half Day Wedding Coverage",
-      price: "₹22,000",
+      type: "Artistic",
     },
     {
       id: 23,
       image: image3,
       category: "Wedding Videography and Photography",
-      price: "₹60,000",
+      type: "Artistic",
     },
     {
       id: 24,
       image: image4,
       category: "Bridal Photography Sessions",
-      price: "₹18,000",
+      type: "Candid",
     },
   ];
 
@@ -381,7 +381,7 @@ const PortfolioPage = () => {
                                 {item.category}
                               </h3>
                               <span className="inline-block bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
-                                {item.price}
+                                {item.type}
                               </span>
                             </div>
                           </div>

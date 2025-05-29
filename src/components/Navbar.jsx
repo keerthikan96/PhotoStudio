@@ -7,7 +7,8 @@ import {
   FaInstagram,
   FaChevronDown,
 } from "react-icons/fa";
-import logo from "../assets/logo3.png";
+import logo from "../assets/logo4.png";
+import logo2 from "../assets/logo3.png";
 import { Phone, Search } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -61,7 +62,7 @@ export const Navbar = ({ setMenuOpen }) => {
         <div className="w-full">
           <div className="flex justify-between items-center h-16 px-4">
             <div className="flex items-center">
-              <img src={logo} alt="Logo" className="w-32 h-auto" />
+              <img src={scrolled ?logo2:logo} alt="Logo" className="w-32 h-auto" />
             </div>{" "}
             <button
               className={`flex items-center justify-center w-8 h-8 rounded-md cursor-pointer focus:outline-none ${
@@ -143,7 +144,7 @@ export const Navbar = ({ setMenuOpen }) => {
               {/* Logo */}
               <div className="flex items-center">
                 <img
-                  src={logo}
+                  src={scrolled ?logo2:logo}
                   alt="Logo"
                   className="w-36 sm:w-36 md:w-36 lg:w-36 h-auto"
                 />
