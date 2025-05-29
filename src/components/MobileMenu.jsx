@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaChevronDown } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   // State for mobile dropdown
@@ -125,12 +126,18 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         >
           Pricing
         </div>
-        
-        <div
+          <div
           onClick={() => scrollToTop("/faq")}
           className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           FAQ
+        </div>
+        
+        <div
+          onClick={() => scrollToTop("/about")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
+        >
+          About
         </div>
         
         <div
@@ -184,7 +191,11 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </div>    </div>
   );
+};
+
+MobileMenu.propTypes = {
+  menuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
 };

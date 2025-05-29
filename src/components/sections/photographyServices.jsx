@@ -7,17 +7,71 @@ import weddingImage2 from "../../assets/Images/serviceview2.JPG";
 import weddingImage3 from "../../assets/Images/serviceview3.jpg";
 import weddingImage4 from "../../assets/Images/serviceview4.jpg";
 
+// Import new images for other sections
+import preShootImage1 from "../../assets/Images/img1.jpg";
+import preShootImage2 from "../../assets/Images/img2.JPG";
+import engagementImage1 from "../../assets/Images/image3.jpg";
+import engagementImage2 from "../../assets/Images/image4.jpg";
+import portraitImage1 from "../../assets/Images/image5.jpg";
+import portraitImage2 from "../../assets/Images/image6.jpg";
+import familyImage1 from "../../assets/Images/image7.jpg";
+import familyImage2 from "../../assets/Images/image8.jpg";
+import fashionImage1 from "../../assets/Images/image9.jpg";
+import fashionImage2 from "../../assets/Images/image10.jpg";
+import serviceView5 from "../../assets/Images/serviceview5.jpg";
+
 const PhotographyServices = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [weddingImage1, weddingImage2, weddingImage3, weddingImage4];
+  const [currentWeddingIndex, setCurrentWeddingIndex] = useState(0);
+  const [currentPreShootIndex, setCurrentPreShootIndex] = useState(0);
+  const [currentEngagementIndex, setCurrentEngagementIndex] = useState(0);
+  const [currentPortraitIndex, setCurrentPortraitIndex] = useState(0);
+  const [currentFamilyIndex, setCurrentFamilyIndex] = useState(0);
+  const [currentFashionIndex, setCurrentFashionIndex] = useState(0);
+  
+  const weddingImages = [weddingImage1, weddingImage2, weddingImage3, weddingImage4];
+  const preShootImages = [preShootImage1, preShootImage2, serviceView5];
+  const engagementImages = [engagementImage1, engagementImage2];
+  const portraitImages = [portraitImage1, portraitImage2];
+  const familyImages = [familyImage1, familyImage2];
+  const fashionImages = [fashionImage1, fashionImage2];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    // Set up intervals for each image section
+    const weddingInterval = setInterval(() => {
+      setCurrentWeddingIndex((prevIndex) => (prevIndex + 1) % weddingImages.length);
     }, 4000);
+    
+    const preShootInterval = setInterval(() => {
+      setCurrentPreShootIndex((prevIndex) => (prevIndex + 1) % preShootImages.length);
+    }, 4300);
+    
+    const engagementInterval = setInterval(() => {
+      setCurrentEngagementIndex((prevIndex) => (prevIndex + 1) % engagementImages.length);
+    }, 4500);
+    
+    const portraitInterval = setInterval(() => {
+      setCurrentPortraitIndex((prevIndex) => (prevIndex + 1) % portraitImages.length);
+    }, 4700);
+    
+    const familyInterval = setInterval(() => {
+      setCurrentFamilyIndex((prevIndex) => (prevIndex + 1) % familyImages.length);
+    }, 4200);
+    
+    const fashionInterval = setInterval(() => {
+      setCurrentFashionIndex((prevIndex) => (prevIndex + 1) % fashionImages.length);
+    }, 4600);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+    // Clear all intervals on unmount
+    return () => {
+      clearInterval(weddingInterval);
+      clearInterval(preShootInterval);
+      clearInterval(engagementInterval);
+      clearInterval(portraitInterval);
+      clearInterval(familyInterval);
+      clearInterval(fashionInterval);
+    };
+  }, [weddingImages.length, preShootImages.length, engagementImages.length, 
+      portraitImages.length, familyImages.length, fashionImages.length]);
 
   return (
     <section
@@ -45,11 +99,11 @@ const PhotographyServices = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <div className="relative w-full h-full min-h-[400px]">
-                  {images.map((image, index) => (
+                  {weddingImages.map((image, index) => (
                     <div
                       key={index}
                       className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                        index === currentImageIndex ? "opacity-100" : "opacity-0"
+                        index === currentWeddingIndex ? "opacity-100" : "opacity-0"
                       }`}
                     >
                       <img
@@ -98,10 +152,22 @@ const PhotographyServices = () => {
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="order-1 md:order-2">
-                <div className="overflow-hidden rounded-lg shadow-lg min-h-[400px] bg-gray-100">
-                  {/* Placeholder for pre-shoot image */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    Pre-shoot Image
+                <div className="overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative w-full h-full min-h-[400px]">
+                    {preShootImages.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                          index === currentPreShootIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Pre-shoot Photography ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -132,10 +198,22 @@ const PhotographyServices = () => {
           {/* ENGAGEMENTS Section */}
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="overflow-hidden rounded-lg shadow-lg min-h-[400px] bg-gray-100">
-                {/* Placeholder for engagement image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  Engagement Image
+              <div className="overflow-hidden rounded-lg shadow-lg">
+                <div className="relative w-full h-full min-h-[400px]">
+                  {engagementImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                        index === currentEngagementIndex ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Engagement Photography ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
@@ -166,10 +244,22 @@ const PhotographyServices = () => {
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="order-1 md:order-2">
-                <div className="overflow-hidden rounded-lg shadow-lg min-h-[400px] bg-gray-100">
-                  {/* Placeholder for portrait image */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    Portrait Image
+                <div className="overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative w-full h-full min-h-[400px]">
+                    {portraitImages.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                          index === currentPortraitIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Portrait Photography ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -200,10 +290,22 @@ const PhotographyServices = () => {
           {/* FAMILY SHOOTS Section */}
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="overflow-hidden rounded-lg shadow-lg min-h-[400px] bg-gray-100">
-                {/* Placeholder for family shoot image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  Family Shoot Image
+              <div className="overflow-hidden rounded-lg shadow-lg">
+                <div className="relative w-full h-full min-h-[400px]">
+                  {familyImages.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                        index === currentFamilyIndex ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Family Photography ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
@@ -211,7 +313,7 @@ const PhotographyServices = () => {
                 <p className="text-gray-600 mb-6">
                   Understanding beauty and happiness through musical structures, 
                   framed paintings, and museums. Delpearachchi Photography brings 
-                  experienced artistic vision and inspiration. You'll experience 
+                  experienced artistic vision and inspiration. You&apos;ll experience 
                   vibrant, lively photography that respects beauty, creating 
                   refreshing and rewarding memories — all smiling and delighting 
                   in the moment. These images celebrate rituals, group memories, 
@@ -233,15 +335,26 @@ const PhotographyServices = () => {
             </div>
           </RevealOnScroll>
 
-
-            {/* PORTRAITS Section */}
+          {/* FASHION SHOOT Section */}
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="order-1 md:order-2">
-                <div className="overflow-hidden rounded-lg shadow-lg min-h-[400px] bg-gray-100">
-                  {/* Placeholder for portrait image */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    FASHION Image
+                <div className="overflow-hidden rounded-lg shadow-lg">
+                  <div className="relative w-full h-full min-h-[400px]">
+                    {fashionImages.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                          index === currentFashionIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Fashion Photography ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

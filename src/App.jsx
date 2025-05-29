@@ -14,6 +14,7 @@ import ContactUs from "./components/pages/contactUS";
 import BookingPage from "./components/pages/bookingPage";
 import PortfolioPage from "./components/pages/portfolioPage";
 import FaqPage from "./components/pages/faqPage";
+import AboutPage from "./components/pages/aboutPage";
 import Footer from "./components/Footer";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/transitions/PageTransition";
@@ -65,12 +66,19 @@ const AnimatedRoutes = () => {
               <PortfolioPage />
             </PageTransition>
           } 
-        />
-        <Route 
+        />        <Route 
           path="/faq" 
           element={
             <PageTransition>
               <FaqPage />
+            </PageTransition>
+          } 
+        />
+        <Route 
+          path="/about" 
+          element={
+            <PageTransition>
+              <AboutPage />
             </PageTransition>
           } 
         />

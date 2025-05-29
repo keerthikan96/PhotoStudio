@@ -236,14 +236,13 @@ export const Navbar = ({ setMenuOpen }) => {
                       ></span>
                     )
                   }
-                </NavLink>
-                <a
-                  href="#careers"
-                  className={`${
-                    scrolled ? "text-gray-700" : "text-white"
-                  } hover:${
-                    scrolled ? "text-gray-900" : "text-gray-200"
-                  } relative group pb-1`}
+                </NavLink>                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `${scrolled ? "text-gray-700" : "text-white"} hover:${
+                      scrolled ? "text-gray-900" : "text-gray-200"
+                    } relative group pb-1 ${isActive ? "font-medium" : ""}`
+                  }
                 >
                   ABOUT
                   <span
@@ -251,7 +250,16 @@ export const Navbar = ({ setMenuOpen }) => {
                       scrolled ? "bg-black" : "bg-white"
                     } transition-all duration-300 ease-out w-0 group-hover:w-full`}
                   ></span>
-                </a>{" "}
+                  {({ isActive }) =>
+                    isActive && (
+                      <span
+                        className={`absolute bottom-0 left-0 h-0.5 ${
+                          scrolled ? "bg-black" : "bg-white"
+                        } w-full`}
+                      ></span>
+                    )
+                  }
+                </NavLink>{" "}
                 <NavLink
                   to="/contactus"
                   className={({ isActive }) =>

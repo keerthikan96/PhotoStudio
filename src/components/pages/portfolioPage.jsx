@@ -184,21 +184,21 @@ const PortfolioPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const text = "text-gray-500 font-extralight ";
-  return (
-    <div className="min-h-screen bg-[#f0f2f4] mt-10">
-      <div className="flex flex-col items-center justify-center w-full mx-auto py-4 sm:py-6 md:py-8 text-gray-900">
-        {/* Hero Section */}
-        <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
-          <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
-            <TextTransition
-              text={"Portfolio of Wedding Photography"}
-            />
+  const text = "text-gray-500 font-extralight ";  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <TextTransition text="Portfolio" />
           </h1>
-          <p className="text-xs sm:text-sm mt-2">Home / Portfolio</p>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+            Capturing life&apos;s most precious moments with passion and artistry
+          </p>
         </div>
-
-        <PagesUI>
+      </div>      {/* Main Content wrapped in PagesUI */}
+      <PagesUI>
           {/* Introduction Text */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
@@ -443,10 +443,8 @@ const PortfolioPage = () => {
                   Read More Stories
                 </button>
               </div>
-            </div>
-          </RevealOnScroll>
+            </div>          </RevealOnScroll>
         </PagesUI>
-      </div>
     </div>
   );
 };

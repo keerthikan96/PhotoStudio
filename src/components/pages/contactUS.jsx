@@ -115,24 +115,23 @@ const ContactUs = () => {
     }
     setIsLoading(false);
   };
-
   return (
-    <div id="contactus" className="min-h-screen bg-[#f0f2f4] mt-10">
-    <div className="flex flex-col items-center justify-center w-full mx-auto py-4 sm:py-6 md:py-8 text-gray-900">
+    <div id="contactus" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section */}
-      <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
-        <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
-          <TextTransition
-            text={"Contact Us"}
-          />
-        </h1>
-        <p className="text-xs sm:text-sm mt-2">
-        Home / Contact Us
-        </p>
+      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <TextTransition text="Contact Us" />
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+            Capturing life&apos;s most precious moments with passion and artistry
+          </p>        </div>
       </div>
-        <PagesUI>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
+      {/* Main Content wrapped in PagesUI */}
+      <PagesUI>
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14 mx-auto max-w-5xl">
           <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
@@ -369,11 +368,8 @@ const ContactUs = () => {
             className="w-full rounded-2xl shadow-md"
           ></iframe>
 
-        </div>
-
-      </div>
+        </div>      </div>
       </PagesUI>
-    </div>
     </div>
   );
 };

@@ -180,34 +180,27 @@ const FaqPage = () => {
         "Yes, we cover weddings throughout Sri Lanka, from Jaffna to Galle, and from Trincomalee to Colombo. We have extensive experience shooting at popular wedding venues including hotels, beaches, and traditional settings across the island.",
     },
   ];
-
   return (
-    <div id="faq" className="min-h-screen bg-[#f0f2f4] mt-10">
-      <div className="flex flex-col items-center justify-center w-full mx-auto py-4 sm:py-6 md:py-8 text-gray-900">
-        {/* Hero Section */}
-        <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
-          <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
-            <TextTransition
-              text={"Easily find solutions and answers."}
-            />
+    <div id="faq" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <div className="relative h-[40vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <TextTransition text="FAQ" />
           </h1>
-          <p className="text-xs sm:text-sm mt-2">
-          It is important for me as a professional that every problem
-          has a solution.
+          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+            Easily find solutions and answers to your questions
           </p>
-          {/* <p className="text-gray-600 mb-4">
-                  It is important for me as a professional that every problem
-                  has a solution,
-                </p>
-                <p className="text-gray-600">
-                  you just need to start working for it! Here are answers.
-                </p> */}
         </div>
-        <PagesUI
-          title="FAQ"
-          description="Frequently Asked Questions"
-          keywords="FAQ, Photography, Wedding Photography, Sri Lanka, Chamodh Delpearachchi Photography"
-        >
+      </div>
+
+      {/* Main Content wrapped in PagesUI */}
+      <PagesUI
+        title="FAQ"
+        description="Frequently Asked Questions"
+        keywords="FAQ, Photography, Wedding Photography, Sri Lanka, Chamodh Delpearachchi Photography"
+      >
           <PageTransition>
             <div className="container mx-auto px-4 py-16 max-w-6xl">
               {/* <div className="text-center mb-12">
@@ -240,11 +233,9 @@ const FaqPage = () => {
                 className="mt-4 inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition duration-300"
               >
                 Contact Us
-              </a>
-            </div>
+              </a>            </div>
           </div>
         </PagesUI>
-      </div>
     </div>
   );
 };
