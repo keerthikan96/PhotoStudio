@@ -127,17 +127,22 @@ const ContactUs = () => {
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
         }}
-      ></div>
-
+      ></div>{" "}
       {/* Hero Section */}
-      <div className="relative h-[60vh] bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center">
+      <div className="relative h-screen bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+            backgroundImage: `url('/src/assets/Images/bg-5.jpg')`,
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
+
+        {/* Floating elements for modern touch */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
             <TextTransition text="Contact Us" />
@@ -147,8 +152,26 @@ const ContactUs = () => {
             artistry
           </p>
         </div>
-      </div>
 
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
+          <div className="animate-bounce">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
       {/* Main Content wrapped in PagesUI */}
       <PagesUI>
         <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">

@@ -19,6 +19,7 @@ import Footer from "./components/Footer";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/transitions/PageTransition";
 import WeddingVows from "./components/pages/WeddingVows";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Create a wrapper component to handle AnimatePresence since it needs useLocation
 const AnimatedRoutes = () => {
@@ -101,12 +102,12 @@ function App() {
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
-      <div
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}      <div
         className={`min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-[#f0f2f4] text-black overflow-x-hidden flex flex-col`}
       >
+        <ScrollToTop />
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <main className="flex-grow">
