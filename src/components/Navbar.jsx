@@ -83,29 +83,28 @@ export const Navbar = ({ setMenuOpen }) => {
             </button>
           </div>{" "}
           {/* Mobile Social Bar */}{" "}
-          <div className="flex w-full items-center justify-between px-4 py-2 bg-transparent">
-            <div className="flex items-center space-x-4">
+          <div className="flex w-full items-center justify-between px-4 py-2 bg-transparent">            <div className="flex items-center space-x-4">
               <a
                 href="#"
                 className={`${
-                  scrolled ? "text-blue-600" : "text-white"
-                } hover:${scrolled ? "text-blue-800" : "text-blue-300"}`}
+                  scrolled ? "text-gray-800" : "text-white"
+                } hover:${scrolled ? "text-black" : "text-gray-300"}`}
               >
                 <FaFacebook className="text-lg" />
               </a>
               <a
                 href="#"
                 className={`${
-                  scrolled ? "text-pink-600" : "text-white"
-                } hover:${scrolled ? "text-pink-800" : "text-pink-300"}`}
+                  scrolled ? "text-gray-800" : "text-white"
+                } hover:${scrolled ? "text-black" : "text-gray-300"}`}
               >
                 <FaInstagram className="text-lg" />
               </a>
               <a
                 href="#"
                 className={`${
-                  scrolled ? "text-blue-500" : "text-white"
-                } hover:${scrolled ? "text-blue-700" : "text-blue-300"}`}
+                  scrolled ? "text-gray-800" : "text-white"
+                } hover:${scrolled ? "text-black" : "text-gray-300"}`}
               >
                 <FaTwitter className="text-lg" />
               </a>

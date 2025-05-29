@@ -84,11 +84,10 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                     >
                       Tamil
                     </div>
-                  </li>
-                  <li>
+                  </li>                  <li>
                     <div className="text-white hover:text-gray-300 transition-colors flex items-center cursor-pointer">
                       Tamil Brahmin
-                      <span className="text-xs bg-orange-800 text-orange-200 px-1.5 py-0.5 rounded-full ml-2">
+                      <span className="text-xs bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded-full ml-2">
                         Trending
                       </span>
                     </div>

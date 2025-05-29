@@ -78,11 +78,10 @@ const TestimonialSwipe = () => {
 
   return (
     <section id="testimonials" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <RevealOnScroll>
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <p className="text-blue-600 mb-2 text-sm sm:text-base font-semibold tracking-wider uppercase">TRUSTED BY 600+ CLIENTS</p>
+      <RevealOnScroll>        <div className="max-w-4xl mx-auto text-center mb-12">
+          <p className="text-gray-800 mb-2 text-sm sm:text-base font-semibold tracking-wider uppercase">TRUSTED BY 600+ CLIENTS</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Client Testimonials</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-20 h-1 bg-gray-800 mx-auto"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto">
@@ -109,9 +108,8 @@ const TestimonialSwipe = () => {
                   </div>
                   
                   {/* Testimonial content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white" style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>
-                    <div className="mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white" style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }}>                    <div className="mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
