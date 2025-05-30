@@ -414,15 +414,17 @@ export const Home = () => {
             </div>
           </RevealOnScroll>          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6, portfolio7, portfolio8].map((image, index) => (
-              <RevealOnScroll key={index} delay={index * 0.1}>
-                <div className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
-                  <img
-                    src={image}
-                    alt={`Portfolio ${index + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <RevealOnScroll key={index} delay={index * 0.1}>                <div className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
+                  <div className="relative w-full h-full">
+                    <img
+                      src={image}
+                      alt={`Portfolio ${index + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none"></div>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-auto">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -668,16 +670,16 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[portfolio9, portfolio10, pt7, ...([portfolio1, portfolio2, portfolio3, portfolio4].slice(0, 1))].map((image, index) => (
               <RevealOnScroll key={index} delay={index * 0.1}>
-                <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                  <div className="aspect-[3/4] overflow-hidden">
+                <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">                  <div className="aspect-[3/4] overflow-hidden relative">
                     <img
                       src={image}
                       alt={`Extended Portfolio ${index + 1}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white">
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white pointer-events-auto">
                       <svg className="w-10 h-10 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
@@ -747,7 +749,7 @@ export const Home = () => {
       </section>
 
       {/* Final Call to Action */}
-      <section 
+      {/* <section 
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bg2})`,
@@ -778,10 +780,10 @@ export const Home = () => {
               </Link>
             </div>
           </RevealOnScroll>        </div>
-      </section>
+      </section> */}
 
       {/* Background Showcase Strip */}
-      <section className="py-12 bg-white">
+      {/* <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
             {[bg1, bg2, bg3, bg4, bg5, bg6].map((bg, index) => (
@@ -797,7 +799,7 @@ export const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enhanced Final Call to Action */}
       <section 

@@ -19,7 +19,6 @@ import familyImage2 from "../../assets/Images/image8.jpg";
 import fashionImage1 from "../../assets/Images/image9.jpg";
 import fashionImage2 from "../../assets/Images/image10.jpg";
 import serviceView5 from "../../assets/Images/serviceview5.jpg";
-import ctaBackgroundImage from "../../assets/Images/bg-8.jpg";
 
 const PhotographyServices = () => {
   const [currentWeddingIndex, setCurrentWeddingIndex] = useState(0);
@@ -119,8 +118,10 @@ const PhotographyServices = () => {
               moments.
             </p>
           </div>
-        </RevealOnScroll>        {/* All Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </RevealOnScroll>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {" "}
           {/* WEDDINGS Card */}
           <RevealOnScroll>
             <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
@@ -265,19 +266,21 @@ const PhotographyServices = () => {
                   </Link>
                 </div>
               </div>
-            </div>          </RevealOnScroll>
-
+            </div>
+          </RevealOnScroll>{" "}
+        </div>
+        {/* Secondary Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* PORTRAITS Card */}
           <RevealOnScroll>
-            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
-              <div className="relative h-96 overflow-hidden">
+            <div className="group relative bg-black rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative h-80 overflow-hidden">
                 {portraitImages.map((image, index) => (
                   <div
                     key={index}
                     className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                       index === currentPortraitIndex
-                        ? "opacity-100 scale-100"
+                        ? "opacity-70 scale-100"
                         : "opacity-0 scale-110"
                     }`}
                   >
@@ -288,31 +291,33 @@ const PhotographyServices = () => {
                     />
                   </div>
                 ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
               </div>
-              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
-                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">PORTRAITS</h2>
-                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
-                    Individual stories told through artistic vision and authentic expression. 
-                    Capturing the essence of personality in every frame.
-                  </p>
-                  <Link
-                    to="/enquire"
-                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
-                  >
-                    Enquire Now
-                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
-                  </Link>
-                </div>
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                  PORTRAITS
+                </h3>
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  Individual stories told through artistic vision and authentic
+                  expression.
+                </p>
+                <Link
+                  to="/enquire"
+                  className="group/btn inline-flex items-center text-white font-semibold hover:text-gray-300 transition-all duration-300 w-fit"
+                >
+                  Learn More
+                  <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                    →
+                  </span>
+                </Link>
               </div>
             </div>
           </RevealOnScroll>
 
           {/* FAMILY SHOOTS Card */}
           <RevealOnScroll>
-            <div className="group relative bg-black rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-l from-white/60 to-transparent z-10"></div>
-              <div className="relative h-96 overflow-hidden">
+            <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="relative h-80 overflow-hidden">
                 {familyImages.map((image, index) => (
                   <div
                     key={index}
@@ -325,41 +330,43 @@ const PhotographyServices = () => {
                     <img
                       src={image}
                       alt={`Family Photography ${index + 1}`}
-                      className="w-full h-full object-cover mix-blend-overlay"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
               </div>
-              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
-                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">FAMILY SHOOTS</h2>
-                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
-                    Generational bonds captured with warmth, joy, and timeless elegance. 
-                    Creating memories that last for generations.
-                  </p>
-                  <Link
-                    to="/enquire"
-                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
-                  >
-                    Enquire Now
-                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
-                  </Link>
-                </div>
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                  FAMILY SHOOTS
+                </h3>
+                <p className="text-gray-200 text-sm mb-4 leading-relaxed">
+                  Generational bonds captured with warmth, joy, and timeless
+                  elegance.
+                </p>
+                <Link
+                  to="/enquire"
+                  className="group/btn inline-flex items-center text-white font-semibold hover:text-gray-300 transition-all duration-300 w-fit"
+                >
+                  Learn More
+                  <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                    →
+                  </span>
+                </Link>
               </div>
             </div>
           </RevealOnScroll>
 
           {/* FASHION SHOOT Card */}
           <RevealOnScroll>
-            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
-              <div className="relative h-96 overflow-hidden">
+            <div className="group relative bg-black rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] md:col-span-2 lg:col-span-1">
+              <div className="relative h-80 overflow-hidden">
                 {fashionImages.map((image, index) => (
                   <div
                     key={index}
                     className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                       index === currentFashionIndex
-                        ? "opacity-100 scale-100"
+                        ? "opacity-70 scale-100"
                         : "opacity-0 scale-110"
                     }`}
                   >
@@ -370,68 +377,59 @@ const PhotographyServices = () => {
                     />
                   </div>
                 ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
               </div>
-              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
-                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">FASHION SHOOT</h2>
-                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
-                    High-fashion meets artistic storytelling in every captivating frame. 
-                    Where style and creativity converge.
-                  </p>
-                  <Link
-                    to="/enquire"
-                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
-                  >
-                    Enquire Now
-                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
-                  </Link>
-                </div>
+              <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                  FASHION SHOOT
+                </h3>
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  High-fashion meets artistic storytelling in every captivating
+                  frame.
+                </p>
+                <Link
+                  to="/enquire"
+                  className="group/btn inline-flex items-center text-white font-semibold hover:text-gray-300 transition-all duration-300 w-fit"
+                >
+                  Learn More
+                  <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                    →
+                  </span>
+                </Link>
               </div>
             </div>
           </RevealOnScroll>
-        </div>        {/* Call to Action */}
+        </div>
+        {/* Call to Action */}
         <RevealOnScroll>
-          <div className="relative text-center mt-20 rounded-3xl overflow-hidden shadow-2xl">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-              <img
-                src={ctaBackgroundImage}
-                alt="Photography Background"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/70"></div>
-            </div>
-            
-            {/* Content */}
-            <div className="relative z-10 p-12">
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Create Magic?
-              </h2>
-              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                Let&apos;s discuss your vision and create something extraordinary
-                together. Every moment deserves to be captured with artistry and
-                passion.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/enquire"
-                  className="group inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
-                >
-                  Start Your Journey
-                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-bold text-lg"
-                >
-                  Get in Touch
-                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-              </div>
+          <div className="text-center mt-20 bg-black rounded-3xl p-12 shadow-2xl">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Create Magic?
+            </h2>
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              Let's discuss your vision and create something extraordinary
+              together. Every moment deserves to be captured with artistry and
+              passion.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/enquire"
+                className="group inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
+              >
+                Start Your Journey
+                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <Link
+                to="/contact"
+                className="group inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-bold text-lg"
+              >
+                Get in Touch
+                <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
             </div>
           </div>
         </RevealOnScroll>{" "}
