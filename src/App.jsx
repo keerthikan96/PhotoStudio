@@ -74,8 +74,7 @@ const AnimatedRoutes = () => {
               <FaqPage />
             </PageTransition>
           } 
-        />
-        <Route 
+        />        <Route 
           path="/about" 
           element={
             <PageTransition>
