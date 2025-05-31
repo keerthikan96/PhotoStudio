@@ -1,6 +1,14 @@
 // src/pages/Graduation.jsx
 
-import React from 'react';
+import React               { src: image6, text: "Here's to the memories we've made and the dreams yet to come true." },         { src: image4, text: "Today's accomplishments are the foundation of tomorrow's success." },rom 'react';
+
+// Import graduation images
+import image1 from '../../assets/Images/image1.jpg';
+import image2 from '../../assets/Images/image2.jpg';
+import image3 from '../../assets/Images/image3.jpg';
+import image4 from '../../assets/Images/image4.jpg';
+import image5 from '../../assets/Images/image5.jpg';
+import image6 from '../../assets/Images/image6.jpg';
 
 const Graduation = () => {
   return (
@@ -31,11 +39,11 @@ const Graduation = () => {
 
           {/* Image Card */}
           {[
-            { src: "/src/assets/Images/g1.jpg", text: "The tassel was worth the hassle." },
-            { src: "/src/assets/Images/g2.jpg", text: "A new chapter begins today." },
-            { src: "/src/assets/Images/g3.jpg", text: "Dream big, work hard, stay focused." },
+            { src: image1, text: "The tassel was worth the hassle." },
+            { src: image2, text: "A new chapter begins today." },
+            { src: image3, text: "Dream big, work hard, stay focused." },
             { src: "/src/assets/Images/g4.jpg", text: "Today’s accomplishments are the foundation of tomorrow’s success." },
-            { src: "/src/assets/Images/g5.jpg", text: "Adventure awaits beyond the gates." },
+            { src: image5, text: "Adventure awaits beyond the gates." },
             { src: "/src/assets/Images/g6.jpg", text: "Here’s to the memories we’ve made and the dreams yet to come true." },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg overflow-hidden">

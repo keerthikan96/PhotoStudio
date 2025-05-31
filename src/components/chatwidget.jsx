@@ -9,20 +9,19 @@ const ChatWidget = () => {
       icon: <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
       bgColor: "bg-green-500 hover:bg-green-600",
       link: "https://wa.me/94766581620?text=Hello%2C%20I%20am%20interested%20in%20your%20services"
-    },
-    {
+    },    {
       icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
-      bgColor: "bg-blue-500 hover:bg-blue-600",
+      bgColor: "bg-gray-700 hover:bg-gray-800",
       link: "tel:+94766581620"
     },
     {
       icon: <Facebook className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
-      bgColor: "bg-[#1877F2] hover:bg-[#166FE5]",
+      bgColor: "bg-gray-800 hover:bg-gray-900",
       link: "https://web.facebook.com/ChamodhDelpearachchi/?_rdc=1&_rdr" 
     },
     {
       icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
-      bgColor: "bg-red-500 hover:bg-red-600",
+      bgColor: "bg-gray-600 hover:bg-gray-700",
       link: "mailto:chamodh@gmail.com" 
     }
   ];

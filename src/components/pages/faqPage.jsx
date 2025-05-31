@@ -1,31 +1,56 @@
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import PropTypes from "prop-types";
+import { FaPlus, FaMinus, FaQuestionCircle, FaCamera, FaUsers, FaPhone, FaCog, FaSearch } from "react-icons/fa";
 import PageTransition from "../transitions/PageTransition";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
+import { RevealOnScroll } from "../RevealOnScroll";
+
+// Import relevant images
+import photographyImage from "../../assets/Images/image1.jpg";
+import pricingImage from "../../assets/Images/image2.jpg";
+import bookingImage from "../../assets/Images/image3.jpg";
+import miscImage from "../../assets/Images/image4.jpg";
+import contactImage from "../../assets/Images/image5.jpg";
+import bg3 from "../../assets/Images/bg-3.jpg";
+import bg4 from "../../assets/Images/bg-4.jpg";
+import bg6 from "../../assets/Images/bg-6.jpg";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden">
       <button
-        className="flex justify-between items-center w-full text-left py-2 focus:outline-none"
+        className="flex justify-between items-center w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200"
         onClick={toggle}
       >
-        <span className="text-gray-800">{question}</span>
-        <span className="text-gray-500 ml-2">
-          {isOpen ? <FaMinus /> : <FaPlus />}
-        </span>
+        <span className="text-gray-800 font-medium pr-4 leading-relaxed">{question}</span>
+        <div className="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
+          {isOpen ? (
+            <FaMinus className="text-gray-600 text-sm" />
+          ) : (
+            <FaPlus className="text-gray-600 text-sm" />
+          )}
+        </div>
       </button>
-      {isOpen && (
-        <div className="mt-2 text-gray-600 pl-2">
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+        <div className="px-6 pb-6 text-gray-600 leading-relaxed">
           <p>{answer}</p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
-const FAQSection = ({ title, faqs }) => {
+FAQItem.propTypes = {
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
+};
+
+const FAQSection = ({ title, faqs, icon, bgImage, description }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (index) => {
@@ -33,21 +58,59 @@ const FAQSection = ({ title, faqs }) => {
   };
 
   return (
-    <div className="mb-12">
-      <h2 className="text-2xl font-bold mb-6">{title}</h2>
-      <div className="space-y-2">
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-            isOpen={openIndex === index}
-            toggle={() => handleToggle(index)}
-          />
-        ))}
+    <RevealOnScroll>
+      <div className="mb-16">
+        {/* Section Header with Image */}
+        <div className="relative mb-8 rounded-2xl overflow-hidden">
+          <div
+            className="h-32 bg-cover bg-center relative"
+            style={{
+              backgroundImage: `url(${bgImage})`,
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+            <div className="relative h-full flex items-center px-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  {icon}
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
+                  <p className="text-white/80 text-sm">{description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              toggle={() => handleToggle(index)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </RevealOnScroll>
   );
+};
+
+FAQSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  faqs: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string.isRequired,
+      answer: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  icon: PropTypes.node.isRequired,
+  bgImage: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 const FaqPage = () => {
@@ -179,72 +242,198 @@ const FaqPage = () => {
       answer:
         "Yes, we cover weddings throughout Sri Lanka, from Jaffna to Galle, and from Trincomalee to Colombo. We have extensive experience shooting at popular wedding venues including hotels, beaches, and traditional settings across the island.",
     },
-  ];
-
-  return (
-    <div id="faq" className="min-h-screen bg-[#f0f2f4] mt-10">
-      <div className="flex flex-col items-center justify-center w-full mx-auto py-4 sm:py-6 md:py-8 text-gray-900">
-        {/* Hero Section */}
-        <div className="mx-4 md:mx-auto max-w-7xl md:w-full px-4 sm:px-6 md:px-8 bg-gray-800 text-white py-6 sm:py-8 md:py-10 text-center rounded-lg mb-8">
-          <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
-            <TextTransition
-              text={"Easily find solutions and answers."}
-            />
+  ];  return (
+    <div id="faq" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      {/* Background Pattern */}
+      <div
+        className="fixed inset-0 opacity-5"
+        style={{
+          backgroundImage: `url(${bg4})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      ></div>      {/* Modern Hero Section */}
+      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+          style={{
+            backgroundImage: `url(${bg6})`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
+        
+        {/* Floating elements for modern touch */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="relative z-10 text-center text-white px-4 max-w-5xl">
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
+              <FaQuestionCircle className="mr-2" />
+              Help Center
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight mb-6 tracking-tight">
+            <TextTransition text="FAQ" />
           </h1>
-          <p className="text-xs sm:text-sm mt-2">
-          It is important for me as a professional that every problem
-          has a solution.
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
+            Find answers to all your photography questions and discover how we capture life&apos;s most precious moments
           </p>
-          {/* <p className="text-gray-600 mb-4">
-                  It is important for me as a professional that every problem
-                  has a solution,
-                </p>
-                <p className="text-gray-600">
-                  you just need to start working for it! Here are answers.
-                </p> */}
-        </div>
-        <PagesUI
-          title="FAQ"
-          description="Frequently Asked Questions"
-          keywords="FAQ, Photography, Wedding Photography, Sri Lanka, Chamodh Delpearachchi Photography"
-        >
-          <PageTransition>
-            <div className="container mx-auto px-4 py-16 max-w-6xl">
-              {/* <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold mb-6">
-                  Easily find solutions and answers.
-                </h1>
-                <p className="text-gray-600 mb-4">
-                  It is important for me as a professional that every problem
-                  has a solution,
-                </p>
-                <p className="text-gray-600">
-                  you just need to start working for it! Here are answers.
-                </p>
-              </div> */}
-
-              <FAQSection title="Photography" faqs={photographyFAQs} />
-              <FAQSection title="Pricing" faqs={pricingFAQs} />
-              <FAQSection title="Booking" faqs={bookingFAQs} />
-              <FAQSection title="Miscellaneous" faqs={miscFAQs} />
-              <FAQSection title="Contact" faqs={contactFAQs} />
+          
+          {/* Quick Stats */}
+          <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold">500+</div>
+              <div className="text-sm opacity-80">Questions Answered</div>
             </div>
-          </PageTransition>
-          <div className="bg-gray-100 py-8">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-gray-600">
-                If you have any other questions, feel free to reach out!
-              </p>
-              <a
-                href="/contact"
-                className="mt-4 inline-block bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition duration-300"
-              >
-                Contact Us
-              </a>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold">24hrs</div>
+              <div className="text-sm opacity-80">Response Time</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold">98%</div>
+              <div className="text-sm opacity-80">Satisfaction Rate</div>
             </div>
           </div>
-        </PagesUI>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
+          <div className="animate-bounce">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
       </div>
+
+      {/* Main Content wrapped in PagesUI */}
+      <PagesUI
+        title="FAQ"
+        description="Frequently Asked Questions about Wedding Photography Services"
+        keywords="FAQ, Photography, Wedding Photography, Sri Lanka, Chamodh Delpearachchi Photography"
+      >
+        <PageTransition>
+          <div className="relative z-10 container mx-auto px-4 py-20 max-w-6xl">
+            {/* Introduction Section */}
+            <RevealOnScroll>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+                  Everything You Need to Know
+                </h2>                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  We&apos;ve compiled answers to the most common questions about our photography services, 
+                  pricing, and booking process to help you make an informed decision.
+                </p>
+              </div>
+            </RevealOnScroll>
+
+            {/* FAQ Sections with Icons and Images */}
+            <FAQSection 
+              title="Photography Services" 
+              faqs={photographyFAQs}
+              icon={<FaCamera className="text-white text-lg" />}
+              bgImage={photographyImage}
+              description="Learn about our photography styles and expertise"
+            />
+            
+            <FAQSection 
+              title="Pricing & Packages" 
+              faqs={pricingFAQs}
+              icon={<FaCog className="text-white text-lg" />}
+              bgImage={pricingImage}
+              description="Understand our pricing structure and package details"
+            />
+            
+            <FAQSection 
+              title="Booking Process" 
+              faqs={bookingFAQs}
+              icon={<FaUsers className="text-white text-lg" />}
+              bgImage={bookingImage}
+              description="Everything about booking and consultation process"
+            />
+            
+            <FAQSection 
+              title="General Information" 
+              faqs={miscFAQs}
+              icon={<FaQuestionCircle className="text-white text-lg" />}
+              bgImage={miscImage}
+              description="Additional details about our services and policies"
+            />
+            
+            <FAQSection 
+              title="Contact & Support" 
+              faqs={contactFAQs}
+              icon={<FaPhone className="text-white text-lg" />}
+              bgImage={contactImage}
+              description="How to reach us and our coverage areas"
+            />
+          </div>
+        </PageTransition>
+
+        {/* Enhanced Call-to-Action Section */}
+        <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{
+              backgroundImage: `url(${bg3})`,
+            }}
+          ></div>
+          <div className="relative z-10 container mx-auto px-4 text-center">
+            <RevealOnScroll>
+              <div className="max-w-3xl mx-auto">
+                <h3 className="text-3xl md:text-4xl font-light text-white mb-6">
+                  Still Have Questions?
+                </h3>
+                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  Our team is here to help you with any specific questions about your photography needs. 
+                  Get in touch for a personalized consultation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/contact"
+                    className="group relative px-8 py-4 bg-white text-black font-medium tracking-wide hover:bg-gray-100 transition-all duration-300 overflow-hidden rounded-lg"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      <FaPhone className="mr-2" />
+                      Contact Us
+                    </span>
+                  </a>
+                  <a
+                    href="/booking"
+                    className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-black transition-all duration-300 rounded-lg"
+                  >
+                    Book Consultation
+                  </a>
+                </div>
+                
+                {/* Contact Info Cards */}
+                <div className="grid md:grid-cols-3 gap-6 mt-12">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <FaPhone className="text-2xl mb-3 mx-auto" />
+                    <h4 className="font-semibold mb-2">Call Us</h4>
+                    <p className="text-sm opacity-90">+94 77 XXX XXXX</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <svg className="w-6 h-6 text-2xl mb-3 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <h4 className="font-semibold mb-2">Email Us</h4>
+                    <p className="text-sm opacity-90">info@chamodhphotography.lk</p>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                    <svg className="w-6 h-6 text-2xl mb-3 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h4 className="font-semibold mb-2">Response Time</h4>
+                    <p className="text-sm opacity-90">Within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </PagesUI>
     </div>
   );
 };

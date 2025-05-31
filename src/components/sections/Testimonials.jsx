@@ -1,89 +1,115 @@
 import React, { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import image1 from "../../assets/Images/image1.jpg";
+import image2 from "../../assets/Images/image2.jpg";
+import image3 from "../../assets/Images/image3.jpg";
+import image4 from "../../assets/Images/image4.jpg";
+import image5 from "../../assets/Images/image5.jpg";
 
 const testimonials = [
   {
     id: 1,
     name: "Rathi Priya",
-    role: "Quality Output",
+    role: "Wedding Client",
     content:
-      "I had a wonderful experience working with Chamodh and his team for our wedding. They captured every moment beautifully and made us feel so comfortable throughout. Great teamwork and a truly memorable experience!",
+      "I had a wonderful experience working with Chamodh and his team for our wedding. They captured every moment beautifully!",
+    photo: image1,
+    bgPosition: "center center",
   },
   {
     id: 2,
     name: "Lalith Kumar",
-    role: "Simply Amazing!",
+    role: "Portrait Session",
     content:
-      "Working with Chamodh Delpearachchi Photography was an absolute delight. From our first meeting to the final delivery of the photos and videos, everything was handled with great professionalism and care. Highly recommend them!",
+      "Absolute delight to work with. Professionalism and care in every aspect!",
+    photo: image2,
+    bgPosition: "center top",
   },
   {
     id: 3,
     name: "Dhinesh Ram",
-    role: "Great Experience",
+    role: "Corporate Event",
     content:
-      "Chamodh and the team went above and beyond to ensure that every detail was captured perfectly. Their dedication, passion, and quality of work truly made our special day even more memorable. Thank you so much!",
+      "Went above and beyond to capture every detail perfectly. Truly memorable!",
+    photo: image3,
+    bgPosition: "center 30%",
   },
   {
     id: 4,
     name: "Anjali Meera",
-    role: "Highly Recommend",
+    role: "Fashion Shoot",
     content:
-      "The entire experience with Chamodh Delpearachchi Photography was seamless. Their attention to detail and creative vision made our wedding album truly one of a kind.",
+      "Seamless experience with creative vision that made our photos one of a kind.",
+    photo: image4,
+    bgPosition: "center center",
   },
   {
     id: 5,
     name: "Sanjana Kumar",
-    role: "Fantastic Work",
+    role: "Family Portrait",
     content:
-      "From our very first conversation, Chamodh and his team made us feel confident and excited. Every step was smooth, and the final results exceeded our expectations. Truly passionate professionals!",
+      "Final results exceeded our expectations. Truly passionate professionals!",
+    photo: image5,
+    bgPosition: "center 70%",
   },
 ];
 
-
 const TestimonialSwipe = () => {
   const [current, setCurrent] = useState(0);
-  const [selectedCard, setSelectedCard] = useState(null);
-  
-  // Responsive testimonials per page
+
   const getTestimonialsPerPage = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth < 640) return 1; // Mobile
-      if (window.innerWidth < 1024) return 2; // Tablet
-      return 3; // Desktop
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 640) return 1;
+      if (window.innerWidth < 1024) return 2;
+      return 3;
     }
-    return 3; // Default for SSR
+    return 3;
   };
-  
+
   const [testimonialsPerPage, setTestimonialsPerPage] = useState(
-    typeof window !== 'undefined' ? getTestimonialsPerPage() : 3
+    typeof window !== "undefined" ? getTestimonialsPerPage() : 3
   );
-  
-  // Update testimonialsPerPage on window resize
+
   React.useEffect(() => {
     const handleResize = () => {
       setTestimonialsPerPage(getTestimonialsPerPage());
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
   return (
     <section
       id="testimonials"
-      className="py-10 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8"
+      className="py-8 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, black 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+      </div>{" "}
       <RevealOnScroll>
-        <p className="text-center text-gray-600 mb-1 sm:mb-2 text-sm sm:text-base">600+ Happy Clients</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-1 sm:mb-2">
-          Words From Our Clients
-        </h2>
-        <p className="text-gray-600 text-center mb-6 sm:mb-8 text-sm sm:text-base">-CD Testimonials-</p>
-
-        <div className="relative p-4 sm:p-8 rounded-lg max-w-7xl mx-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-center justify-center">
+        <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
+          <div className="inline-flex items-center justify-center px-4 py-2 mb-6 border border-black/20 rounded-full bg-black/5 backdrop-blur-sm">
+            <p className="text-black/90 text-sm sm:text-base font-medium tracking-wider uppercase">
+              TRUSTED BY 600+ CLIENTS
+            </p>
+          </div>{" "}
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4 tracking-tight">
+            Client Testimonials
+          </h2>
+          <div className="w-24 h-0.5 bg-black mx-auto"></div>
+        </div>{" "}
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {testimonials
               .slice(
                 current * testimonialsPerPage,
@@ -92,38 +118,104 @@ const TestimonialSwipe = () => {
               .map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className={`bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center flex flex-col justify-between h-[250px] sm:h-[300px] md:h-[350px] max-w-[330px] mx-auto transition-transform duration-300 ease-in-out ${
-                    selectedCard === testimonial.id
-                      ? "transform scale-105 border-2 border-blue-400"
-                      : "hover:scale-105 hover:shadow-xl"
-                  }`}
-                  onClick={() => setSelectedCard(testimonial.id)}
+                  className="relative h-[32rem] sm:h-[36rem] rounded-2xl overflow-hidden group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+                  style={{
+                    boxShadow:
+                      "0 25px 50px -12px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1)",
+                  }}
                 >
-                  <p className="text-gray-700 italic text-sm sm:text-base">
-                    "{testimonial.content.length > 150 && window.innerWidth < 640 
-                      ? testimonial.content.substring(0, 150) + '...' 
-                      : testimonial.content}"
-                  </p>
-                  <div className="mt-3 sm:mt-4">
-                    <p className="text-gray-900 font-semibold text-sm sm:text-base">
-                      {testimonial.name}
+                  {/* Background image with modern overlay */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-700 group-hover:scale-110"
+                    style={{
+                      backgroundImage: `url(${testimonial.photo})`,
+                      backgroundPosition: testimonial.bgPosition,
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                  </div>
+
+                  {/* Modern content overlay */}
+                  <div className="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end text-white">
+                    {/* Quote icon with modern styling */}
+                    <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Testimonial text with better typography */}
+                    <p className="text-xl sm:text-2xl italic mb-8 leading-relaxed font-light text-white/95 tracking-wide">
+                      &ldquo;{testimonial.content}&rdquo;
                     </p>
-                    <p className="text-gray-600 text-xs sm:text-sm">{testimonial.role}</p>
+
+                    {/* Client info with modern separator */}
+                    <div className="border-t border-white/20 pt-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-semibold text-xl tracking-wide text-white mb-1">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-white/70 text-sm font-medium tracking-wider uppercase">
+                            {testimonial.role}
+                          </p>
+                        </div>
+                        <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Modern studio watermark */}
+                  <div className="absolute top-6 right-6 bg-black/50 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full text-xs font-medium tracking-wider border border-white/20">
+                    CD Photography
                   </div>
                 </div>
               ))}
-          </div>
+          </div>{" "}
+          {/* Modern Pagination */}
+          <div className="flex items-center justify-center space-x-4 mt-16">
+            <div className="flex items-center space-x-3">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`transition-all duration-500 ${
+                    current === index
+                      ? "w-8 h-3 bg-white rounded-full shadow-lg shadow-white/20"
+                      : "w-3 h-3 bg-white/30 rounded-full hover:bg-white/50"
+                  }`}
+                  aria-label={`View testimonials group ${index + 1}`}
+                />
+              ))}
+            </div>
 
-          <div className="flex items-center justify-center space-x-2 mt-4 sm:mt-6">
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gray-300 transition-all duration-300 cursor-pointer ${
-                  current === index ? "w-4 sm:w-6 bg-gray-700" : "bg-gray-300"
-                }`}
-                onClick={() => setCurrent(index)}
-              />
-            ))}
+            {/* Page counter */}
+            <div className="ml-6 text-white/60 text-sm font-medium">
+              {current + 1} / {totalPages}
+            </div>
           </div>
         </div>
       </RevealOnScroll>
