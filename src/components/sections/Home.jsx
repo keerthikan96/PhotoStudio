@@ -131,14 +131,16 @@ export const Home = () => {
               </SwiperSlide>
             );
           })}
-        </Swiper>        {/* Hero Content Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center z-30">
+        </Swiper>        {/* Hero Content Overlay with Auto Hide/Show */}
+        <div className="absolute inset-0 flex items-center justify-center z-30 group">
           <RevealOnScroll>
-            <div className="text-center text-white px-4 max-w-5xl">              <div className="mb-6">
+            <div className="text-center text-white px-4 max-w-5xl transition-all duration-1000 group-hover:opacity-20">              
+              <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
                   Professional Photography
                 </span>
-              </div><h1 className="text-4xl md:text-6xl lg:text-8xl font-extralight mb-6 tracking-tight leading-tight">
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-8xl font-extralight mb-6 tracking-tight leading-tight">
                 Capturing Life&apos;s
                 <span className="block font-light italic text-gray-200">Beautiful Moments</span>
               </h1>
@@ -167,7 +169,20 @@ export const Home = () => {
               </div>
             </div>
           </RevealOnScroll>
-        </div>        {/* Custom Navigation */}
+        </div>
+        
+        {/* View Images Button */}
+        <div className="absolute top-6 right-6 z-40">
+          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-all duration-300 cursor-pointer group">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            <span className="absolute -bottom-8 right-0 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              Hover to view images
+            </span>
+          </div>
+        </div>{/* Custom Navigation */}
         <div className="swiper-button-prev-custom absolute left-6 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/30">
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
