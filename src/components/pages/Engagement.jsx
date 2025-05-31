@@ -2,14 +2,22 @@
 
 import React from 'react';
 
+// Import engagement images
+import image1 from '../../assets/Images/image1.jpg';
+import image2 from '../../assets/Images/image2.jpg';
+import image3 from '../../assets/Images/image3.jpg';
+import image4 from '../../assets/Images/image4.jpg';
+import image5 from '../../assets/Images/image5.jpg';
+import image6 from '../../assets/Images/image6.jpg';
+
 const Engagement = () => {
   const images = [
-    { src: "/src/assets/Images/E1.jpg", text: "Together is a beautiful place to be." },
-    { src: "/src/assets/Images/E2.jpg", text: "A new chapter of our story begins." },
-    { src: "/src/assets/Images/E3.jpeg", text: "Hand in hand, heart to heart." },
-    { src: "/src/assets/Images/E4.jpg", text: "Love binds us beyond words." },
-    { src: "/src/assets/Images/E5.jpg", text: "Today, tomorrow, always." },
-    { src: "/src/assets/Images/E6.jpg", text: "The journey to forever starts here." },
+    { src: image1, text: "Together is a beautiful place to be." },
+    { src: image2, text: "A new chapter of our story begins." },
+    { src: image3, text: "Hand in hand, heart to heart." },
+    { src: image4, text: "Love binds us beyond words." },
+    { src: image5, text: "Today, tomorrow, always." },
+    { src: image6, text: "The journey to forever starts here." },
   ];
 
   return (

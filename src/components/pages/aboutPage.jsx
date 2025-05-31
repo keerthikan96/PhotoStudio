@@ -3,6 +3,9 @@ import creatorImageProtrait from "../../assets/Images/chamodMain.jpg";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
 import { RevealOnScroll } from "../RevealOnScroll";
+// Import background images
+import bg4 from "../../assets/Images/bg-4.jpg";
+import bg8 from "../../assets/Images/bg-8.jpg";
 
 function AboutPage() {
   return (
@@ -10,7 +13,7 @@ function AboutPage() {
       <div
         className="absolute inset-0 opacity-3"
         style={{
-          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundImage: `url(${bg4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -20,7 +23,7 @@ function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-8.jpg')`,
+            backgroundImage: `url(${bg8})`,
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>

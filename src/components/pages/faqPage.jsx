@@ -12,6 +12,9 @@ import pricingImage from "../../assets/Images/image2.jpg";
 import bookingImage from "../../assets/Images/image3.jpg";
 import miscImage from "../../assets/Images/image4.jpg";
 import contactImage from "../../assets/Images/image5.jpg";
+import bg3 from "../../assets/Images/bg-3.jpg";
+import bg4 from "../../assets/Images/bg-4.jpg";
+import bg6 from "../../assets/Images/bg-6.jpg";
 
 const FAQItem = ({ question, answer, isOpen, toggle }) => {
   return (
@@ -245,7 +248,7 @@ const FaqPage = () => {
       <div
         className="fixed inset-0 opacity-5"
         style={{
-          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundImage: `url(${bg4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -255,7 +258,7 @@ const FaqPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-6.jpg')`,
+            backgroundImage: `url(${bg6})`,
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
@@ -373,7 +376,7 @@ const FaqPage = () => {
           <div
             className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{
-              backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+              backgroundImage: `url(${bg3})`,
             }}
           ></div>
           <div className="relative z-10 container mx-auto px-4 text-center">

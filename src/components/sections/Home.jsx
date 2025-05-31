@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -6,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 import { HiCamera, HiHeart, HiStar, HiPlay } from "react-icons/hi";
+import GalleryModal from "../common/GalleryModal";
 
 // Hero images
 import image1 from "../../assets/Images/img1.jpg";
@@ -51,10 +53,36 @@ import serviceImg4 from "../../assets/Images/serviceview4.jpg";
 import serviceImg5 from "../../assets/Images/serviceview5.jpg";
 
 // Profile images
-import chamodProfile from "../../assets/Images/chamodProfile.jpg";
 import chamodMain from "../../assets/Images/chamodMain.jpg";
 
 export const Home = () => {
+  // Gallery modal state
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Portfolio images array for the gallery
+  const portfolioImages = [
+    { src: portfolio1, alt: "Wedding Photography - Romantic Moment", title: "Romantic Wedding Portrait" },
+    { src: portfolio2, alt: "Engagement Photography - Couple", title: "Engagement Session" },
+    { src: portfolio3, alt: "Portrait Photography - Individual", title: "Professional Portrait" },
+    { src: portfolio4, alt: "Event Photography - Celebration", title: "Event Coverage" },
+    { src: portfolio5, alt: "Wedding Photography - Ceremony", title: "Wedding Ceremony" },
+    { src: portfolio6, alt: "Portrait Photography - Family", title: "Family Portrait" },
+    { src: portfolio7, alt: "Wedding Photography - Reception", title: "Wedding Reception" },
+    { src: portfolio8, alt: "Engagement Photography - Outdoor", title: "Outdoor Engagement" }
+  ];
+
+  // Function to open gallery at specific image
+  const openGallery = (index) => {
+    setCurrentImageIndex(index);
+    setIsGalleryOpen(true);
+  };
+
+  // Function to close gallery
+  const closeGallery = () => {
+    setIsGalleryOpen(false);
+  };
+
   // Debug: Log imported images to console
   console.log('Hero Images:', { image1, image2, image3, image4, image5 });
   console.log('Image paths:', [image1, image2, image3, image4, image5]);
@@ -421,22 +449,26 @@ export const Home = () => {
               </p>
             </div>
           </RevealOnScroll>          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6, portfolio7, portfolio8].map((image, index) => (
-              <RevealOnScroll key={index} delay={index * 0.1}>                <div className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500">
+            {portfolioImages.map((imageData, index) => (
+              <RevealOnScroll key={index} delay={index * 0.1}>
+                <div 
+                  className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                  onClick={() => openGallery(index)}
+                >
                   <div className="relative w-full h-full">
                     <img
-                      src={image}
-                      alt={`Portfolio ${index + 1}`}
+                      src={imageData.src}
+                      alt={imageData.alt}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
                   </div>
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-auto">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white">
+                      <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
+                      <p className="text-xs font-medium">Click to view</p>
                     </div>
                   </div>
                 </div>
@@ -853,8 +885,16 @@ export const Home = () => {
               </div>
             </div>
           </RevealOnScroll>
-        </div>
-      </section>
+        </div>      </section>
+
+      {/* Gallery Modal */}
+      <GalleryModal
+        isOpen={isGalleryOpen}
+        onClose={closeGallery}
+        images={portfolioImages}
+        currentIndex={currentImageIndex}
+        onImageChange={setCurrentImageIndex}
+      />
 
       <style>
         {`

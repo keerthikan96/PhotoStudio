@@ -19,6 +19,9 @@ import portfolioImg1 from "../../assets/Images/pt-1.jpg";
 import portfolioImg2 from "../../assets/Images/pt-2.jpg";
 import portfolioImg3 from "../../assets/Images/pt-3.jpg";
 import portfolioImg4 from "../../assets/Images/pt-4.jpg";
+// Import background images
+import bg4 from "../../assets/Images/bg-4.jpg";
+import bg12 from "../../assets/Images/bg-12.jpg";
 import portfolioImg5 from "../../assets/Images/pt-5.jpg";
 import portfolioImg6 from "../../assets/Images/pt-6.jpg";
 import serviceImg1 from "../../assets/Images/serviceview1.jpg";
@@ -112,7 +115,7 @@ const BookingPage = () => {
       <div
         className="fixed inset-0 opacity-5"
         style={{
-          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundImage: `url(${bg4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -124,7 +127,7 @@ const BookingPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-12.jpg')`,
+            backgroundImage: `url(${bg12})`,
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>

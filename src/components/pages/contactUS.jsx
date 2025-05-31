@@ -5,7 +5,28 @@ import emailjs from "emailjs-com";
 import otpGenerator from "otp-generator";
 import { SmsClient } from "@azure/communication-sms";
 
+// Import images
+import bg13 from "../../assets/Images/bg-13.jpg";
+import bg14 from "../../assets/Images/bg-14.jpg";
+import serviceview1 from "../../assets/Images/serviceview1.jpg";
+import serviceview2 from "../../assets/Images/serviceview2.jpg";
+import serviceview3 from "../../assets/Images/serviceview3.jpg";
+import pt1 from "../../assets/Images/pt-1.jpg";
+import pt2 from "../../assets/Images/pt-2.jpg";
+import pt3 from "../../assets/Images/pt-3.jpg";
+import image1 from "../../assets/Images/image1.jpg";
+import image2 from "../../assets/Images/image2.jpg";
+import image3 from "../../assets/Images/image3.jpg";
+import image4 from "../../assets/Images/image4.jpg";
+import image5 from "../../assets/Images/image5.jpg";
+import image6 from "../../assets/Images/image6.jpg";
+import image7 from "../../assets/Images/image7.jpg";
+import image8 from "../../assets/Images/image8.jpg";
+
 const ContactUs = () => {
+  // Array of portfolio images
+  const portfolioImages = [image1, image2, image3, image4, image5, image6, image7, image8];
+  
   const [otpSent, setOtpSent] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -128,7 +149,7 @@ const ContactUs = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110 transition-transform duration-700"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-14.jpg')`,
+            backgroundImage: `url(${bg14})`,
           }}
         ></div>
         {/* Gradient Overlays */}
@@ -191,7 +212,7 @@ const ContactUs = () => {
             <div className="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="/src/assets/Images/serviceview1.jpg"
+                  src={serviceview1}
                   alt="Our Location"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -222,7 +243,7 @@ const ContactUs = () => {
             <div className="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="/src/assets/Images/serviceview2.jpg"
+                  src={serviceview2}
                   alt="Email Us"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -251,7 +272,7 @@ const ContactUs = () => {
             <div className="group relative overflow-hidden bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="h-48 overflow-hidden">
                 <img
-                  src="/src/assets/Images/serviceview3.jpg"
+                  src={serviceview3}
                   alt="Call Us"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -287,7 +308,7 @@ const ContactUs = () => {
                 <div className="relative h-32 bg-gradient-to-r from-gray-900 via-gray-800 to-black overflow-hidden">
                   <div className="absolute inset-0 opacity-20">
                     <img
-                      src="/src/assets/Images/bg-13.jpg"
+                      src={bg13}
                       alt="Contact Background"
                       className="w-full h-full object-cover"
                     />
@@ -468,7 +489,7 @@ const ContactUs = () => {
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
                         <img
-                          src="/src/assets/Images/pt-1.jpg"
+                          src={pt1}
                           alt="Professional Team"
                           className="w-full h-full object-cover"
                         />
@@ -487,7 +508,7 @@ const ContactUs = () => {
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
                         <img
-                          src="/src/assets/Images/pt-2.jpg"
+                          src={pt2}
                           alt="Modern Equipment"
                           className="w-full h-full object-cover"
                         />
@@ -506,7 +527,7 @@ const ContactUs = () => {
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
                         <img
-                          src="/src/assets/Images/pt-3.jpg"
+                          src={pt3}
                           alt="Quick Delivery"
                           className="w-full h-full object-cover"
                         />
@@ -691,17 +712,15 @@ const ContactUs = () => {
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                 Get inspired by our latest photography projects
               </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+            </div>            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {portfolioImages.map((image, index) => (
                 <div
                   key={index}
                   className="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer transform hover:-translate-y-2 transition-all duration-500"
                 >
                   <img
-                    src={`/src/assets/Images/image${index}.jpg`}
-                    alt={`Portfolio ${index}`}
+                    src={image}
+                    alt={`Portfolio ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

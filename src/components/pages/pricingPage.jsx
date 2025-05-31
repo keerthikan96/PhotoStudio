@@ -5,6 +5,22 @@ import TextTransition from "../TextTransition";
 import PricingPackage from "../PricingPackage";
 import FAQ from "../FAQ"; // Import the new FAQ component
 
+// Import all images used in pricing page
+import bg3 from "../../assets/Images/bg-3.jpg";
+import bg4 from "../../assets/Images/bg-4.jpg";
+import bg5 from "../../assets/Images/bg-5.jpg";
+import bg13 from "../../assets/Images/bg-13.jpg";
+import image1 from "../../assets/Images/image1.jpg";
+import image2 from "../../assets/Images/image2.jpg";
+import image3 from "../../assets/Images/image3.jpg";
+import image4 from "../../assets/Images/image4.jpg";
+import image5 from "../../assets/Images/image5.jpg";
+import pt1 from "../../assets/Images/pt-1.jpg";
+import pt2 from "../../assets/Images/pt-2.jpg";
+import pt3 from "../../assets/Images/pt-3.jpg";
+import pt4 from "../../assets/Images/pt-4.jpg";
+import chamodMain from "../../assets/Images/chamodMain.jpg";
+
 const PricingPage = () => {
   const text = "text-gray-500 font-extralight ";  
   const navigate = useNavigate();
@@ -193,7 +209,7 @@ const PricingPage = () => {
       <div
         className="absolute inset-0 opacity-3"
         style={{
-          backgroundImage: `url('/src/assets/Images/bg-4.jpg')`,
+          backgroundImage: `url(${bg4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -206,7 +222,7 @@ const PricingPage = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
             style={{
-              backgroundImage: `url('/src/assets/Images/bg-13.jpg')`,
+              backgroundImage: `url(${bg13})`,
             }}
           ></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
@@ -246,7 +262,7 @@ const PricingPage = () => {
               <div
                 className="absolute right-0 top-0 w-1/3 h-full bg-cover bg-center opacity-10"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/image1.jpg')`,
+                  backgroundImage: `url(${image1})`,
                 }}
               ></div>
               <div className="relative z-10">
@@ -305,7 +321,7 @@ const PricingPage = () => {
               <div
                 className="absolute left-0 top-0 w-full h-full bg-cover bg-center opacity-10"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/image2.jpg')`,
+                  backgroundImage: `url(${image2})`,
                 }}
               ></div>
               <div className="relative z-10">
@@ -356,7 +372,7 @@ const PricingPage = () => {
               <div
                 className="absolute right-0 top-0 w-2/5 h-full bg-cover bg-center opacity-15"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/image3.jpg')`,
+                  backgroundImage: `url(${image3})`,
                 }}
               ></div>
               <div className="relative z-10">
@@ -403,7 +419,7 @@ const PricingPage = () => {
                 <RevealOnScroll delay={0}>
                   <div className="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
                     <img
-                      src="/src/assets/Images/pt-1.jpg"
+                      src={pt1}
                       alt="Wedding Photography Sample 1"
                       className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -414,7 +430,7 @@ const PricingPage = () => {
                 <RevealOnScroll delay={0.1}>
                   <div className="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
                     <img
-                      src="/src/assets/Images/pt-2.jpg"
+                      src={pt2}
                       alt="Wedding Photography Sample 2"
                       className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -425,7 +441,7 @@ const PricingPage = () => {
                 <RevealOnScroll delay={0.2}>
                   <div className="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
                     <img
-                      src="/src/assets/Images/pt-3.jpg"
+                      src={pt3}
                       alt="Wedding Photography Sample 3"
                       className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -436,7 +452,7 @@ const PricingPage = () => {
                 <RevealOnScroll delay={0.3}>
                   <div className="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105">
                     <img
-                      src="/src/assets/Images/pt-4.jpg"
+                      src={pt4}
                       alt="Wedding Photography Sample 4"
                       className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -495,7 +511,7 @@ const PricingPage = () => {
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-5 rounded-lg"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/bg-5.jpg')`,
+                  backgroundImage: `url(${bg5})`,
                 }}
               ></div>
               <div className="relative z-10 text-center">
@@ -808,7 +824,7 @@ const PricingPage = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-5"
                   style={{
-                    backgroundImage: `url('/src/assets/Images/image4.jpg')`,
+                    backgroundImage: `url(${image4})`,
                   }}
                 ></div>
                 <div className="relative z-10">
@@ -844,7 +860,7 @@ const PricingPage = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center opacity-5"
                   style={{
-                    backgroundImage: `url('/src/assets/Images/image5.jpg')`,
+                    backgroundImage: `url(${image5})`,
                   }}
                 ></div>
                 <div className="relative z-10">
@@ -880,7 +896,7 @@ const PricingPage = () => {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/chamodMain.jpg')`,
+                  backgroundImage: `url(${chamodMain})`,
                 }}
               ></div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/85"></div>{" "}
@@ -903,7 +919,7 @@ const PricingPage = () => {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+                  backgroundImage: `url(${bg3})`,
                 }}
               ></div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>{" "}

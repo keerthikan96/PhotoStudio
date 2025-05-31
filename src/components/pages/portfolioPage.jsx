@@ -15,6 +15,8 @@ import image10 from "../../assets/Images/image10.jpg";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
 
+import bg3 from '../../assets/Images/bg-3.jpg';
+
 const PortfolioPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const imagesPerPage = 10;
@@ -186,11 +188,10 @@ const PortfolioPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-100">
       {/* Modern Hero Section */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
+      <div className="relative h-screen flex items-center justify-center overflow-hidden">        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: `url('/src/assets/Images/bg-3.jpg')`,
+            backgroundImage: `url(${bg3})`,
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>

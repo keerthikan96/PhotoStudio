@@ -1,5 +1,18 @@
 import { Link } from 'react-router-dom';
-import logoLoder from "../assets/logo4.png"
+import logoLoder from "../assets/logo4.png";
+
+// Import all images used in the footer
+import bg8 from "../assets/Images/bg-8.jpg";
+import image1 from "../assets/Images/image1.jpg";
+import image2 from "../assets/Images/image2.jpg";
+import image3 from "../assets/Images/image3.jpg";
+import image4 from "../assets/Images/image4.jpg";
+import image5 from "../assets/Images/image5.jpg";
+import pt1 from "../assets/Images/pt-1.jpg";
+import pt2 from "../assets/Images/pt-2.jpg";
+import pt3 from "../assets/Images/pt-3.jpg";
+import bg14 from "../assets/Images/bg-14.jpg";
+
 const Footer = () => {
   return (    <footer className="bg-gray-900 relative overflow-hidden">
       {/* Main Footer Content */}
@@ -7,7 +20,7 @@ const Footer = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img 
-            src="/src/assets/Images/bg-8.jpg" 
+            src={bg8} 
             alt="Photography Background" 
             className="w-full h-full object-cover opacity-20"
           />
@@ -17,21 +30,21 @@ const Footer = () => {
         {/* Decorative Photography Elements */}
         <div className="absolute top-10 left-10 opacity-10 hidden lg:block">
           <img 
-            src="/src/assets/Images/image1.jpg" 
+            src={image1} 
             alt="Portfolio" 
             className="w-32 h-32 object-cover rounded-full blur-sm"
           />
         </div>
         <div className="absolute top-20 right-20 opacity-10 hidden lg:block">
           <img 
-            src="/src/assets/Images/image3.jpg" 
+            src={image3} 
             alt="Portfolio" 
             className="w-24 h-24 object-cover rounded-lg blur-sm rotate-12"
           />
         </div>
         <div className="absolute bottom-20 left-1/4 opacity-10 hidden lg:block">
           <img 
-            src="/src/assets/Images/image5.jpg" 
+            src={image5} 
             alt="Portfolio" 
             className="w-20 h-20 object-cover rounded-full blur-sm"
           />
@@ -80,14 +93,14 @@ const Footer = () => {
                 {/* Small preview images around the newsletter */}
                 <div className="absolute -left-20 top-2 opacity-30 hidden xl:block">
                   <img 
-                    src="/src/assets/Images/image2.jpg" 
+                    src={image2} 
                     alt="Photography" 
                     className="w-12 h-12 object-cover rounded-lg rotate-12 shadow-lg"
                   />
                 </div>
                 <div className="absolute -right-16 top-4 opacity-30 hidden xl:block">
                   <img 
-                    src="/src/assets/Images/image4.jpg" 
+                    src={image4} 
                     alt="Photography" 
                     className="w-10 h-10 object-cover rounded-full -rotate-12 shadow-lg"
                   />
@@ -122,17 +135,17 @@ const Footer = () => {
                 <div className="mb-6">
                   <div className="grid grid-cols-3 gap-2 opacity-60 hover:opacity-80 transition-opacity">
                     <img 
-                      src="/src/assets/Images/pt-1.jpg" 
+                      src={pt1} 
                       alt="Portfolio Preview" 
                       className="w-full h-16 object-cover rounded-lg"
                     />
                     <img 
-                      src="/src/assets/Images/pt-2.jpg" 
+                      src={pt2} 
                       alt="Portfolio Preview" 
                       className="w-full h-16 object-cover rounded-lg"
                     />
                     <img 
-                      src="/src/assets/Images/pt-3.jpg" 
+                      src={pt3} 
                       alt="Portfolio Preview" 
                       className="w-full h-16 object-cover rounded-lg"
                     />
@@ -306,7 +319,7 @@ const Footer = () => {
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-5">
           <img 
-            src="/src/assets/Images/bg-14.jpg" 
+            src={bg14} 
             alt="Pattern" 
             className="w-full h-full object-cover"
           />

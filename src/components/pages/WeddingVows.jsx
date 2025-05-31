@@ -2,6 +2,14 @@
 
 import React from 'react';
 
+// Import wedding-related images
+import image1 from '../../assets/Images/image1.jpg';
+import image2 from '../../assets/Images/image2.jpg';
+import image3 from '../../assets/Images/image3.jpg';
+import image4 from '../../assets/Images/image4.jpg';
+import image5 from '../../assets/Images/image5.jpg';
+import image6 from '../../assets/Images/image6.jpg';
+
 const WeddingVows = () => {
   return (
     <div className="bg-cream text-gray-800 min-h-screen p-6">
@@ -32,7 +40,7 @@ const WeddingVows = () => {
           {/* Image 1 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/engage.jpg"  // Replace with actual image URL
+              src={image1}
               alt="Wedding Highlight 1"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
@@ -44,7 +52,7 @@ const WeddingVows = () => {
           {/* Image 2 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/h.jpg"  // Replace with actual image URL
+              src={image2}
               alt="Wedding Highlight 2"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
@@ -56,7 +64,7 @@ const WeddingVows = () => {
           {/* Image 3 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/h1.jpeg"  // Replace with actual image URL
+              src={image3}
               alt="Wedding Highlight 3"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
@@ -68,7 +76,7 @@ const WeddingVows = () => {
           {/* Image 4 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/h2.jpeg"  // Replace with actual image URL
+              src={image4}
               alt="Wedding Highlight 4"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
@@ -80,7 +88,7 @@ const WeddingVows = () => {
           {/* Image 5 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/h3.jpeg"  // Replace with actual image URL
+              src={image5}
               alt="Wedding Highlight 5"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
@@ -92,7 +100,7 @@ const WeddingVows = () => {
           {/* Image 6 */}
           <div className="flex flex-col items-center border-2 border-brown-400 p-4 rounded-lg">
             <img
-              src="/src/assets/Images/h4.jpeg"  // Replace with actual image URL
+              src={image6}
               alt="Wedding Highlight 6"
               className="rounded-lg w-full h-72 object-cover mb-4"
             />
