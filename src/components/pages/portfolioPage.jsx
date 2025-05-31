@@ -327,7 +327,7 @@ const PortfolioPage = () => {
                 <div className="lg:sticky lg:top-8 space-y-8">
                   <RevealOnScroll>
                     <div className="bg-gray-50 rounded-2xl p-8">
-                      <h3 className="text-2xl font-light text-gray-900 mb-4">
+                      <h3 className="text-xl font-light text-gray-900 mb-4">
                         <TextTransition text="Pictures = Stories" />
                       </h3>
                       <p className="text-gray-600 leading-relaxed mb-6">

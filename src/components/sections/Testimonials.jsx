@@ -79,10 +79,11 @@ const TestimonialSwipe = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);  return (
+  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
+  return (
     <section
       id="testimonials"
-      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
+      className="py-8 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -94,13 +95,17 @@ const TestimonialSwipe = () => {
             backgroundSize: "40px 40px",
           }}
         ></div>
-      </div>      <RevealOnScroll>
+      </div>{" "}
+      <RevealOnScroll>
         <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
           <div className="inline-flex items-center justify-center px-4 py-2 mb-6 border border-black/20 rounded-full bg-black/5 backdrop-blur-sm">
             <p className="text-black/90 text-sm sm:text-base font-medium tracking-wider uppercase">
               TRUSTED BY 600+ CLIENTS
             </p>
-          </div>          <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4 tracking-tight">Client Testimonials</h2>
+          </div>{" "}
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4 tracking-tight">
+            Client Testimonials
+          </h2>
           <div className="w-24 h-0.5 bg-black mx-auto"></div>
         </div>{" "}
         <div className="relative max-w-7xl mx-auto">

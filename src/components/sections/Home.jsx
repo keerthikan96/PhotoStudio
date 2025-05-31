@@ -812,11 +812,11 @@ export const Home = () => {
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <RevealOnScroll>
-            <div className="space-y-8">
-              <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-white font-medium">
-                <HiCamera className="mr-2" />
-                CD Photography Studio
+          <RevealOnScroll>            <div className="space-y-8">
+              <div className="mb-6">
+                <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase text-white">
+                  Professional Photography
+                </span>
               </div>
               <h2 className="text-4xl lg:text-6xl font-extralight text-white leading-tight">
                 Your Story

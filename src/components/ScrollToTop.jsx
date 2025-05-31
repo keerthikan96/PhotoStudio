@@ -5,11 +5,12 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top when pathname changes
+    // Immediate scroll to top for better UX with page transitions
+    // This happens before the page transition animation starts
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: 'instant' // Using instant to avoid conflicting with page transition animations
     });
   }, [pathname]);
 

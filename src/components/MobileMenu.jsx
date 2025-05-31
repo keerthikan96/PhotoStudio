@@ -7,11 +7,10 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   // State for mobile dropdown
   const [portfolioExpanded, setPortfolioExpanded] = useState(false);
   const navigate = useNavigate();
-  
-  // Function to navigate and scroll to top
+    // Function to navigate and close menu (scroll handled by ScrollToTop component)
   const scrollToTop = (path) => {
     navigate(path);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Remove manual scroll - let the ScrollToTop component handle it for consistency
     setMenuOpen(false);
   };
   
