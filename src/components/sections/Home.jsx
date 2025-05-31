@@ -201,56 +201,48 @@ export const Home = () => {
             </svg>
           </div>
         </div>
-      </section>
-
-      {/* Welcome Section with Images */}
-      <section className="py-20 bg-white">
+      </section>      {/* Welcome Section with Images */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+          <RevealOnScroll>            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">
                 Welcome to CD Photography
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                 Where passion meets artistry, creating timeless memories that last forever
               </p>
-            </div>
-          </RevealOnScroll>
+            </div></RevealOnScroll>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <RevealOnScroll>
-              <div className="space-y-8">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light text-gray-900">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">            <RevealOnScroll>
+              <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+                <div className="space-y-4 sm:space-y-6">
+                  <h3 className="text-2xl sm:text-3xl font-light text-gray-900">
                     Your Story, Our Artistry
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                     At CD Photography, we believe every moment has a story worth telling. 
                     Our passion is to capture the authentic emotions, intimate connections, 
                     and beautiful details that make your special day uniquely yours.
                   </p>
                 </div>
                 
-                <div className="flex items-center space-x-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900">500+</div>
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-8">                  <div className="text-center group">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">500+</div>
                     <div className="text-sm text-gray-600">Weddings Captured</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900 flex items-center">
+                  <div className="text-center group">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center justify-center group-hover:text-blue-600 transition-colors duration-300">
                       4.9 <HiStar className="ml-1 text-yellow-400" />
                     </div>
                     <div className="text-sm text-gray-600">Client Rating</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900">8+</div>
+                  <div className="text-center group">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">8+</div>
                     <div className="text-sm text-gray-600">Years Experience</div>
                   </div>
-                </div>
-
-                <Link
+                </div>                <Link
                   to="/about"
-                  className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-all duration-300"
+                  className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-all duration-300 text-sm sm:text-base"
                 >
                   Learn More About Us
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -258,51 +250,63 @@ export const Home = () => {
                   </svg>
                 </Link>
               </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll>
-              <div className="relative">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4">
-                    <img
-                      src={portfolio1}
-                      alt="Wedding Photography"
-                      className="w-full h-64 object-cover rounded-lg shadow-lg"
-                    />
-                    <img
-                      src={portfolio3}
-                      alt="Portrait Photography"
-                      className="w-full h-48 object-cover rounded-lg shadow-lg"
-                    />
-                  </div>
-                  <div className="space-y-4 pt-8">
-                    <img
-                      src={portfolio2}
-                      alt="Engagement Photography"
-                      className="w-full h-48 object-cover rounded-lg shadow-lg"
-                    />
-                    <img
-                      src={portfolio4}
-                      alt="Event Photography"
-                      className="w-full h-64 object-cover rounded-lg shadow-lg"
-                    />
-                  </div>
-                </div>
-                
-                {/* Floating photographer card */}
-                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-2xl border border-gray-100">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={chamodProfile}
-                      alt="Chamodh Delpearachchi"
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Chamodh Delpearachchi</h4>
-                      <p className="text-sm text-gray-600">Lead Photographer</p>
+            </RevealOnScroll>            <RevealOnScroll>              <div className="relative overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={portfolio1}
+                        alt="Wedding Photography"
+                        className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={portfolio3}
+                        alt="Portrait Photography"
+                        className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
                   </div>
-                </div>
+                  <div className="space-y-4 sm:space-y-6 sm:pt-12">
+                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={portfolio2}
+                        alt="Engagement Photography"
+                        className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={portfolio4}
+                        alt="Event Photography"
+                        className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>                {/* Floating photographer card */}
+                {/* <div className="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 lg:-left-8 bg-white p-4 sm:p-6 rounded-xl shadow-2xl border border-gray-100 z-10 hover:shadow-3xl transition-all duration-300 max-w-xs">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
+                    <div className="relative">
+                      <img
+                        src={chamodProfile}
+                        alt="Chamodh Delpearachchi"
+                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover ring-2 sm:ring-4 ring-white shadow-md"
+                      />
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base truncate">Chamodh Delpearachchi</h4>
+                      <p className="text-xs sm:text-sm text-gray-600">Lead Photographer</p>
+                      <div className="flex items-center mt-1">
+                        <div className="flex text-yellow-400 text-xs">
+                          ★★★★★
+                        </div>
+                        <span className="text-xs text-gray-500 ml-1">5.0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
               </div>
             </RevealOnScroll>
           </div>
@@ -331,9 +335,8 @@ export const Home = () => {
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <RevealOnScroll delay={0.1}>
-              <div className="group relative bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-20 transition-all duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">            <RevealOnScroll delay={0.1}>
+              <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={serviceImg1}
@@ -341,14 +344,12 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Wedding Photography</h3>
-                  <p className="text-gray-300 mb-6">
+                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Wedding Photography</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
                     Capturing the magic and emotion of your special day with artistic precision
                   </p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,10 +358,8 @@ export const Home = () => {
                   </Link>
                 </div>
               </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.2}>
-              <div className="group relative bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-20 transition-all duration-500">
+            </RevealOnScroll>            <RevealOnScroll delay={0.2}>
+              <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={serviceImg2}
@@ -368,14 +367,12 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Portrait Sessions</h3>
-                  <p className="text-gray-300 mb-6">
+                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Portrait Sessions</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
                     Professional portraits that capture your personality and natural beauty
                   </p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -384,10 +381,8 @@ export const Home = () => {
                   </Link>
                 </div>
               </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll delay={0.3}>
-              <div className="group relative bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-20 transition-all duration-500">
+            </RevealOnScroll>            <RevealOnScroll delay={0.3}>
+              <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={serviceImg3}
@@ -395,14 +390,12 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Event Photography</h3>
-                  <p className="text-gray-300 mb-6">
+                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Event Photography</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
                     Documenting your celebrations and special moments with creative flair
                   </p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -488,10 +481,9 @@ export const Home = () => {
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[pt1, pt2, pt3, pt4, pt5, pt6].map((image, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">            {[pt1, pt2, pt3, pt4, pt5, pt6].map((image, index) => (
               <RevealOnScroll key={index} delay={index * 0.15}>
-                <div className="group relative overflow-hidden rounded-2xl shadow-2xl bg-white bg-opacity-10 backdrop-blur-sm hover:bg-opacity-20 transition-all duration-500">
+                <div className="group relative overflow-hidden rounded-2xl shadow-2xl bg-black bg-opacity-40 backdrop-blur-sm hover:bg-opacity-60 transition-all duration-500">
                   <div className="aspect-[4/5] overflow-hidden">
                     <img
                       src={image}
@@ -500,15 +492,14 @@ export const Home = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-2 drop-shadow-lg">
                       {index === 0 && "Wedding Elegance"}
                       {index === 1 && "Portrait Perfection"}
                       {index === 2 && "Love Stories"}
                       {index === 3 && "Candid Moments"}
                       {index === 4 && "Artistic Vision"}
-                      {index === 5 && "Timeless Beauty"}
-                    </h3>
-                    <p className="text-gray-300 text-sm">
+                      {index === 5 && "Timeless Beauty"}                    </h3>
+                    <p className="text-gray-300 text-sm drop-shadow-md">
                       {index === 0 && "Capturing the magic of your special day with timeless elegance"}
                       {index === 1 && "Professional portraits that reveal your authentic self"}
                       {index === 2 && "Documenting the beautiful journey of love and connection"}
