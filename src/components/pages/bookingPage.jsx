@@ -136,15 +136,13 @@ const BookingPage = () => {
         {/* Floating elements for modern touch */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-        
-        <div className="relative z-10 text-center text-white px-4">
-          <div className="mb-6">
+          <div className="relative z-10 text-center text-white px-4">          <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
-              Professional Booking
+              Book Your Session
             </span>
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight mb-6 tracking-tight">
-            <TextTransition text="Make Your Enquiry" />
+            <TextTransition text="MAKE YOUR ENQUIRY" />
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
             Start your journey with us - Get a personalized quote in just 15 minutes

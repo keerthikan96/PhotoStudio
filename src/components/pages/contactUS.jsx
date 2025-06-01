@@ -161,14 +161,17 @@ const ContactUs = () => {
         <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-white/20 rounded-full animate-bounce delay-1000"></div>
         {/* Modern Floating Cards */}
         <div className="absolute top-20 left-10 w-40 h-40 bg-white/5 backdrop-blur-sm rounded-3xl rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 backdrop-blur-sm rounded-3xl -rotate-12 animate-pulse delay-1000"></div>
-        {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div className="space-y-6">
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 backdrop-blur-sm rounded-3xl -rotate-12 animate-pulse delay-1000"></div>        {/* Hero Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">          <div className="space-y-6">
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
+                Get In Touch
+              </span>
+            </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight">
-              <TextTransition text="Get in " />
+              <TextTransition text="GET IN " />
               <span className="font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Touch
+                TOUCH
               </span>
             </h1>{" "}
             <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">

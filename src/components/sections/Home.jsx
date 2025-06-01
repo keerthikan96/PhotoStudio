@@ -161,16 +161,15 @@ export const Home = () => {
           })}
         </Swiper>        {/* Hero Content Overlay with Auto Hide/Show */}
         <div className="absolute inset-0 flex items-center justify-center z-30 group">
-          <RevealOnScroll>
-            <div className="text-center text-white px-4 max-w-5xl transition-all duration-1000 group-hover:opacity-20">              
+          <RevealOnScroll>            <div className="text-center text-white px-4 max-w-5xl transition-all duration-1000 group-hover:opacity-20">              
               <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
-                  Professional Photography
+                  Photography Studio
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-8xl font-extralight mb-6 tracking-tight leading-tight">
-                Capturing Life&apos;s
-                <span className="block font-light italic text-gray-200">Beautiful Moments</span>
+                CAPTURING LIFE&apos;S
+                <span className="block font-light italic text-gray-200">BEAUTIFUL MOMENTS</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed opacity-90">
                 Where every frame tells a story, and every moment becomes a timeless memory

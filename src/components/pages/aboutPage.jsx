@@ -32,10 +32,13 @@ function AboutPage() {
         {/* Floating elements for modern touch */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-        
-        <div className="relative z-10 text-center text-white px-4">
+          <div className="relative z-10 text-center text-white px-4">
+          <div className="mb-6">            <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
+              About Our Studio
+            </span>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            <TextTransition text="About Us" />
+            <TextTransition text="ABOUT US" />
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Capturing life&apos;s most precious moments with passion and
