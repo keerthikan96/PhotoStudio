@@ -7,35 +7,132 @@ import weddingImage2 from "../../assets/Images/serviceview2.JPG";
 import weddingImage3 from "../../assets/Images/serviceview3.jpg";
 import weddingImage4 from "../../assets/Images/serviceview4.jpg";
 
+// Import new images for other sections
+import preShootImage1 from "../../assets/Images/img1.jpg";
+import preShootImage2 from "../../assets/Images/img2.JPG";
+import engagementImage1 from "../../assets/Images/image3.jpg";
+import engagementImage2 from "../../assets/Images/image4.jpg";
+import portraitImage1 from "../../assets/Images/image5.jpg";
+import portraitImage2 from "../../assets/Images/image6.jpg";
+import familyImage1 from "../../assets/Images/image7.jpg";
+import familyImage2 from "../../assets/Images/image8.jpg";
+import fashionImage1 from "../../assets/Images/image9.jpg";
+import fashionImage2 from "../../assets/Images/image10.jpg";
+import serviceView5 from "../../assets/Images/serviceview5.jpg";
+import ctaBackgroundImage from "../../assets/Images/bg-8.jpg";
+
 const PhotographyServices = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [weddingImage1, weddingImage2, weddingImage3, weddingImage4];
+  const [currentWeddingIndex, setCurrentWeddingIndex] = useState(0);
+  const [currentPreShootIndex, setCurrentPreShootIndex] = useState(0);
+  const [currentEngagementIndex, setCurrentEngagementIndex] = useState(0);
+  const [currentPortraitIndex, setCurrentPortraitIndex] = useState(0);
+  const [currentFamilyIndex, setCurrentFamilyIndex] = useState(0);
+  const [currentFashionIndex, setCurrentFashionIndex] = useState(0);
+
+  const weddingImages = [
+    weddingImage1,
+    weddingImage2,
+    weddingImage3,
+    weddingImage4,
+  ];
+  const preShootImages = [preShootImage1, preShootImage2, serviceView5];
+  const engagementImages = [engagementImage1, engagementImage2];
+  const portraitImages = [portraitImage1, portraitImage2];
+  const familyImages = [familyImage1, familyImage2];
+  const fashionImages = [fashionImage1, fashionImage2];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    // Set up intervals for each image section
+    const weddingInterval = setInterval(() => {
+      setCurrentWeddingIndex(
+        (prevIndex) => (prevIndex + 1) % weddingImages.length
+      );
     }, 4000);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+    const preShootInterval = setInterval(() => {
+      setCurrentPreShootIndex(
+        (prevIndex) => (prevIndex + 1) % preShootImages.length
+      );
+    }, 4300);
 
+    const engagementInterval = setInterval(() => {
+      setCurrentEngagementIndex(
+        (prevIndex) => (prevIndex + 1) % engagementImages.length
+      );
+    }, 4500);
+
+    const portraitInterval = setInterval(() => {
+      setCurrentPortraitIndex(
+        (prevIndex) => (prevIndex + 1) % portraitImages.length
+      );
+    }, 4700);
+
+    const familyInterval = setInterval(() => {
+      setCurrentFamilyIndex(
+        (prevIndex) => (prevIndex + 1) % familyImages.length
+      );
+    }, 4200);
+
+    const fashionInterval = setInterval(() => {
+      setCurrentFashionIndex(
+        (prevIndex) => (prevIndex + 1) % fashionImages.length
+      );
+    }, 4600);
+
+    // Clear all intervals on unmount
+    return () => {
+      clearInterval(weddingInterval);
+      clearInterval(preShootInterval);
+      clearInterval(engagementInterval);
+      clearInterval(portraitInterval);
+      clearInterval(familyInterval);
+      clearInterval(fashionInterval);
+    };
+  }, [
+    weddingImages.length,
+    preShootImages.length,
+    engagementImages.length,
+    portraitImages.length,
+    familyImages.length,
+    fashionImages.length,
+  ]);
   return (
     <section
       id="services"
-      className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24 mt-20"
+      className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16 lg:py-24"
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          {/* Left Side - Image Slideshow with Transitions */}
+        {/* Header Section */}
+        <RevealOnScroll>
+          <div className="text-center mb-20">
+            <h1 className="text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
+              Our Services
+            </h1>
+            <div className="w-24 h-1 bg-black mx-auto mb-8"></div>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              At{" "}
+              <span className="font-bold text-black">
+                Chamochi Delpearachchi Photography
+              </span>
+              , we craft visual stories that transcend time. Each frame is
+              meticulously composed to capture the essence of your most precious
+              moments.
+            </p>
+          </div>
+        </RevealOnScroll>        {/* All Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* WEDDINGS Card */}
           <RevealOnScroll>
-            <div className="overflow-hidden rounded-lg shadow-lg relative h-full">
-              {/* Image Slideshow */}
-              <div className="relative w-full h-full min-h-[400px]">
-                {images.map((image, index) => (
+            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {weddingImages.map((image, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                      index === currentImageIndex ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentWeddingIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
                     }`}
                   >
                     <img
@@ -46,167 +143,298 @@ const PhotographyServices = () => {
                   </div>
                 ))}
               </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
+                    WEDDINGS
+                  </h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    Capturing authentic moments where two lives become one. Our
+                    team seamlessly documents your love story with artistic
+                    vision and heartfelt passion.
+                  </p>
+                  <div className="flex gap-3">
+                    <Link
+                      to="/enquire"
+                      className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold"
+                    >
+                      Enquire Now
+                      <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                        →
+                      </span>
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="group/btn inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-semibold"
+                    >
+                      Call Us
+                      <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                        →
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>{" "}
+          {/* PRE-SHOOTS Card */}
+          <RevealOnScroll>
+            <div className="group relative bg-black rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-l from-white/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {preShootImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentPreShootIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Pre-shoot Photography ${index + 1}`}
+                      className="w-full h-full object-cover mix-blend-overlay"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
+                    PRE-SHOOTS
+                  </h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    Timeless love stories begin before the big day. We create
+                    magical moments that showcase your unique bond and personal
+                    style.
+                  </p>
+                  <Link
+                    to="/enquire"
+                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
+                  >
+                    Enquire Now
+                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>{" "}
+          {/* ENGAGEMENTS Card */}
+          <RevealOnScroll>
+            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {engagementImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentEngagementIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Engagement Photography ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
+                    ENGAGEMENTS
+                  </h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    A celebration of new beginnings. We capture the joy and
+                    anticipation of your engagement with elegance and timeless
+                    beauty.
+                  </p>
+                  <Link
+                    to="/enquire"
+                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
+                  >
+                    Enquire Now
+                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>          </RevealOnScroll>
+
+          {/* PORTRAITS Card */}
+          <RevealOnScroll>
+            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {portraitImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentPortraitIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Portrait Photography ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">PORTRAITS</h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    Individual stories told through artistic vision and authentic expression. 
+                    Capturing the essence of personality in every frame.
+                  </p>
+                  <Link
+                    to="/enquire"
+                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
+                  >
+                    Enquire Now
+                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </RevealOnScroll>
 
-          {/* Right Side - Text Content */}
+          {/* FAMILY SHOOTS Card */}
           <RevealOnScroll>
-            <div className="flex flex-col justify-center h-full">
-              <div className="text-left mb-12">
-                <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-md mb-4">
-                  Wedding Photography
-                </span>
-                <h2 className="text-4xl font-bold text-gray-800 mb-2">
-                  Services
-                </h2>
+            <div className="group relative bg-black rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-l from-white/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {familyImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentFamilyIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Family Photography ${index + 1}`}
+                      className="w-full h-full object-cover mix-blend-overlay"
+                    />
+                  </div>
+                ))}
               </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">FAMILY SHOOTS</h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    Generational bonds captured with warmth, joy, and timeless elegance. 
+                    Creating memories that last for generations.
+                  </p>
+                  <Link
+                    to="/enquire"
+                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
+                  >
+                    Enquire Now
+                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
 
-              <p className="text-gray-600 mb-6">
-                {/* At Focuz Studios, we are proud to be known as the best wedding
-                photographer in Sri Lanka. At{" "}
-                <span className="font-semibold">Focuz Studios</span>, we proudly
-                stand as the{" "}
-                <span className="font-semibold">
-                  best wedding photographer in Sri Lanka
-                </span>
-                , offering world-class wedding photography and cinematography
-                services. We have captured magical moments from weddings both
-                nationally and internationally, covering destinations like
-                Paris, London, Australia, Singapore, Sri Lanka, and Thailand.  */}
-                At{" "}
-                <span className="font-semibold">
-                  Chamodh Delpearachchi Photography
-                </span>
-                , we are proud to be recognized as one of the best wedding
-                photographers in Sri Lanka. We specialize in offering
-                world-class{" "}
-                <span className="font-semibold">wedding photography</span> and
-                cinematography services, capturing the magic of love stories
-                across the island and beyond. Our portfolio includes beautiful
-                moments from weddings held not only across Sri Lanka but also in
-                international destinations like Paris, London, Australia,
-                Singapore, and Thailand
+          {/* FASHION SHOOT Card */}
+          <RevealOnScroll>
+            <div className="group relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
+              <div className="relative h-96 overflow-hidden">
+                {fashionImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      index === currentFashionIndex
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-110"
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Fashion Photography ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
+                <div className="transform transition-all duration-300 group-hover:translate-y-0 translate-y-4">
+                  <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">FASHION SHOOT</h2>
+                  <p className="text-gray-200 mb-6 leading-relaxed opacity-90">
+                    High-fashion meets artistic storytelling in every captivating frame. 
+                    Where style and creativity converge.
+                  </p>
+                  <Link
+                    to="/enquire"
+                    className="group/btn inline-flex items-center px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold w-fit"
+                  >
+                    Enquire Now
+                    <span className="ml-2 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>        {/* Call to Action */}
+        <RevealOnScroll>
+          <div className="relative text-center mt-20 rounded-3xl overflow-hidden shadow-2xl">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src={ctaBackgroundImage}
+                alt="Photography Background"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70"></div>
+            </div>
+            
+            {/* Content */}
+            <div className="relative z-10 p-12">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Create Magic?
+              </h2>
+              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                Let&apos;s discuss your vision and create something extraordinary
+                together. Every moment deserves to be captured with artistry and
+                passion.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/enquire"
-                  className="group inline-flex items-center px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                  className="group inline-flex items-center px-8 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all duration-300 font-bold text-lg"
                 >
-                  <span className="mr-2 transition-transform duration-300 group-hover:translate-x-1">
+                  Start Your Journey
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
                     →
-                  </span>{" "}
-                  Enquire Now
+                  </span>
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-md"
+                  className="group inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-all duration-300 font-bold text-lg"
                 >
-                  Make a call{" "}
-                  <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
+                  Get in Touch
+                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
                 </Link>
               </div>
             </div>
-          </RevealOnScroll>
-        </div>
-
-        {/* Service Types */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
-          {/* Candid/Artistic Photography */}
-          <RevealOnScroll>
-            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Candid/Artistic Photography
-              </h3>
-              <p className="text-gray-600">
-                Candid photography is not just about capturing moments — at
-                Chamodh Delpearachchi Photography, it's about celebrating true
-                authenticity. We believe in preserving natural smiles, unposed
-                emotions, and genuine interactions. Our team seamlessly blends
-                into your celebrations, approaches each moment with creativity,
-                and works passionately to ensure you can relive those precious
-                memories for a lifetime.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-          {/* Traditional Photography */}
-          <RevealOnScroll>
-            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                Traditional Photography
-              </h3>
-              <p className="text-gray-600">
-                Traditional wedding photography is all about timeless, formal
-                portraits. At Chamodh Delpearachchi Photography, we ensure every
-                posed moment is captured beautifully and authentically. You'll
-                experience classic, vibrant color photographs where couples,
-                families, and friends look toward the camera — all smiling and
-                cherishing the moment. These images celebrate rituals, group
-                memories, and cultural traditions, preserving the essence of
-                your special day for generations to come.
-              </p>
-            </div>
-          </RevealOnScroll>
-
-          {/* Wedding Film */}
-          <RevealOnScroll>
-            <div className="text-center p-6 transition-all duration-300 hover:shadow-lg hover:bg-gray-50 rounded-lg">
-              <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-gray-200 hover:scale-110">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-gray-700 transition-all duration-300 transform group-hover:rotate-12"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1V9h-1v2zm1-4V5h-1v2h1zM5 5v2H4V5h1zm0 4H4v2h1V9zm-1 4h1v2H4v-2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Wedding Film</h3>
-              <p className="text-gray-600">
-                At Chamodh Delpearachchi Photography, we believe a wedding is
-                like a beautiful movie — a collection of heartfelt moments woven
-                into one timeless story. We specialize in creating cinematic
-                wedding films that capture emotions, traditions, and love
-                stories with elegance and authenticity. After all, your
-                fairy-tale deserves to be captured and treasured forever!
-              </p>
-            </div>
-          </RevealOnScroll>
-        </div>
+          </div>
+        </RevealOnScroll>{" "}
       </div>
     </section>
   );

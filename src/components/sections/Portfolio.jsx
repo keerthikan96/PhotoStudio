@@ -1,7 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
-import image3 from "../../assets/Images/portfolio.jpg";
+import { useState, useEffect, useRef } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
 import { NavLink } from 'react-router-dom';
+
+// Background images for sections
+import bg1 from "../../assets/Images/bg-1.jpg";
+import bg2 from "../../assets/Images/bg-2.jpg";
+import bg3 from "../../assets/Images/bg-3.jpg";
+
+// Photographer images
+import chamodMain from "../../assets/Images/chamodMain.jpg";
+
+// Service images
+import serviceImg1 from "../../assets/Images/serviceview1.jpg";
+import serviceImg2 from "../../assets/Images/serviceview2.jpg";
+import serviceImg3 from "../../assets/Images/serviceview3.jpg";
+import serviceImg4 from "../../assets/Images/serviceview4.jpg";
+
+// Recent work images
+import image3 from "../../assets/Images/portfolio.jpg";
 
 const Portfolio = () => {
   const [awardsCount, setAwardsCount] = useState(0);
@@ -28,13 +44,14 @@ const Portfolio = () => {
       }
     }, { threshold: 0.3 });
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
@@ -70,30 +87,33 @@ const Portfolio = () => {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isVisible]);
+  }, [isVisible, finalRating, finalYears, finalPortraits, finalAwards]);
 
   const whyChamodhItems = [
     {
       id: 1,
       title: "How to Prepare for Your Wedding Photoshoot",
-      content: "We guide you through every step to ensure you're fully prepared for your special day — from selecting outfits to planning your photography timeline."
+      content: "We guide you through every step to ensure you're fully prepared for your special day — from selecting outfits to planning your photography timeline.",
+      image: serviceImg1
     },
     {
       id: 2,
       title: "Couple, Makeup Team & Photographer",
-      content: "Our team works closely with you and your makeup artists to create stunning, natural looks that shine beautifully through every photograph."
+      content: "Our team works closely with you and your makeup artists to create stunning, natural looks that shine beautifully through every photograph.",
+      image: serviceImg2
     },
     {
       id: 3,
       title: "What You Can Expect from Us",
-      content: "Professionalism, creativity, and a heartfelt dedication to capturing every precious moment of your wedding with true artistic excellence."
+      content: "Professionalism, creativity, and a heartfelt dedication to capturing every precious moment of your wedding with true artistic excellence.",
+      image: serviceImg3
     },
     {
       id: 4,
       title: "Led by Passion, Creativity, and Expertise",
-      content: "At Chamodh Delpearachchi Photography, our work is driven by passion, artistic vision, and years of professional experience in wedding storytelling."
-    }
-  ];
+      content: "At Chamodh Delpearachchi Photography, our work is driven by passion, artistic vision, and years of professional experience in wedding storytelling.",
+      image: serviceImg4
+    }  ];
   
 
   const toggleItem = (id) => {
@@ -104,87 +124,176 @@ const Portfolio = () => {
     <section
       id="portfolio"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center py-10 sm:py-16 md:py-20 lg:py-24"
-    >  
-      <RevealOnScroll>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-4 sm:p-6 md:p-8 rounded-lg">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 lg:gap-12">
-            <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8">
-              <img src={image3} alt="Capturing Moments" className="w-full h-auto rounded-lg shadow-lg" />
-            </div>
-            <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 text-center md:text-left">
-              <p className="text-base sm:text-lg mb-2">Portraits That Speak, Memories That Stay</p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">TRANSFORMING MOMENTS INTO MASTERPIECES</h1>
+      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100"
+    >
+      {/* Hero Section with Modern Layout */}
+      <div className="relative py-20 lg:py-32 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div 
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${bg1})` }}
+          />
+        </div>
+        
+        <RevealOnScroll>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               
-              <p className="text-base sm:text-lg mb-6 sm:mb-8">CD Photography in Colombo is where creativity meets precision. We turn fleeting moments into art, ensuring your portraits are as unique as your story.</p>
-              <NavLink to="/booking" className="bg-black text-white px-5 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-gray-800 transition duration-300 text-sm sm:text-base">
-                Book Now
-              </NavLink>
-              
-              <div className="mt-8 sm:mt-10 md:mt-12 flex flex-wrap gap-4 sm:gap-6 md:gap-8 justify-center md:justify-start">
-                <div className="text-center">
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold">{portraitsCount.toFixed(1)}k+</span>
-                  <span className="block text-xs sm:text-sm">Portraits</span>
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <span className="inline-block px-4 py-2 bg-black text-white rounded-full text-sm font-medium tracking-wider uppercase">
+                    Professional Photography
+                  </span>
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                    TRANSFORMING
+                    <span className="block text-gray-600">MOMENTS INTO</span>
+                    <span className="block bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+                      MASTERPIECES
+                    </span>
+                  </h1>
+                  <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-lg">
+                    CD Photography in Colombo is where creativity meets precision. We turn fleeting moments 
+                    into art, ensuring your portraits are as unique as your story.
+                  </p>
                 </div>
-                <span className="hidden sm:block text-xl sm:text-2xl md:text-3xl font-bold">|</span>
-                <div className="text-center">
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold">{awardsCount.toFixed(1)}+</span>
-                  <span className="block text-xs sm:text-sm">Awards</span>
+
+                {/* CTA Button */}
+                <div>
+                  <NavLink 
+                    to="/booking" 
+                    className="group inline-flex items-center px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1"
+                  >
+                    Book Your Session
+                    <svg className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </NavLink>
                 </div>
-                <span className="hidden sm:block text-xl sm:text-2xl md:text-3xl font-bold">|</span>
-                <div className="text-center">
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold">{ratingCount.toFixed(1)}</span>
-                  <span className="block text-xs sm:text-sm">Rating</span>
+
+                {/* Stats Section */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-bold text-black">{portraitsCount.toFixed(1)}k+</div>
+                    <div className="text-sm text-gray-600 font-medium">Portraits</div>
+                  </div>
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-bold text-black">{awardsCount.toFixed(1)}+</div>
+                    <div className="text-sm text-gray-600 font-medium">Awards</div>
+                  </div>
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-bold text-black">{ratingCount.toFixed(1)}</div>
+                    <div className="text-sm text-gray-600 font-medium">Rating</div>
+                  </div>
+                  <div className="text-center space-y-2">
+                    <div className="text-3xl font-bold text-black">{yearsCount}</div>
+                    <div className="text-sm text-gray-600 font-medium">Years</div>
+                  </div>
                 </div>
-                <span className="hidden sm:block text-xl sm:text-2xl md:text-3xl font-bold">|</span>
-                <div className="text-center">
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold">{yearsCount}</span>
-                  <span className="block text-xs sm:text-sm">Years</span>
+              </div>              {/* Right Content - Visual Grid */}
+              <div className="relative">
+                {/* Main featured image */}
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img 
+                    src={image3} 
+                    alt="Professional Portrait Photography" 
+                    className="w-full h-80 sm:h-96 lg:h-[500px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
+
+                {/* Floating elements for modern touch */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-black/10 rounded-full blur-xl" />
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gray-400/20 rounded-full blur-lg" />
               </div>
             </div>
-          </div> 
-        </div>
+          </div>
+        </RevealOnScroll>
+      </div>
 
-        <div className="mt-24 bg-gray-50 rounded-xl p-8 md:p-12">
+    
+      {/* Enhanced Why Choose Us Section */}
+      <div className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div 
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${bg2})` }}
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Focus Studios?</h2>
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium tracking-wider uppercase mb-4">
+                Why Choose Us
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                CD Photography Studios
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the difference that passion, expertise, and artistic vision can make in 
+                capturing your most precious moments.
+              </p>
             </div>
           </RevealOnScroll>
 
-          <div className="space-y-4">
-            {whyChamodhItems.map((item) => (
-              <RevealOnScroll key={item.id}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {whyChamodhItems.map((item, index) => (
+              <RevealOnScroll key={item.id} delay={index * 0.2}>
                 <div 
-                  className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+                  className="group bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:bg-white/15 transition-all duration-500 cursor-pointer"
+                  onClick={() => toggleItem(item.id)}
                 >
-                  <button
-                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
-                    onClick={() => toggleItem(item.id)}
-                  >
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                    <span className={`transform transition-transform duration-300 ${expandedItem === item.id ? 'rotate-180' : ''}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div 
-                    className={`transition-all duration-300 overflow-hidden ${
-                      expandedItem === item.id ? 'max-h-40 p-6 pt-0' : 'max-h-0'
-                    }`}
-                  >
-                    <p className="text-gray-600">{item.content}</p>
+                  <div className="flex flex-col md:flex-row">
+                    {/* Image Section */}
+                    <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    
+                    {/* Content Section */}
+                    <div className="md:w-2/3 p-6 md:p-8">
+                      <div className="flex items-start justify-between mb-4">
+                        <h3 className="text-xl font-semibold text-white leading-tight">
+                          {item.title}
+                        </h3>
+                        <span className={`transform transition-transform duration-300 text-white ml-4 ${expandedItem === item.id ? 'rotate-180' : ''}`}>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </div>
+                      
+                      <div 
+                        className={`transition-all duration-500 overflow-hidden ${
+                          expandedItem === item.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <p className="text-gray-300 leading-relaxed">
+                          {item.content}
+                        </p>
+                      </div>
+                      
+                      {/* Preview text when collapsed */}
+                      {expandedItem !== item.id && (
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {item.content.substring(0, 80)}...
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </RevealOnScroll>
             ))}
           </div>
         </div>
-      </RevealOnScroll>
-        {/* Why Focus Studios? Section */}
-      
+      </div>
+
     </section>
   );
 };

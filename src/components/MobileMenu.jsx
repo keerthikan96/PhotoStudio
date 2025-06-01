@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaChevronDown } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   // State for mobile dropdown
   const [portfolioExpanded, setPortfolioExpanded] = useState(false);
   const navigate = useNavigate();
-  
-  // Function to navigate and scroll to top
+    // Function to navigate and close menu (scroll handled by ScrollToTop component)
   const scrollToTop = (path) => {
     navigate(path);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Remove manual scroll - let the ScrollToTop component handle it for consistency
     setMenuOpen(false);
   };
   
@@ -64,59 +64,12 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         {/* Portfolio with dropdown */}
         <div className="relative w-full flex flex-col items-center">
           <div 
-            className={`flex items-center justify-center space-x-1 cursor-pointer text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
-            onClick={() => setPortfolioExpanded(!portfolioExpanded)}
+           className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
+            onClick={() => scrollToTop("/portfolio")}
           >
             <span>Portfolio</span>
-            <FaChevronDown className={`ml-1 text-sm transition-transform ${portfolioExpanded ? 'rotate-180' : ''}`} />
+            
           </div>
-          
-          {portfolioExpanded && (
-            <div className="w-full max-w-xs bg-gray-900 rounded-lg py-2 mb-3">
-              <div className="px-3 py-2">
-                <h4 className="text-gray-400 text-sm uppercase mb-2">Weddings</h4>
-                <ul className="space-y-2 pl-2">
-                  <li>
-                    <div
-                      onClick={() => scrollToTop("/portfolio/wedding-vows")}
-                      className="text-white hover:text-gray-300 transition-colors block cursor-pointer"
-                    >
-                      Tamil
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors flex items-center cursor-pointer">
-                      Tamil Brahmin
-                      <span className="text-xs bg-orange-800 text-orange-200 px-1.5 py-0.5 rounded-full ml-2">
-                        Trending
-                      </span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      Christian
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="border-t border-gray-800 mt-2 pt-2 px-3">
-                <h4 className="text-gray-400 text-sm uppercase mb-2">Other Categories</h4>
-                <ul className="space-y-2 pl-2">
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      Destination Wedding
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      International Weddings
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )}
         </div>
         
         <div
@@ -125,12 +78,18 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         >
           Pricing
         </div>
-        
-        <div
+          <div
           onClick={() => scrollToTop("/faq")}
           className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
         >
           FAQ
+        </div>
+        
+        <div
+          onClick={() => scrollToTop("/about")}
+          className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
+        >
+          About
         </div>
         
         <div
@@ -184,7 +143,11 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </div>    </div>
   );
+};
+
+MobileMenu.propTypes = {
+  menuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
 };
