@@ -64,58 +64,12 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         {/* Portfolio with dropdown */}
         <div className="relative w-full flex flex-col items-center">
           <div 
-            className={`flex items-center justify-center space-x-1 cursor-pointer text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200`}
-            onClick={() => setPortfolioExpanded(!portfolioExpanded)}
+           className={`text-xl font-semibold text-white my-3 sm:my-4 hover:text-gray-300 transition-all duration-200 cursor-pointer`}
+            onClick={() => scrollToTop("/portfolio")}
           >
             <span>Portfolio</span>
-            <FaChevronDown className={`ml-1 text-sm transition-transform ${portfolioExpanded ? 'rotate-180' : ''}`} />
+            
           </div>
-          
-          {portfolioExpanded && (
-            <div className="w-full max-w-xs bg-gray-900 rounded-lg py-2 mb-3">
-              <div className="px-3 py-2">
-                <h4 className="text-gray-400 text-sm uppercase mb-2">Weddings</h4>
-                <ul className="space-y-2 pl-2">
-                  <li>
-                    <div
-                      onClick={() => scrollToTop("/portfolio/wedding-vows")}
-                      className="text-white hover:text-gray-300 transition-colors block cursor-pointer"
-                    >
-                      Tamil
-                    </div>
-                  </li>                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors flex items-center cursor-pointer">
-                      Tamil Brahmin
-                      <span className="text-xs bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded-full ml-2">
-                        Trending
-                      </span>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      Christian
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="border-t border-gray-800 mt-2 pt-2 px-3">
-                <h4 className="text-gray-400 text-sm uppercase mb-2">Other Categories</h4>
-                <ul className="space-y-2 pl-2">
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      Destination Wedding
-                    </div>
-                  </li>
-                  <li>
-                    <div className="text-white hover:text-gray-300 transition-colors block cursor-pointer">
-                      International Weddings
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          )}
         </div>
         
         <div
