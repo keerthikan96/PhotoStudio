@@ -19,14 +19,14 @@ export const PagesUI = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative mt-8 w-full">
+    <div className="relative mt-10 w-full">
       {/* First stacked div */}
       <div className={`absolute w-[94%] h-[35px] bg-gray-400/20 shadow-md rounded-t-3xl -top-9 left-1/2 -translate-x-1/2 z-10 transition-all duration-500 ease-in-out ${showFirstLayer ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}></div>
       {/* Second stacked div */}
       <div className={`absolute w-[96%] h-[40px] bg-gray-400/30 shadow-md rounded-3xl -top-5 left-1/2 -translate-x-1/2 z-20 transition-all duration-500 ease-in-out ${showSecondLayer ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}></div>
       <div 
         ref={pageRef}
-        className={` mx-2 p-5 bg-[#f8f9fa] shadow-2xl rounded-3xl min-h-[80vh] relative z-30 transition-all duration-500 ease-in-out ${showMainContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
+        className={` mx-2 p-5 bg-white shadow-2xl rounded-3xl min-h-[80vh] relative z-30 transition-all duration-500 ease-in-out ${showMainContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
       >
         <div className="p-4">
           {children}

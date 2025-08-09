@@ -9,20 +9,44 @@ const TextTransition = ({ text}) => {
     setIsVisible(true);
   }, []);
   
+  // Split text into words to prevent word breaking
+  const words = text?.split(' ') || [];
+  let charIndex = 0;
+  
   return (
     <>
-      {text?.split('')?.map((char, index) => (
-        <span 
-          key={index} 
-          className="inline-block transition-all duration-300 ease-in-out"
-          style={{ 
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
-            transitionDelay: `${index * 40}ms`, // Increased delay for more spacing in animation
-            marginRight: char === ' ' ? '0.25em' : '0.05em' // Add spacing between letters
-          }}
-        >
-          {char}
+      {words.map((word, wordIndex) => (
+        <span key={wordIndex} className="inline-block">
+          {word.split('').map((char, index) => {
+            const currentCharIndex = charIndex++;
+            return (
+              <span 
+                key={index} 
+                className="inline-block transition-all duration-300 ease-in-out"
+                style={{ 
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                  transitionDelay: `${currentCharIndex * 40}ms`,
+                  marginRight: '0.05em'
+                }}
+              >
+                {char}
+              </span>
+            );
+          })}
+          {wordIndex < words.length - 1 && (
+            <span 
+              className="inline-block transition-all duration-300 ease-in-out"
+              style={{ 
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                transitionDelay: `${charIndex++ * 40}ms`,
+                marginRight: '0.25em'
+              }}
+            >
+              &nbsp;
+            </span>
+          )}
         </span>
       ))}
     </>

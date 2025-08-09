@@ -145,7 +145,7 @@ const fetchGoogleReviews = async () => {
   }, []);
 
   return (
-    <section id="google-reviews" className="py-10 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="google-reviews" className="py-5 sm:py-8 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <RevealOnScroll>
         <div className="flex items-center justify-center mb-2">
           <img 
