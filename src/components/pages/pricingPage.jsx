@@ -10,16 +10,13 @@ import bg3 from "../../assets/Images/bg-3.jpg";
 import bg4 from "../../assets/Images/bg-4.jpg";
 import bg5 from "../../assets/Images/bg-5.jpg";
 import bg13 from "../../assets/Images/bg-13.jpg";
-import image1 from "../../assets/Images/image1.jpg";
 import image2 from "../../assets/Images/image2.jpg";
-import image3 from "../../assets/Images/image3.jpg";
 import image4 from "../../assets/Images/image4.jpg";
 import image5 from "../../assets/Images/image5.jpg";
 import pt1 from "../../assets/Images/pt-1.jpg";
 import pt2 from "../../assets/Images/pt-2.jpg";
 import pt3 from "../../assets/Images/pt-3.jpg";
 import pt4 from "../../assets/Images/pt-4.jpg";
-import chamodMain from "../../assets/Images/chamodMain.jpg";
 
 const PricingPage = () => {
   const text = "text-gray-500 font-extralight ";  
@@ -611,67 +608,132 @@ const PricingPage = () => {
                     ➕ Extras & Add-ons
                   </h3>
                   <p className="text-lg text-gray-600 max-w-2xl mx-auto">Additional services to enhance your photography package</p>
-                </div>
-                
-                {/* Enhanced Extras Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                  {extras.map((extra, index) => (
-                    <RevealOnScroll key={index} delay={index * 0.1}>
-                      <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
-                        {/* Background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50"></div>
-                        
-                        {/* Icon section */}
-                        <div className="relative z-10 p-6 text-center">
-                          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            {/* Dynamic icon based on item type */}
-                            {extra.item.includes('Album') && (
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                              </svg>
-                            )}
-                            {extra.item.includes('Cards') && (
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                              </svg>
-                            )}
-                            {extra.item.includes('Enlargements') && (
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                            )}
-                            {extra.item.includes('Board') && (
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                              </svg>
-                            )}
-                            {!extra.item.includes('Album') && !extra.item.includes('Cards') && !extra.item.includes('Enlargements') && !extra.item.includes('Board') && (
-                              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                              </svg>
-                            )}
-                          </div>
-                          
-                          <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-200">
-                            {extra.item}
-                          </h4>
-                          
-                          <div className="mt-4">
-                            <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-300">
-                              {extra.price}
+                </div>                {/* Enhanced Extras Grid */}
+                <div className="max-w-7xl mx-auto">                  {/* First row - 3 items */}
+                  <div className="flex flex-wrap justify-center gap-6 mb-6">
+                    {extras.slice(0, 3).map((extra, index) => (
+                      <div key={index} className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96">
+                        <RevealOnScroll delay={index * 0.1}>
+                          <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                            {/* Background gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50"></div>
+                            
+                            {/* Icon section */}
+                            <div className="relative z-10 p-6 text-center">
+                              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                {/* Dynamic icon based on item type */}
+                                {extra.item.includes('Album') && (
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                  </svg>
+                                )}
+                                {extra.item.includes('Cards') && (
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                  </svg>
+                                )}
+                                {extra.item.includes('Enlargements') && (
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                )}
+                                {extra.item.includes('Board') && (
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                  </svg>
+                                )}
+                                {!extra.item.includes('Album') && !extra.item.includes('Cards') && !extra.item.includes('Enlargements') && !extra.item.includes('Board') && (
+                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                  </svg>
+                                )}
+                              </div>
+                              
+                              <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-200">
+                                {extra.item}
+                              </h4>
+                              
+                              <div className="mt-4">
+                                <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-300">
+                                  {extra.price}
+                                </div>
+                              </div>
                             </div>
+                            
+                            {/* Decorative elements */}
+                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-200/30 rounded-full blur-sm"></div>
+                            <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gray-300/40 rounded-full blur-sm"></div>
+                            
+                            {/* Hover overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                           </div>
-                        </div>
-                        
-                        {/* Decorative elements */}
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-200/30 rounded-full blur-sm"></div>
-                        <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gray-300/40 rounded-full blur-sm"></div>
-                        
-                        {/* Hover overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                        </RevealOnScroll>
                       </div>
-                    </RevealOnScroll>
-                  ))}
+                    ))}                  </div>
+                    {/* Second row - 2 items centered */}
+                  {extras.length > 3 && (
+                    <div className="flex justify-center gap-6 flex-wrap">
+                      {extras.slice(3).map((extra, index) => (
+                        <div key={index + 3} className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96">
+                          <RevealOnScroll delay={(index + 3) * 0.1}>
+                            <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                              {/* Background gradient */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50"></div>
+                              
+                              {/* Icon section */}
+                              <div className="relative z-10 p-6 text-center">
+                                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                  {/* Dynamic icon based on item type */}
+                                  {extra.item.includes('Album') && (
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                  )}
+                                  {extra.item.includes('Cards') && (
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                  )}
+                                  {extra.item.includes('Enlargements') && (
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                  )}
+                                  {extra.item.includes('Board') && (
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    </svg>
+                                  )}
+                                  {!extra.item.includes('Album') && !extra.item.includes('Cards') && !extra.item.includes('Enlargements') && !extra.item.includes('Board') && (
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                    </svg>
+                                  )}
+                                </div>
+                                
+                                <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-200">
+                                  {extra.item}
+                                </h4>
+                                
+                                <div className="mt-4">
+                                  <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-300">
+                                    {extra.price}
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* Decorative elements */}
+                              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-200/30 rounded-full blur-sm"></div>
+                              <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gray-300/40 rounded-full blur-sm"></div>
+                              
+                              {/* Hover overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                            </div>
+                          </RevealOnScroll>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 
                 {/* Call to Action */}
