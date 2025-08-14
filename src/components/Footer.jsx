@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logoLoder from "../assets/logo4.png";
+import logosinhala from "../assets/logoA.png";
 
 // Import portfolio images for preview
 import pt1 from "../assets/Images/pt-1.jpg";
@@ -28,12 +29,11 @@ const Footer = () => {
       </div>
       {/* Main Footer Content */}
       <div className="relative">
-        <div className="container mx-auto px-6 pt-16 pb-8">
-          {" "}
+        <div className="container mx-auto px-6 pt-8 pb-4">
           {/* Newsletter Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-slate-600 to-gray-700 rounded-full mb-6 shadow-lg shadow-slate-500/25">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-slate-600 to-gray-700 rounded-full mb-4 shadow-lg shadow-slate-500/25">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8 text-white"
@@ -55,16 +55,15 @@ const Footer = () => {
                   />
                 </svg>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Stay Connected
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                STAY CONNECTED
               </h2>
-              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-gray-300 text-base mb-6 max-w-2xl mx-auto">
                 Get exclusive photography tips, behind-the-scenes content, and
                 special offers delivered to your inbox
               </p>
               <div className="max-w-md mx-auto">
                 <div className="flex flex-col sm:flex-row gap-4">
-                  {" "}
                   <input
                     type="email"
                     placeholder="Enter your email address"
@@ -74,27 +73,30 @@ const Footer = () => {
                     Subscribe
                   </button>
                 </div>
-              </div>{" "}
+              </div>
             </div>
           </div>
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
             {" "}
             {/* Brand Section */}
-            <div className="lg:col-span-1 text-center lg:text-left">              <Link to="/" className="inline-block mb-6 group">
-                <h2 className="text-3xl font-bold text-white transition-transform group-hover:scale-105">
-                 Chamodh Delpearachchi Photography
-                </h2>{" "}
+            <div className="lg:col-span-1 text-center lg:text-left">
+              <Link to="/" className="inline-block mb-4 group">
+                <img
+                  src={logosinhala}
+                  alt="Chamodh Delpearachchi Photography"
+                  className="h-24 w-auto mx-auto lg:mx-0 transition-transform group-hover:scale-105"
+                />
               </Link>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 Capturing life&apos;s most precious moments with artistic vision
                 and professional expertise.
               </p>
 
               {/* Portfolio Preview */}
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">
                   Recent Works
                 </h4>
                 <div className="grid grid-cols-3 gap-2">
@@ -190,10 +192,9 @@ const Footer = () => {
             </div>
             {/* Quick Links */}
             <div className="text-center lg:text-left">
-              <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
-              <ul className="space-y-3">
+              <h3 className="text-white font-bold text-lg mb-4 lg:ml-7">Quick Links</h3>
+              <ul className="space-y-2">
                 <li>
-                  {" "}
                   <Link
                     to="/"
                     className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
@@ -213,7 +214,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  {" "}
                   <Link
                     to="/portfolio"
                     className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
@@ -233,7 +233,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  {" "}
                   <Link
                     to="/pricing"
                     className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
@@ -253,7 +252,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  {" "}
                   <Link
                     to="/booking"
                     className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
@@ -273,7 +271,6 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  {" "}
                   <Link
                     to="/contactus"
                     className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
@@ -291,15 +288,13 @@ const Footer = () => {
                     </svg>
                     Contact
                   </Link>
-                </li>{" "}
+                </li>
               </ul>
             </div>
             {/* Our Services */}
             <div className="text-center lg:text-left">
-              <h3 className="text-white font-bold text-lg mb-6">
-                Our Services
-              </h3>{" "}
-              <ul className="space-y-3">
+              <h3 className="text-white font-bold text-lg mb-4 lg:ml-7">Our Services</h3>
+              <ul className="space-y-2">
                 <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
                   <svg
                     className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
@@ -476,7 +471,7 @@ const Footer = () => {
       </div>
       {/* Bottom Section */}
       <div className="bg-black/50 backdrop-blur-sm border-t border-white/10 relative">
-        <div className="container mx-auto px-6 py-6 relative">
+        <div className="container mx-auto px-6 py-4 relative">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <img 

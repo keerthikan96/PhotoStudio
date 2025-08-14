@@ -80,7 +80,7 @@ export const Home = () => {
         </Swiper>
 
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        {/* <div className="absolute inset-0 flex items-center justify-center z-10">
           <RevealOnScroll>
             <div className="text-center text-white px-4 max-w-5xl">
               <div className="mb-6">
@@ -118,7 +118,7 @@ export const Home = () => {
               </div>
             </div>
           </RevealOnScroll>
-        </div>
+        </div> */}
 
         {/* Custom Navigation */}
         <div className="swiper-button-prev-custom absolute left-6 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/30">

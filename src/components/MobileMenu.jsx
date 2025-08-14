@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaChevronDown } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import logosinhala from "../assets/logoA.png";
 import PropTypes from "prop-types";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
-  // State for mobile dropdown
-  const [portfolioExpanded, setPortfolioExpanded] = useState(false);
   const navigate = useNavigate();
     // Function to navigate and close menu (scroll handled by ScrollToTop component)
   const scrollToTop = (path) => {
@@ -41,7 +40,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       <div className="absolute top-0 left-0 right-0 flex justify-between items-center p-4 sm:p-6 border-b border-gray-800">
         <div className="flex flex-col">
           <div onClick={() => scrollToTop("/")} className="cursor-pointer">
-            <img src="/CDLogo1.svg" alt="Photo Dynamic Logo" className="h-8 sm:h-10 invert" />
+            <img src={logosinhala} alt="PhotoStudio Logo" className="h-8 sm:h-10 w-auto object-contain" />
           </div>
         </div>
         <button
@@ -110,17 +109,17 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         <div className="mt-8 w-full max-w-xs border-t border-gray-800 pt-6 flex flex-col items-center">
           <div className="flex items-center text-gray-400 mb-3">
             <FaMapMarkerAlt className="mr-2" />
-            <span className="text-sm">Colombo</span>
+            <span className="text-sm">Colombo, Sri Lanka</span>
           </div>
           
           <div className="flex items-center text-gray-400 mb-3">
             <FaEnvelope className="mr-2" />
-            <span className="text-sm">keer@studio.com</span>
+            <span className="text-sm">chamodh@gmail.com</span>
           </div>
           
           <div className="flex items-center text-gray-400">
             <FaPhone className="mr-2" />
-            <span className="text-sm">+94 75838 3145</span>
+            <span className="text-sm">+94 76658 1620</span>
           </div>
           
           <div className="mt-6 flex space-x-6">

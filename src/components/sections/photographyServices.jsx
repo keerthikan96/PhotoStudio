@@ -106,7 +106,7 @@ const PhotographyServices = () => {
         <RevealOnScroll>
           <div className="text-center mb-20">
             <h1 className="text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
-              Our Services
+              OUR SERVICES
             </h1>
             <div className="w-24 h-1 bg-black mx-auto mb-8"></div>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">

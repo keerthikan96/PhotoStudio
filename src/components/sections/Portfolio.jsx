@@ -230,7 +230,7 @@ const Portfolio = () => {
                 Why Choose Us
               </span>
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                CD Photography Studios
+                CHAMODH DELPEARACHCHI PHOTOGRAPHY
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Experience the difference that passion, expertise, and artistic vision can make in 

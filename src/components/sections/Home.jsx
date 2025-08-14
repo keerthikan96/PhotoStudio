@@ -62,14 +62,46 @@ export const Home = () => {
 
   // Portfolio images array for the gallery
   const portfolioImages = [
-    { src: portfolio1, alt: "Wedding Photography - Romantic Moment", title: "Romantic Wedding Portrait" },
-    { src: portfolio2, alt: "Engagement Photography - Couple", title: "Engagement Session" },
-    { src: portfolio3, alt: "Portrait Photography - Individual", title: "Professional Portrait" },
-    { src: portfolio4, alt: "Event Photography - Celebration", title: "Event Coverage" },
-    { src: portfolio5, alt: "Wedding Photography - Ceremony", title: "Wedding Ceremony" },
-    { src: portfolio6, alt: "Portrait Photography - Family", title: "Family Portrait" },
-    { src: portfolio7, alt: "Wedding Photography - Reception", title: "Wedding Reception" },
-    { src: portfolio8, alt: "Engagement Photography - Outdoor", title: "Outdoor Engagement" }
+    {
+      src: portfolio1,
+      alt: "Wedding Photography - Romantic Moment",
+      title: "Romantic Wedding Portrait",
+    },
+    {
+      src: portfolio2,
+      alt: "Engagement Photography - Couple",
+      title: "Engagement Session",
+    },
+    {
+      src: portfolio3,
+      alt: "Portrait Photography - Individual",
+      title: "Professional Portrait",
+    },
+    {
+      src: portfolio4,
+      alt: "Event Photography - Celebration",
+      title: "Event Coverage",
+    },
+    {
+      src: portfolio5,
+      alt: "Wedding Photography - Ceremony",
+      title: "Wedding Ceremony",
+    },
+    {
+      src: portfolio6,
+      alt: "Portrait Photography - Family",
+      title: "Family Portrait",
+    },
+    {
+      src: portfolio7,
+      alt: "Wedding Photography - Reception",
+      title: "Wedding Reception",
+    },
+    {
+      src: portfolio8,
+      alt: "Engagement Photography - Outdoor",
+      title: "Outdoor Engagement",
+    },
   ];
 
   // Function to open gallery at specific image
@@ -84,23 +116,27 @@ export const Home = () => {
   };
 
   // Debug: Log imported images to console
-  console.log('Hero Images:', { image1, image2, image3, image4, image5 });
-  console.log('Image paths:', [image1, image2, image3, image4, image5]);
-  
+  console.log("Hero Images:", { image1, image2, image3, image4, image5 });
+  console.log("Image paths:", [image1, image2, image3, image4, image5]);
+
   // Hero images array with better debugging
   const heroImages = [
-    { src: image1, name: 'img1.jpg' },
-    { src: image2, name: 'img2.JPG' },
-    { src: image3, name: 'img3.jpg' },
-    { src: image4, name: 'img4.jpg' },
-    { src: image5, name: 'img5.jpg' }
+    { src: image1, name: "img1.jpg" },
+    { src: image2, name: "img2.JPG" },
+    { src: image3, name: "img3.jpg" },
+    { src: image4, name: "img4.jpg" },
+    { src: image5, name: "img5.jpg" },
   ];
-  
-  console.log('Hero images array:', heroImages);
-  
+
+  console.log("Hero images array:", heroImages);
+
   return (
-    <>      {/* Hero Section with Full-Screen Image Slider */}
-      <section className="relative h-screen overflow-hidden bg-gray-900 z-10">        <Swiper
+    <>
+      {" "}
+      {/* Hero Section with Full-Screen Image Slider */}
+      <section className="relative h-screen overflow-hidden bg-gray-900 z-10">
+        {" "}
+        <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           slidesPerView={1}
           loop={true}
@@ -119,8 +155,8 @@ export const Home = () => {
             prevEl: ".swiper-button-prev-custom",
           }}
           className="w-full h-full relative z-20"
-          onSwiper={(swiper) => console.log('Swiper instance:', swiper)}
-          onSlideChange={() => console.log('Slide changed')}
+          onSwiper={(swiper) => console.log("Swiper instance:", swiper)}
+          onSlideChange={() => console.log("Slide changed")}
         >
           {heroImages.map((imageObj, index) => {
             console.log(`Rendering slide ${index + 1}:`, imageObj);
@@ -133,25 +169,41 @@ export const Home = () => {
                       alt={`Photography Slide ${index + 1} - ${imageObj.name}`}
                       className="w-full h-full object-cover"
                       onLoad={(e) => {
-                        console.log(`✅ Image ${index + 1} (${imageObj.name}) loaded successfully`);
-                        console.log('Image element:', e.target);
-                        console.log('Image dimensions:', e.target.naturalWidth, 'x', e.target.naturalHeight);
+                        console.log(
+                          `✅ Image ${index + 1} (${
+                            imageObj.name
+                          }) loaded successfully`
+                        );
+                        console.log("Image element:", e.target);
+                        console.log(
+                          "Image dimensions:",
+                          e.target.naturalWidth,
+                          "x",
+                          e.target.naturalHeight
+                        );
                       }}
                       onError={(e) => {
-                        console.error(`❌ Image ${index + 1} (${imageObj.name}) failed to load`);
-                        console.error('Error details:', e);
-                        console.error('Image src:', e.target.src);
-                      }}                      style={{ 
-                        display: 'block',
-                        minHeight: '100vh',
-                        backgroundColor: '#1f2937', // Fallback background
-                        position: 'relative',
-                        zIndex: 1
+                        console.error(
+                          `❌ Image ${index + 1} (${
+                            imageObj.name
+                          }) failed to load`
+                        );
+                        console.error("Error details:", e);
+                        console.error("Image src:", e.target.src);
+                      }}
+                      style={{
+                        display: "block",
+                        minHeight: "100vh",
+                        backgroundColor: "#1f2937", // Fallback background
+                        position: "relative",
+                        zIndex: 1,
                       }}
                     />
                   ) : (
                     <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                      <p className="text-white text-xl">Image {index + 1} not found</p>
+                      <p className="text-white text-xl">
+                        Image {index + 1} not found
+                      </p>
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -159,8 +211,9 @@ export const Home = () => {
               </SwiperSlide>
             );
           })}
-        </Swiper>        {/* Hero Content Overlay with Auto Hide/Show */}
-        <div className="absolute inset-0 flex items-center justify-center z-30 group">
+        </Swiper>{" "}
+        {/* Hero Content Overlay with Auto Hide/Show */}
+        {/* <div className="absolute inset-0 flex items-center justify-center z-30 group">
           <RevealOnScroll>            <div className="text-center text-white px-4 max-w-5xl transition-all duration-1000 group-hover:opacity-20">              
               <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
@@ -196,66 +249,112 @@ export const Home = () => {
               </div>
             </div>
           </RevealOnScroll>
-        </div>
-        
-        {/* View Images Button */}
+        </div> */}
+        {/* Custom Navigation */}
         <div className="absolute top-6 right-6 z-40">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-all duration-300 cursor-pointer group">
+          {/* <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 text-white hover:bg-white/30 transition-all duration-300 cursor-pointer group">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+
             </svg>
             <span className="absolute -bottom-8 right-0 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               Hover to view images
             </span>
-          </div>
-        </div>{/* Custom Navigation */}
+          </div> */}
+        </div>
+        {/* Custom Navigation */}
         <div className="swiper-button-prev-custom absolute left-6 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/30">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </div>
         <div className="swiper-button-next-custom absolute right-6 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/30">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
-        </div>        {/* Scroll Indicator */}
+        </div>{" "}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-30">
           <div className="flex flex-col items-center animate-bounce">
-            <span className="text-sm mb-2 tracking-wider">Scroll to explore</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <span className="text-sm mb-2 tracking-wider">
+              Scroll to explore
+            </span>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
             </svg>
           </div>
         </div>
-      </section>      {/* Welcome Section with Images */}
+      </section>{" "}
+      {/* Welcome Section with Images */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll>            <div className="text-center mb-12 sm:mb-16">
+          <RevealOnScroll>
+            {" "}
+            <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">
-                Welcome to CD Photography
+                WELCOME TO CHAMODH DELPEARACHCHI PHOTOGRAPHY
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-                Where passion meets artistry, creating timeless memories that last forever
+                Where passion meets artistry, creating timeless memories that
+                last forever
               </p>
-            </div></RevealOnScroll>
+            </div>
+          </RevealOnScroll>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">            <RevealOnScroll>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {" "}
+            <RevealOnScroll>
               <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
                 <div className="space-y-4 sm:space-y-6">
                   <h3 className="text-2xl sm:text-3xl font-light text-gray-900">
                     Your Story, Our Artistry
                   </h3>
                   <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                    At CD Photography, we believe every moment has a story worth telling. 
-                    Our passion is to capture the authentic emotions, intimate connections, 
-                    and beautiful details that make your special day uniquely yours.
+                    At CD Photography, we believe every moment has a story worth
+                    telling. Our passion is to capture the authentic emotions,
+                    intimate connections, and beautiful details that make your
+                    special day uniquely yours.
                   </p>
                 </div>
-                
-                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-8">                  <div className="text-center group">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">500+</div>
-                    <div className="text-sm text-gray-600">Weddings Captured</div>
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-8">
+                  {" "}
+                  <div className="text-center group">
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      500+
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Weddings Captured
+                    </div>
                   </div>
                   <div className="text-center group">
                     <div className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center justify-center group-hover:text-blue-600 transition-colors duration-300">
@@ -264,54 +363,46 @@ export const Home = () => {
                     <div className="text-sm text-gray-600">Client Rating</div>
                   </div>
                   <div className="text-center group">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">8+</div>
-                    <div className="text-sm text-gray-600">Years Experience</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      8+
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Years Experience
+                    </div>
                   </div>
-                </div>                <Link
+                </div>{" "}
+                <Link
                   to="/about"
                   className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-all duration-300 text-sm sm:text-base"
                 >
                   Learn More About Us
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </Link>
               </div>
-            </RevealOnScroll>            <RevealOnScroll>              <div className="relative overflow-hidden">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div className="space-y-4 sm:space-y-6">
-                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                      <img
-                        src={portfolio1}
-                        alt="Wedding Photography"
-                        className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                      <img
-                        src={portfolio3}
-                        alt="Portrait Photography"
-                        className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-4 sm:space-y-6 sm:pt-12">
-                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                      <img
-                        src={portfolio2}
-                        alt="Engagement Photography"
-                        className="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                      <img
-                        src={portfolio4}
-                        alt="Event Photography"
-                        className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                </div>                {/* Floating photographer card */}
+            </RevealOnScroll>{" "}
+            <RevealOnScroll>
+              {" "}
+              <div className="relative overflow-hidden">
+                <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={portfolio1}
+                    alt="Wedding Photography"
+                    className="w-full h-64 sm:h-80 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>{" "}
+                {/* Floating photographer card */}
                 {/* <div className="absolute -bottom-4 sm:-bottom-8 -left-4 sm:-left-8 lg:-left-8 bg-white p-4 sm:p-6 rounded-xl shadow-2xl border border-gray-100 z-10 hover:shadow-3xl transition-all duration-300 max-w-xs">
                   <div className="flex items-center space-x-3 sm:space-x-4">
                     <div className="relative">
@@ -339,30 +430,32 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Services Preview with Background Image */}
-      <section 
+      <section
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bg1})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
-                Our Photography Services
+                OUR PHOTOGRAPHY SERVICES
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From intimate ceremonies to grand celebrations, we capture every precious moment
+                From intimate ceremonies to grand celebrations, we capture every
+                precious moment
               </p>
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">            <RevealOnScroll delay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {" "}
+            <RevealOnScroll delay={0.1}>
               <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -371,21 +464,38 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Wedding Photography</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
-                    Capturing the magic and emotion of your special day with artistic precision
+                <div className="p-8">
+                  {" "}
+                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">
+                    Wedding Photography
+                  </h3>{" "}
+                  <p className="text-gray-300 mb-6 drop-shadow-md">
+                    Capturing the magic and emotion of your special day with
+                    artistic precision
                   </p>
                   <Link
                     to="/services"
                     className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="ml-2 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </Link>
                 </div>
               </div>
-            </RevealOnScroll>            <RevealOnScroll delay={0.2}>
+            </RevealOnScroll>{" "}
+            <RevealOnScroll delay={0.2}>
               <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -394,21 +504,38 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Portrait Sessions</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
-                    Professional portraits that capture your personality and natural beauty
+                <div className="p-8">
+                  {" "}
+                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">
+                    Portrait Sessions
+                  </h3>{" "}
+                  <p className="text-gray-300 mb-6 drop-shadow-md">
+                    Professional portraits that capture your personality and
+                    natural beauty
                   </p>
                   <Link
                     to="/services"
                     className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="ml-2 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </Link>
                 </div>
               </div>
-            </RevealOnScroll>            <RevealOnScroll delay={0.3}>
+            </RevealOnScroll>{" "}
+            <RevealOnScroll delay={0.3}>
               <div className="group relative bg-black bg-opacity-40 backdrop-blur-sm rounded-2xl overflow-hidden hover:bg-opacity-60 transition-all duration-500">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -417,16 +544,32 @@ export const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-8">                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">Event Photography</h3>                  <p className="text-gray-300 mb-6 drop-shadow-md">
-                    Documenting your celebrations and special moments with creative flair
+                <div className="p-8">
+                  {" "}
+                  <h3 className="text-2xl font-semibold text-white mb-4 drop-shadow-lg">
+                    Event Photography
+                  </h3>{" "}
+                  <p className="text-gray-300 mb-6 drop-shadow-md">
+                    Documenting your celebrations and special moments with
+                    creative flair
                   </p>
                   <Link
                     to="/services"
                     className="inline-flex items-center text-white font-medium hover:text-gray-300 transition-colors drop-shadow-md"
                   >
                     Learn More
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="ml-2 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -435,22 +578,24 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Portfolio Showcase */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
-                Recent Work
-              </h2>              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                A glimpse into the beautiful moments we&apos;ve captured recently
+              RECENT WORK
+              </h2>{" "}
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                A glimpse into the beautiful moments we&apos;ve captured
+                recently
               </p>
             </div>
-          </RevealOnScroll>          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+          </RevealOnScroll>{" "}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {portfolioImages.map((imageData, index) => (
               <RevealOnScroll key={index} delay={index * 0.1}>
-                <div 
+                <div
                   className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
                   onClick={() => openGallery(index)}
                 >
@@ -464,8 +609,18 @@ export const Home = () => {
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white">
-                      <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      <svg
+                        className="w-8 h-8 mx-auto mb-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
                       </svg>
                       <p className="text-xs font-medium">Click to view</p>
                     </div>
@@ -474,7 +629,6 @@ export const Home = () => {
               </RevealOnScroll>
             ))}
           </div>
-
           <RevealOnScroll>
             <div className="text-center mt-12">
               <Link
@@ -482,22 +636,32 @@ export const Home = () => {
                 className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all duration-300"
               >
                 View Full Portfolio
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="ml-2 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </Link>
             </div>
-          </RevealOnScroll>        </div>
+          </RevealOnScroll>{" "}
+        </div>
       </section>
-
       {/* Featured Work Section */}
-      <section 
+      <section
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${bg3})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -507,12 +671,15 @@ export const Home = () => {
                 Featured Photography
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                A curated selection of our most beloved captures that tell extraordinary stories
+                A curated selection of our most beloved captures that tell
+                extraordinary stories
               </p>
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">            {[pt1, pt2, pt3, pt4, pt5, pt6].map((image, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {" "}
+            {[pt1, pt2, pt3, pt4, pt5, pt6].map((image, index) => (
               <RevealOnScroll key={index} delay={index * 0.15}>
                 <div className="group relative overflow-hidden rounded-2xl shadow-2xl bg-black bg-opacity-40 backdrop-blur-sm hover:bg-opacity-60 transition-all duration-500">
                   <div className="aspect-[4/5] overflow-hidden">
@@ -529,14 +696,21 @@ export const Home = () => {
                       {index === 2 && "Love Stories"}
                       {index === 3 && "Candid Moments"}
                       {index === 4 && "Artistic Vision"}
-                      {index === 5 && "Timeless Beauty"}                    </h3>
+                      {index === 5 && "Timeless Beauty"}{" "}
+                    </h3>
                     <p className="text-gray-300 text-sm drop-shadow-md">
-                      {index === 0 && "Capturing the magic of your special day with timeless elegance"}
-                      {index === 1 && "Professional portraits that reveal your authentic self"}
-                      {index === 2 && "Documenting the beautiful journey of love and connection"}
-                      {index === 3 && "Natural, unposed moments that speak from the heart"}
-                      {index === 4 && "Creative compositions that transform memories into art"}
-                      {index === 5 && "Classic photography that transcends trends and time"}
+                      {index === 0 &&
+                        "Capturing the magic of your special day with timeless elegance"}
+                      {index === 1 &&
+                        "Professional portraits that reveal your authentic self"}
+                      {index === 2 &&
+                        "Documenting the beautiful journey of love and connection"}
+                      {index === 3 &&
+                        "Natural, unposed moments that speak from the heart"}
+                      {index === 4 &&
+                        "Creative compositions that transform memories into art"}
+                      {index === 5 &&
+                        "Classic photography that transcends trends and time"}
                     </p>
                   </div>
                 </div>
@@ -545,7 +719,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Extended Services Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -555,13 +728,20 @@ export const Home = () => {
                 Complete Photography Services
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From intimate portraits to grand celebrations, we offer comprehensive photography solutions
+                From intimate portraits to grand celebrations, we offer
+                comprehensive photography solutions
               </p>
             </div>
           </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[serviceImg1, serviceImg2, serviceImg3, serviceImg4, serviceImg5].map((image, index) => (
+            {[
+              serviceImg1,
+              serviceImg2,
+              serviceImg3,
+              serviceImg4,
+              serviceImg5,
+            ].map((image, index) => (
               <RevealOnScroll key={index} delay={index * 0.1}>
                 <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
                   <div className="aspect-[4/5] overflow-hidden">
@@ -594,14 +774,13 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Photographer Spotlight */}
-      <section 
+      <section
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${bg4})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -615,8 +794,8 @@ export const Home = () => {
                     className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
                   />
                 </div>
-                <div className="absolute -top-4 -right-4 w-32 h-32 bg-white bg-opacity-20 backdrop-blur-sm rounded-full"></div>
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white bg-opacity-10 backdrop-blur-sm rounded-full"></div>
+                {/* <div className="absolute -top-4 -right-4 w-32 h-32 bg-white bg-opacity-20 backdrop-blur-sm rounded-full"></div>
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white bg-opacity-10 backdrop-blur-sm rounded-full"></div> */}
               </div>
             </RevealOnScroll>
 
@@ -627,47 +806,57 @@ export const Home = () => {
                     Meet Chamodh Delpearachchi
                   </h2>
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    With over 8 years of experience capturing life&apos;s most precious moments, 
-                    Chamodh brings an artistic eye and passionate heart to every photography session.
+                    With over 8 years of experience capturing life&apos;s most
+                    precious moments, Chamodh brings an artistic eye and
+                    passionate heart to every photography session.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
                       <HiCamera className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Artistic Vision</h3>
+                      <h3 className="text-xl font-semibold mb-2">
+                        Artistic Vision
+                      </h3>
                       <p className="text-gray-300">
-                        Every photograph is crafted with meticulous attention to detail, 
-                        ensuring each image tells a unique and compelling story.
+                        Every photograph is crafted with meticulous attention to
+                        detail, ensuring each image tells a unique and
+                        compelling story.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
                       <HiHeart className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Passionate Approach</h3>
+                      <h3 className="text-xl font-semibold mb-2">
+                        Passionate Approach
+                      </h3>
                       <p className="text-gray-300">
-                        Photography isn&apos;t just a profession—it&apos;s a passion that drives 
-                        the pursuit of perfection in every frame captured.
+                        Photography isn&apos;t just a profession—it&apos;s a
+                        passion that drives the pursuit of perfection in every
+                        frame captured.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
                       <HiStar className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Client Excellence</h3>
+                      <h3 className="text-xl font-semibold mb-2">
+                        Client Excellence
+                      </h3>
                       <p className="text-gray-300">
-                        Committed to exceeding expectations with personalized service 
-                        and creating lasting relationships with every client.
+                        Committed to exceeding expectations with personalized
+                        service and creating lasting relationships with every
+                        client.
                       </p>
                     </div>
                   </div>
@@ -679,8 +868,18 @@ export const Home = () => {
                     className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-medium tracking-wide hover:bg-gray-100 transition-all duration-300"
                   >
                     Learn More About Our Story
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="ml-2 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -689,25 +888,32 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Extended Portfolio Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
-                Extended Portfolio Gallery
+                EXTENDED PORTFOLIO GALLERY
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore our comprehensive collection showcasing the breadth and depth of our photography expertise
+                Explore our comprehensive collection showcasing the breadth and
+                depth of our photography expertise
               </p>
             </div>
           </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[portfolio9, portfolio10, pt7, ...([portfolio1, portfolio2, portfolio3, portfolio4].slice(0, 1))].map((image, index) => (
+            {[
+              portfolio9,
+              portfolio10,
+              pt7,
+              ...[portfolio1, portfolio2, portfolio3, portfolio4].slice(0, 1),
+            ].map((image, index) => (
               <RevealOnScroll key={index} delay={index * 0.1}>
-                <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">                  <div className="aspect-[3/4] overflow-hidden relative">
+                <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                  {" "}
+                  <div className="aspect-[3/4] overflow-hidden relative">
                     <img
                       src={image}
                       alt={`Extended Portfolio ${index + 1}`}
@@ -717,8 +923,18 @@ export const Home = () => {
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white pointer-events-auto">
-                      <svg className="w-10 h-10 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      <svg
+                        className="w-10 h-10 mx-auto mb-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
                       </svg>
                       <p className="text-sm font-medium">View Details</p>
                     </div>
@@ -729,15 +945,14 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Enhanced Call to Action with Multiple Backgrounds */}
-      <section 
+      <section
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bg5})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -746,7 +961,8 @@ export const Home = () => {
               Ready to Capture Your Story?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let&apos;s create something beautiful together. Every great story begins with a single moment.
+              Let&apos;s create something beautiful together. Every great story
+              begins with a single moment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -765,7 +981,6 @@ export const Home = () => {
           </RevealOnScroll>
         </div>
       </section>
-
       {/* Background Showcase Strip */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -784,7 +999,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Final Call to Action */}
       {/* <section 
         className="py-20 relative overflow-hidden"
@@ -818,7 +1032,6 @@ export const Home = () => {
             </div>
           </RevealOnScroll>        </div>
       </section> */}
-
       {/* Background Showcase Strip */}
       {/* <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -837,30 +1050,34 @@ export const Home = () => {
           </div>
         </div>
       </section> */}
-
       {/* Enhanced Final Call to Action */}
-      <section 
+      <section
         className="py-20 relative overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bg6})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <RevealOnScroll>            <div className="space-y-8">
+          <RevealOnScroll>
+            {" "}
+            <div className="space-y-8">
               <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase text-white">
                   Professional Photography
                 </span>
               </div>
               <h2 className="text-4xl lg:text-6xl font-extralight text-white leading-tight">
-                Your Story
-                <span className="block font-light italic text-gray-200">Awaits</span>
+                YOUR STORY
+                <span className="block font-light italic text-gray-200">
+                  AWAITS
+                </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                Transform your precious moments into timeless memories with our professional photography services.
+                Transform your precious moments into timeless memories with our
+                professional photography services.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
                 <Link
@@ -884,8 +1101,8 @@ export const Home = () => {
               </div>
             </div>
           </RevealOnScroll>
-        </div>      </section>
-
+        </div>{" "}
+      </section>
       {/* Gallery Modal */}
       <GalleryModal
         isOpen={isGalleryOpen}
@@ -894,7 +1111,6 @@ export const Home = () => {
         currentIndex={currentImageIndex}
         onImageChange={setCurrentImageIndex}
       />
-
       <style>
         {`
           .swiper-pagination-bullet-custom {
