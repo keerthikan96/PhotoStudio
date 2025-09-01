@@ -168,7 +168,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/chamodh-delpearachchi-04756578/?originalSubdomain=lk"
+              href="https://www.tiktok.com/@chamoddelpearachchi"
               className="text-white hover:text-gray-300 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -180,7 +180,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
-                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.16h.05c.53-1 1.82-2.16 3.75-2.16C20.4 8 24 10.6 24 16.25V24h-4v-7.25c0-1.73-.03-3.95-2.4-3.95-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z" />
+                <path d="M12.75 2h2.25c.41 2.19 2.13 3.81 4.25 3.98V8.2c-1.01.09-2.01-.07-2.95-.47v7.77c0 3.18-2.58 5.77-5.75 5.5-2.85-.24-5.09-2.67-5.05-5.53.04-2.7 2.23-4.97 4.93-5.02.23 0 .42.18.42.41v2.19c0 .23-.18.41-.41.42-1.13.02-2.05.94-2.05 2.07 0 1.13.92 2.05 2.05 2.05 1.13 0 2.05-.92 2.05-2.05V2.41c0-.23.18-.41.41-.41z" />
               </svg>
             </a>
           </div>

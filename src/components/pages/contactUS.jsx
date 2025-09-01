@@ -2,8 +2,6 @@ import { useState } from "react";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
 import emailjs from "emailjs-com";
-import otpGenerator from "otp-generator";
-import { SmsClient } from "@azure/communication-sms";
 
 // Import images
 import bg13 from "../../assets/Images/bg-13.jpg";
@@ -36,93 +34,55 @@ const ContactUs = () => {
     image8,
   ];
 
-  const [otpSent, setOtpSent] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
-    otp: "",
     message: "",
   });
-  const [isVerified, setIsVerified] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [generatedOtp, setGeneratedOtp] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
 
-  const sendSmsMessage = async (phoneNumber, message) => {
-    try {
-      // Initialize the SMS client with your connection string
-      const smsClient = new SmsClient(
-        import.meta.env.VITE_AZURE_COMMUNICATION_CONNECTION_STRING
-      );
-      const sendResult = await smsClient.send({
-        from: import.meta.env.VITE_AZURE_PHONE_NUMBER, // Your Azure Communication Services phone number
-        to: phoneNumber,
-        message: message,
-      });
-
-      console.log("SMS sent successfully:", sendResult);
-      // Message sent successfully
-      return true;
-    } catch (error) {
-      console.error("Error sending SMS:", error);
-      return false;
+    // Validate phone number format as user types
+    if (name === "phone") {
+      validatePhoneNumber(value);
     }
   };
 
-  const handleVerify = async () => {
-    if (!formData.phone) {
-      alert("Please enter your phone number first");
-      return;
-    }
-    const otp = otpGenerator.generate(6, {
-      digits: true,
-      alphabets: false,
-      upperCase: false,
-      specialChars: false,
-    });
-    setGeneratedOtp(otp);
-
-    // Send OTP via SMS
-    const smsSent = await sendSmsMessage(
-      formData.phone,
-      `Your CD Photography verification code is: ${otp}`
-    );
-
-    if (smsSent) {
-      setOtpSent(true);
-      alert("OTP sent to your phone number");
+  const validatePhoneNumber = (phone) => {
+    // Remove any spaces or dashes for validation
+    const cleanPhone = phone.replace(/[\s-]/g, "");
+    // Check if it matches Sri Lankan mobile format (10 digits starting with 0)
+    const sriLankanMobileRegex = /^0[1-9][0-9]{8}$/;
+    if (!phone) {
+      setPhoneError("");
+    } else if (!sriLankanMobileRegex.test(cleanPhone)) {
+      setPhoneError("Please enter a valid 10-digit phone number (e.g., 0771234567)");
     } else {
-      alert("Failed to send OTP. Please try again.");
-    }
-  };
-
-  const verifyOtp = () => {
-    if (formData.otp === generatedOtp) {
-      setIsVerified(true);
-      alert("Phone number verified successfully!");
-    } else {
-      alert("Invalid OTP. Please try again.");
+      setPhoneError("");
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isVerified) {
-      alert("Please verify your phone number first");
+    // Final phone validation before submission
+    const cleanPhone = formData.phone.replace(/[\s-]/g, "");
+    const sriLankanMobileRegex = /^0[1-9][0-9]{8}$/;
+    if (!sriLankanMobileRegex.test(cleanPhone)) {
+      alert("Please enter a valid 10-digit phone number (e.g., 0771234567)");
       return;
     }
-
     setIsLoading(true);
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          to_email: "keerthikan.invorgsl@gmail.com",
+          to_email: "chamodh@gmail.com",
           from_name: formData.fullName,
           from_email: formData.email,
           phone: formData.phone,
@@ -130,17 +90,14 @@ const ContactUs = () => {
         },
         import.meta.env.VITE_EMAILJS_USER_ID
       );
-
       alert("Message sent successfully!");
       setFormData({
         fullName: "",
         email: "",
         phone: "",
-        otp: "",
         message: "",
       });
-      setOtpSent(false);
-      setIsVerified(false);
+      setPhoneError("");
     } catch (error) {
       console.error("Error sending message:", error);
       alert("Failed to send message. Please try again.");
@@ -379,59 +336,28 @@ const ContactUs = () => {
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
                         Phone Number*
                       </label>
-                      <div className="flex gap-3">
-                        <input
-                          className="flex-1 border-2 border-gray-200 rounded-2xl px-6 py-4 text-base focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300"
-                          type="tel"
-                          placeholder="+94 76658 1620"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          disabled={isLoading}
-                        />
-                        {/* <button
-                          type="button"
-                          className={`${
-                            isVerified
-                              ? "bg-green-500 hover:bg-green-600"
-                              : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                          } text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1`}
-                          onClick={handleVerify}
-                          disabled={isLoading || isVerified}
-                        >
-                          {isVerified ? "Verified ✓" : "Verify"}
-                        </button> */}
-                      </div>
+                      <input
+                        className={`w-full border-2 ${phoneError ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : 'border-gray-200 focus:border-blue-500 focus:ring-blue-500/20'} rounded-2xl px-6 py-4 text-base focus:outline-none focus:ring-4 transition-all duration-300`}
+                        type="tel"
+                        placeholder="0771234567"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        disabled={isLoading}
+                      />
+                      {phoneError && (
+                        <p className="mt-2 text-sm text-red-600 flex items-center">
+                          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                          </svg>
+                          {phoneError}
+                        </p>
+                      )}
+                      <p className="mt-2 text-sm text-gray-500">
+                        Enter a 10-digit Sri Lankan mobile number (e.g., 0771234567)
+                      </p>
                     </div>
-
-                    {otpSent && !isVerified && (
-                      <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-                        <label className="block text-sm font-semibold text-gray-700 mb-3">
-                          Enter Verification Code*
-                        </label>
-                        <div className="flex gap-3">
-                          <input
-                            className="flex-1 border-2 border-blue-200 rounded-2xl px-6 py-4 text-base focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300"
-                            type="text"
-                            placeholder="Enter 6-digit code"
-                            name="otp"
-                            value={formData.otp}
-                            onChange={handleChange}
-                            required
-                            disabled={isLoading}
-                          />
-                          <button
-                            type="button"
-                            className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg"
-                            onClick={verifyOtp}
-                            disabled={isLoading}
-                          >
-                            Verify
-                          </button>
-                        </div>
-                      </div>
-                    )}
 
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
@@ -452,7 +378,7 @@ const ContactUs = () => {
                     <button
                       type="submit"
                       className="w-full bg-gradient-to-r from-gray-900 to-black text-white py-5 rounded-2xl text-lg font-semibold hover:from-gray-800 hover:to-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-                      disabled={isLoading || !isVerified}
+                      disabled={isLoading || phoneError}
                     >
                       {isLoading ? (
                         <span className="flex items-center justify-center">

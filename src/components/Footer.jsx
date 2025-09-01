@@ -11,123 +11,92 @@ import bg8 from "../assets/Images/bg-8.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+    // /* Eyecatcher: Added a subtle noise pattern for a textured feel */
+    <footer className="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden bg-[url('/noise.svg')]">
       {" "}
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={bg8}
           alt="Photography Background"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-10" // /* Eyecatcher: Reduced opacity for subtlety */
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95"></div>
+        {/* Eyecatcher: Enhanced the gradient for more depth */ }
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-black/80 to-slate-900/90"></div>
       </div>{" "}
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(71,85,105,0.15),transparent_50%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(75,85,99,0.1),transparent_40%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(203,213,225,0.1),transparent_60%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_80%,rgba(203,213,225,0.08),transparent_50%)]"></div>
       </div>
       {/* Main Footer Content */}
       <div className="relative">
-        <div className="container mx-auto px-6 pt-8 pb-4">
+        <div className="container mx-auto px-6 pt-12 pb-4"> {/* Eyecatcher: Increased top padding */}
           {/* Newsletter Section */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-12"> {/* Eyecatcher: Increased bottom margin */}
             <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-slate-600 to-gray-700 rounded-full mb-4 shadow-lg shadow-slate-500/25">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+              <div className="flex flex-col items-center justify-center mb-4">
+                <Link to="/" className="inline-block group mb-4">
+                  <img
+                    src={logosinhala}
+                    alt="Chamodh Delpearachchi Photography"
+                    // /* Eyecatcher: Added a drop-shadow on hover for a glowing effect */
+                    className="h-20 w-auto mx-auto lg:mx-0 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_10px_rgba(203,213,225,0.4)]"
+                    style={{ maxHeight: '80px' }}
                   />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+                </Link>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                STAY CONNECTED
-              </h2>
-              <p className="text-gray-300 text-base mb-6 max-w-2xl mx-auto">
-                Get exclusive photography tips, behind-the-scenes content, and
-                special offers delivered to your inbox
+              <p className="text-gray-300 md:text-lg mb-6 max-w-2xl mx-auto"> {/* Eyecatcher: Slightly larger text on medium screens */}
+                  Stay inspired with photography tips, behind-the-scenes content, and special offers.
               </p>
-              <div className="max-w-md mx-auto">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent text-white placeholder-gray-300 transition-all duration-300"
-                  />
-                  <button className="bg-gradient-to-r from-slate-600 to-gray-700 text-white px-8 py-4 rounded-xl hover:from-slate-700 hover:to-gray-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 hover:shadow-slate-500/25">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-8">
             {" "}
             {/* Brand Section */}
             <div className="lg:col-span-1 text-center lg:text-left">
-              <Link to="/" className="inline-block mb-4 group">
-                <img
-                  src={logosinhala}
-                  alt="Chamodh Delpearachchi Photography"
-                  className="h-24 w-auto mx-auto lg:mx-0 transition-transform group-hover:scale-105"
-                />
-              </Link>
-
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              {/* Eyecatcher: Made headers more prominent with uppercase, tracking, and a border */}
+              <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wider pb-3 border-b-2 border-slate-700">
+                STAY CONNECTED
+              </h3>
+              
+              <p className="text-gray-300 mb-6 leading-relaxed"> {/* Eyecatcher: Increased line-height */}
                 Capturing life&apos;s most precious moments with artistic vision
                 and professional expertise.
               </p>
 
               {/* Portfolio Preview */}
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">
                   Recent Works
                 </h4>
-                <div className="grid grid-cols-3 gap-2">
-                  <img
-                    src={pt1}
-                    alt="Portfolio Preview"
-                    className="w-full h-16 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img
-                    src={pt2}
-                    alt="Portfolio Preview"
-                    className="w-full h-16 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img
-                    src={pt3}
-                    alt="Portfolio Preview"
-                    className="w-full h-16 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
+                <div className="grid grid-cols-3 gap-3">
+                    {/* Eyecatcher: Added a subtle border, shadow, and overlay on hover */}
+                    {[pt1, pt2, pt3].map((img, index) => (
+                      <div key={index} className="relative group rounded-lg overflow-hidden border-2 border-transparent hover:border-slate-500 transition-all duration-300">
+                        <img
+                          src={img}
+                          alt="Portfolio Preview"
+                          className="w-full h-20 object-cover rounded-md group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                    ))}
                 </div>
               </div>
               {/* Social Media */}
               <div className="flex justify-center lg:justify-start space-x-3">
                 {" "}
+                {/* Eyecatcher: Added transform, glow, and gradient effects on hover */}
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/ChamodhDelpearachchi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/10 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300"
+                  className="group bg-white/5 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-500/30"
                 >
                   <svg
-                    className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors"
+                    className="h-6 w-6 text-gray-300 group-hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -139,13 +108,13 @@ const Footer = () => {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/chamodh_delpearachchi/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/10 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300"
+                  className="group bg-white/5 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-500/30"
                 >
                   <svg
-                    className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors"
+                    className="h-6 w-6 text-gray-300 group-hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -157,225 +126,96 @@ const Footer = () => {
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://twitter.com"
+                  href="https://www.tiktok.com/@chamoddelpearachchi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/10 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300"
+                  className="group bg-white/5 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-500/30"
                 >
                   <svg
-                    className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors"
+                    className="h-6 w-6 text-gray-300 group-hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    <path d="M12.75 2v12.25a2.25 2.25 0 1 1-2.25-2.25h.25V9.5h-.25A5.25 5.25 0 1 0 15.75 14.75V7.5h2V5.25h-2V2h-3z" />
                   </svg>
                 </a>{" "}
                 <a
-                  href="https://youtube.com"
+                  href="https://www.pinterest.com/chamodhdelpearachchi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/10 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300"
+                  className="group bg-white/5 backdrop-blur-sm hover:bg-slate-700 rounded-lg p-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-500/30"
                 >
                   <svg
-                    className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors"
+                    className="h-6 w-6 text-gray-300 group-hover:text-white transition-colors"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                      clipRule="evenodd"
-                    />
+                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.084 2.55 7.563 6.13 8.89-.085-.755-.16-1.915.033-2.74.175-.74 1.125-4.71 1.125-4.71s-.287-.574-.287-1.423c0-1.334.774-2.33 1.736-2.33.819 0 1.216.615 1.216 1.353 0 .825-.526 2.06-.797 3.21-.227.96.482 1.743 1.43 1.743 1.716 0 3.037-1.81 3.037-4.42 0-2.31-1.662-3.927-4.035-3.927-2.75 0-4.37 2.062-4.37 4.197 0 .834.32 1.73.72 2.215.08.097.09.182.066.28-.073.297-.24.96-.273 1.093-.04.165-.13.2-.3.12-1.12-.52-1.82-2.15-1.82-3.46 0-2.82 2.05-6.06 6.11-6.06 3.21 0 5.7 2.29 5.7 5.35 0 3.18-1.99 5.74-4.76 5.74-1.01 0-1.96-.53-2.28-1.14l-.62 2.36c-.19.74-.57 1.67-.85 2.24.64.2 1.32.31 2.03.31 5.523 0 10-4.477 10-10S17.523 2 12 2z" />
                   </svg>
                 </a>{" "}
               </div>
             </div>
             {/* Quick Links */}
             <div className="text-center lg:text-left">
-              <h3 className="text-white font-bold text-lg mb-4 lg:ml-7">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to="/"
-                    className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/portfolio"
-                    className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/pricing"
-                    className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/booking"
-                    className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Book Session
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contactus"
-                    className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    Contact
-                  </Link>
-                </li>
+              <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wider pb-3 border-b-2 border-slate-700">Quick Links</h3>
+              <ul className="space-y-3">
+                {['/', '/portfolio', '/pricing', '/booking', '/contactus'].map((path, index) => (
+                    <li key={path}>
+                      <Link
+                        to={path}
+                        /* Eyecatcher: More dynamic hover effect with sliding icon and text */
+                        className="text-gray-300 hover:text-white transition-all duration-300 flex items-center justify-center lg:justify-start group hover:translate-x-2"
+                      >
+                        <svg
+                          /* Eyecatcher: Icon appears and pushes text on hover */
+                          className="w-0 h-4 mr-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:mr-3 transition-all duration-300 text-slate-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        {['Home', 'Portfolio', 'Pricing', 'Book Session', 'Contact'][index]}
+                      </Link>
+                    </li>
+                ))}
               </ul>
             </div>
             {/* Our Services */}
             <div className="text-center lg:text-left">
-              <h3 className="text-white font-bold text-lg mb-4 lg:ml-7">Our Services</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <svg
-                    className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Wedding Photography
-                </li>
-                <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <svg
-                    className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Pre-Wedding Shoots
-                </li>
-                <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <svg
-                    className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Portrait Photography
-                </li>
-                <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <svg
-                    className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Event Coverage
-                </li>
-                <li className="text-gray-300 hover:text-gray-100 transition-colors duration-200 flex items-center group cursor-pointer">
-                  <svg
-                    className="w-4 h-4 mr-3 opacity-0 group-hover:opacity-100 transition-opacity text-gray-100"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  Commercial Photography
-                </li>
+              <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wider pb-3 border-b-2 border-slate-700">Our Services</h3>
+              <ul className="space-y-3">
+                {['Wedding Photography', 'Pre-Wedding Shoots', 'Portrait Photography', 'Event Coverage', 'Commercial Photography'].map((service) => (
+                  <li key={service} className="text-gray-300 hover:text-white transition-all duration-300 flex items-center justify-center lg:justify-start group cursor-pointer hover:translate-x-2">
+                     <svg
+                        className="w-0 h-4 mr-0 opacity-0 group-hover:w-4 group-hover:opacity-100 group-hover:mr-3 transition-all duration-300 text-slate-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    {service}
+                  </li>
+                ))}
               </ul>
             </div>
             {/* Contact Info */}
             <div className="text-center lg:text-left">
-              <h3 className="text-white font-bold text-lg mb-6">
+              <h3 className="text-white font-bold text-lg mb-6 uppercase tracking-wider pb-3 border-b-2 border-slate-700">
                 Get in Touch
               </h3>
               <ul className="space-y-4">
                 {" "}
-                <li className="flex items-start group">
-                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-2 mr-3 transition-colors">
+                {/* Eyecatcher: Added a highlight effect on hover for the entire list item */}
+                <li className="flex items-start justify-center lg:justify-start group p-2 -ml-2 rounded-lg transition-colors hover:bg-white/5">
+                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-3 mr-4 transition-all duration-300">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-slate-400 group-hover:text-white transition-colors"
@@ -405,8 +245,8 @@ const Footer = () => {
                     </p>
                   </div>
                 </li>{" "}
-                <li className="flex items-center group">
-                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-2 mr-3 transition-colors">
+                <li className="flex items-center justify-center lg:justify-start group p-2 -ml-2 rounded-lg transition-colors hover:bg-white/5">
+                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-3 mr-4 transition-all duration-300">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-slate-400 group-hover:text-white transition-colors"
@@ -422,10 +262,10 @@ const Footer = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-gray-300">+94 76658 1620</span>
+                  <span className="text-gray-300 hover:text-white transition-colors"><a href="tel:+94766581620">+94 76658 1620</a></span>
                 </li>{" "}
-                <li className="flex items-center group">
-                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-2 mr-3 transition-colors">
+                <li className="flex items-center justify-center lg:justify-start group p-2 -ml-2 rounded-lg transition-colors hover:bg-white/5">
+                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-3 mr-4 transition-all duration-300">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-slate-400 group-hover:text-white transition-colors"
@@ -441,10 +281,10 @@ const Footer = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-gray-300">chamodh@gmail.com</span>
+                  <span className="text-gray-300 hover:text-white transition-colors"><a href="mailto:chamodh@gmail.com">chamodh@gmail.com</a></span>
                 </li>
-                <li className="flex items-center group">
-                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-2 mr-3 transition-colors">
+                <li className="flex items-center justify-center lg:justify-start group p-2 -ml-2 rounded-lg transition-colors hover:bg-white/5">
+                  <div className="bg-white/10 backdrop-blur-sm group-hover:bg-slate-600 rounded-lg p-3 mr-4 transition-all duration-300">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-slate-400 group-hover:text-white transition-colors"
@@ -470,9 +310,10 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom Section */}
-      <div className="bg-black/50 backdrop-blur-sm border-t border-white/10 relative">
+      {/* Eyecatcher: Added a glowing top border effect */}
+      <div className="bg-black/50 backdrop-blur-sm border-t border-white/10 relative before:absolute before:top-0 before:left-0 before:w-full before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent before:opacity-50">
         <div className="container mx-auto px-6 py-4 relative">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <div className="flex items-center mb-4 md:mb-0">
               <img 
                 src={logoLoder}
@@ -480,13 +321,14 @@ const Footer = () => {
                 className="h-8 w-auto mr-3 opacity-70"
               />
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} KAAYALTEK. All rights reserved. Crafted with ❤️ for memorable moments.
+                © {new Date().getFullYear()} <a href='https://www.kaayaltek.com' target='_blank' rel="noopener noreferrer" className='font-semibold text-gray-300 hover:text-white transition-colors'>KAAYALTEK</a>. All rights reserved.
               </p>
             </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors duration-200">Cookie Policy</a>
+            <div className="flex items-center justify-center space-x-6">
+               {/* Eyecatcher: Made copyright text more visually interesting */}
+              <p className="text-gray-500 text-sm hidden lg:block">Crafted with ❤️ for memorable moments.</p>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Terms of Service</a>
             </div>
           </div>
         </div>
