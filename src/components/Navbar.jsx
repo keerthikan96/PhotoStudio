@@ -11,7 +11,7 @@ import logo from "../assets/logo4.png";
 import logo2 from "../assets/logo3.png";
 import logosinhala from "../assets/logoA.png"
 import { Phone, Search } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export const Navbar = ({ setMenuOpen }) => {
@@ -47,11 +47,13 @@ export const Navbar = ({ setMenuOpen }) => {
           {/* Main mobile header */}
           <div className="flex justify-between items-center h-16 px-4 py-2">
             <div className="flex items-center flex-1">
+              <Link to="/">
               <img 
                 src={logosinhala} 
                 alt="Logo" 
                 className="w-32 sm:w-40 h-auto max-h-12 object-contain" 
               />
+              </Link>
             </div>
             <button
               className="flex items-center justify-center w-10 h-10 rounded-md cursor-pointer focus:outline-none text-white ml-2"
@@ -71,7 +73,7 @@ export const Navbar = ({ setMenuOpen }) => {
           </div>
           
           {/* Mobile bottom bar with social and CTA */}
-          <div className="flex w-full items-center justify-between px-4 py-2 bg-black bg-opacity-20 backdrop-blur-sm">
+          {/* <div className="flex w-full items-center justify-between px-4 py-2 bg-black bg-opacity-20 backdrop-blur-sm">
             <div className="flex items-center space-x-4">
               <a href="#" className="text-white hover:text-gray-200 transition-colors">
                 <FaFacebook className="text-lg" />
@@ -89,7 +91,7 @@ export const Navbar = ({ setMenuOpen }) => {
             >
               ENQUIRE NOW
             </NavLink>
-          </div>
+          </div> */}
         </div>
       </nav>
 
@@ -102,11 +104,13 @@ export const Navbar = ({ setMenuOpen }) => {
             <div className="flex justify-between items-center h-20 px-8 sm:px-12 py-3">
               {/* Logo */}
               <div className="flex items-center pt-5">
-                <img
-                  src={logosinhala}
-                  alt="Logo"
-                  className="w-48 sm:w-72 md:w-72 lg:w-96 h-auto max-h-32 object-contain"
-                />
+                <Link to="/">
+                  <img
+                    src={logosinhala}
+                    alt="Logo"
+                    className="w-48 sm:w-72 md:w-72 lg:w-96 h-auto max-h-32 object-contain"
+                  />
+                </Link>
               </div>
               <div className="hidden md:flex items-center space-x-12">
                 <NavLink

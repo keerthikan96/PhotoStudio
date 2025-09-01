@@ -19,7 +19,7 @@ import pt3 from "../../assets/Images/pt-3.jpg";
 import pt4 from "../../assets/Images/pt-4.jpg";
 
 const PricingPage = () => {
-  const text = "text-gray-500 font-extralight ";  
+  const text = "text-gray-500 font-extralight ";
   const navigate = useNavigate();
 
   const weddingPackages = [
@@ -30,47 +30,47 @@ const PricingPage = () => {
       features: [
         "10 Hours Exclusive Coverage",
         "Bride & Groom getting ready at the hotel",
-        "Ceremony & Reception Coverage", 
+        "Ceremony & Reception Coverage",
         "Couple shoot at preferred location",
         "2 Professional Photographers",
         "200 Retouched Images",
-        "All Unedited Images on USB"
+        "All Unedited Images on USB",
       ],
       delay: 0,
     },
     {
-      title: "Package 02", 
+      title: "Package 02",
       subtitle: "1 Album Package",
       price: "LKR 220,000",
       features: [
         "Includes all of Package 01 plus:",
         "12x30 Fine Art Album (50 pages)",
         "2 Enlargements (16x24)",
-        "100 Thank You Cards"
+        "100 Thank You Cards",
       ],
       delay: 0.2,
     },
     {
       title: "Package 03",
-      subtitle: "Wedding + Pre-Casual Session", 
+      subtitle: "Wedding + Pre-Casual Session",
       price: "LKR 260,000",
       features: [
         "5 Hours Preshoot",
         "10 Hours Wedding Day",
         "60 Preshoot + 200 Wedding Edited Photos",
         "12x30 Album (50 pages), 2 Enlargements",
-        "100 Thank You Cards"
+        "100 Thank You Cards",
       ],
       delay: 0.4,
     },
     {
       title: "Package 04",
       subtitle: "Wedding + Preshoot + Homecoming",
-      price: "LKR 330,000", 
+      price: "LKR 330,000",
       features: [
         "Includes Package 03 +",
         "2 Hours HC Coverage",
-        "Additional Couple Shoot for HC"
+        "Additional Couple Shoot for HC",
       ],
       delay: 0.6,
     },
@@ -82,7 +82,7 @@ const PricingPage = () => {
         "10 Hours Wedding, 8 Hours HC",
         "12x30 (Wedding) + 12x18 (HC) Albums",
         "4 Enlargements (Wedding)",
-        "100 Thank You Cards"
+        "100 Thank You Cards",
       ],
       delay: 0.8,
     },
@@ -93,12 +93,12 @@ const PricingPage = () => {
       features: [
         "5 Hours Preshoot",
         "10 Hours Wedding",
-        "8 Hours HC", 
+        "8 Hours HC",
         "2 Albums (12x30 & 12x18), 4 Enlargements",
-        "60 Preshoot, 200 Wedding, 140 HC Edited Photos"
+        "60 Preshoot, 200 Wedding, 140 HC Edited Photos",
       ],
       delay: 1.0,
-    }
+    },
   ];
   // Homecoming packages
   const homecomingPackages = [
@@ -106,54 +106,75 @@ const PricingPage = () => {
       title: "HC Package 01",
       subtitle: "Shoot Only",
       price: "LKR 70,000",
-      features: [
-        "Couple shoot at preferred location",
-        "80 Retouched Photos"
-      ],
+      features: ["Couple shoot at preferred location", "80 Retouched Photos"],
       delay: 0,
     },
     {
-      title: "HC Package 02", 
+      title: "HC Package 02",
       subtitle: "Shoot + Reception Coverage",
       price: "LKR 140,000",
       features: [
         "Shoot + Reception Coverage",
-        "12x16 Album + 1 Enlargement", 
-        "150 Retouched Photos"
+        "12x16 Album + 1 Enlargement",
+        "150 Retouched Photos",
       ],
       delay: 0.2,
     },
     {
       title: "HC Package 03",
       subtitle: "Enhanced Coverage",
-      price: "LKR 170,000", 
+      price: "LKR 170,000",
       features: [
         "Same as Package 02 +",
         "2 Enlargements",
-        "100 Thank You Cards"
+        "100 Thank You Cards",
       ],
       delay: 0.4,
-    }
+    },
   ];
 
-  // Pre-casual and engagement packages  
+  // Pre-casual and engagement packages
   const otherPackages = [
     {
       category: "Pre-Casual Sessions",
       packages: [
-        { name: "Preshoot 01", details: "60 Photos, USB", price: "LKR 100,000" },
-        { name: "Preshoot 02", details: "+2 Wooden Enlargements", price: "LKR 120,000" },
-        { name: "Preshoot 03", details: "+12x16/8x24 Album", price: "LKR 150,000" }
-      ]
+        {
+          name: "Preshoot 01",
+          details: "60 Photos, USB",
+          price: "LKR 100,000",
+        },
+        {
+          name: "Preshoot 02",
+          details: "+2 Wooden Enlargements",
+          price: "LKR 120,000",
+        },
+        {
+          name: "Preshoot 03",
+          details: "+12x16/8x24 Album",
+          price: "LKR 150,000",
+        },
+      ],
     },
     {
-      category: "Engagement Packages", 
+      category: "Engagement Packages",
       packages: [
-        { name: "Engagement 01", details: "5 Hrs, 80 Photos", price: "LKR 80,000" },
-        { name: "Engagement 02", details: "+2 Wooden Enlargements", price: "LKR 100,000" },
-        { name: "Engagement 03", details: "+Album & 2 Enlargements", price: "LKR 150,000" }
-      ]
-    }
+        {
+          name: "Engagement 01",
+          details: "5 Hrs, 80 Photos",
+          price: "LKR 80,000",
+        },
+        {
+          name: "Engagement 02",
+          details: "+2 Wooden Enlargements",
+          price: "LKR 100,000",
+        },
+        {
+          name: "Engagement 03",
+          details: "+Album & 2 Enlargements",
+          price: "LKR 150,000",
+        },
+      ],
+    },
   ];
 
   // Extras and add-ons
@@ -162,40 +183,43 @@ const PricingPage = () => {
     { item: "Thank You Cards", price: "LKR 200 each" },
     { item: "Enlargements", price: "LKR 5,000–20,000" },
     { item: "Signature Board (12x18)", price: "LKR 10,000 (2-week notice)" },
-    { item: "Album Copies", price: "Main – LKR 60,000 / Preshoot – LKR 40,000" }
+    {
+      item: "Album Copies",
+      price: "Main – LKR 60,000 / Preshoot – LKR 40,000",
+    },
   ];
   // FAQ data for easier management
   const faqs = [
     {
       question: "What is your booking procedure?",
       answer:
-        "To confirm your booking, we require a LKR 20,000 non-refundable advance payment. Full payment must be made 1 week before the event."
+        "To confirm your booking, we require a LKR 20,000 non-refundable advance payment. Full payment must be made 1 week before the event.",
     },
     {
       question: "How long does it take to receive our photos?",
       answer:
-        "Delivery timelines vary by package: 4 months for weddings, 3 months for engagements, and 2 months for preshoots. All edited images are delivered digitally."
+        "Delivery timelines vary by package: 4 months for weddings, 3 months for engagements, and 2 months for preshoots. All edited images are delivered digitally.",
     },
     {
       question: "Do you cover outstation events?",
       answer:
-        "Yes, we cover events across Sri Lanka. Additional outstation charges will apply depending on the location and distance."
+        "Yes, we cover events across Sri Lanka. Additional outstation charges will apply depending on the location and distance.",
     },
     {
       question: "Can we get extra hours of coverage?",
       answer:
-        "Absolutely! Extra hour coverage is available at LKR 10,000 per hour. Please discuss this requirement during booking."
+        "Absolutely! Extra hour coverage is available at LKR 10,000 per hour. Please discuss this requirement during booking.",
     },
     {
       question: "What about social media usage of our photos?",
       answer:
-        "Only selected images will be shared on our social media platforms for portfolio purposes. We maintain strict privacy and will not share images without permission."
+        "Only selected images will be shared on our social media platforms for portfolio purposes. We maintain strict privacy and will not share images without permission.",
     },
     {
       question: "When will we receive enlargements and albums?",
       answer:
-        "Enlargements are delivered 2 weeks post-event. Albums are included in the delivery timeline mentioned above (2-4 months depending on the package)."
-    }
+        "Enlargements are delivered 2 weeks post-event. Albums are included in the delivery timeline mentioned above (2-4 months depending on the package).",
+    },
   ];
   return (
     <div
@@ -212,9 +236,11 @@ const PricingPage = () => {
           backgroundAttachment: "fixed",
         }}
       ></div>
-
       {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/20"></div>      <div className="relative z-10">        {/* Hero Section */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-white/20"></div>{" "}
+      <div className="relative z-10">
+        {" "}
+        {/* Hero Section */}
         <div className="relative h-screen bg-gradient-to-r from-black/80 to-black/50 flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
@@ -224,16 +250,16 @@ const PricingPage = () => {
           ></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
-          
           {/* Floating elements for modern touch */}
           <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>            <div className="relative z-10 text-center text-white px-4">
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>{" "}
+          <div className="relative z-10 text-center text-white px-4">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
                 Wedding Packages
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight mb-6 tracking-tight">
               <TextTransition text="PRICING" />
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
@@ -241,17 +267,25 @@ const PricingPage = () => {
               artistry
             </p>
           </div>
-          
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
             <div className="animate-bounce">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
               </svg>
             </div>
           </div>
         </div>
-
         {/* Main Content wrapped in PagesUI */}
         <PagesUI>
           {" "}
@@ -537,13 +571,18 @@ const PricingPage = () => {
                   </button>
                 </RevealOnScroll>
               </div>
-            </div>            <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 pt-6 flex flex-col justify-center items-center">
+            </div>{" "}
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 pt-6 flex flex-col justify-center items-center">
               {/* Wedding Packages Section */}
               <div className="w-full mb-16">
-                <div className="text-center mb-12">                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-black to-yellow-700 bg-clip-text text-transparent">
-                    💍 Wedding Packages
+                <div className="text-center mb-12">
+                  {" "}
+                  <h3 className="text-3xl sm:text-4xl  font-bold mb-6 bg-gradient-to-r from-gray-800 via-black to-yellow-700 bg-clip-text text-transparent">
+                    WEDDING PACKAGES
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">Complete wedding photography solutions for your special day</p>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Complete wedding photography solutions for your special day
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {weddingPackages.map((pkg, index) => (
@@ -551,13 +590,16 @@ const PricingPage = () => {
                   ))}
                 </div>
               </div>
-
               {/* Homecoming Packages Section */}
               <div className="w-full mb-16">
-                <div className="text-center mb-12">                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-                    🏡 Homecoming Packages
+                <div className="text-center mb-12">
+                  {" "}
+                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+                    🏡 HOMECOMING PACKAGES
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">Specialized coverage for homecoming ceremonies</p>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Specialized coverage for homecoming ceremonies
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {homecomingPackages.map((pkg, index) => (
@@ -565,31 +607,48 @@ const PricingPage = () => {
                   ))}
                 </div>
               </div>
-
               {/* Pre-Casual and Engagement Packages */}
               <div className="w-full mb-16">
-                <div className="text-center mb-12">                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent">
-                    📸 Additional Services
+                <div className="text-center mb-12">
+                  {" "}
+                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent">
+                    📸 ADDITIONAL SERVICES
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">Pre-shoots, engagements, and other special occasions</p>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Pre-shoots, engagements, and other special occasions
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                   {otherPackages.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 p-8 border border-gray-100">
+                    <div
+                      key={categoryIndex}
+                      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 p-8 border border-gray-100"
+                    >
                       <div className="text-center mb-8">
                         <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                          {category.category === "Pre-Casual Sessions" ? "💑" : "💍"} {category.category}
+                          {category.category === "Pre-Casual Sessions"
+                            ? "💑"
+                            : "💍"}{" "}
+                          {category.category}
                         </h4>
                         <div className="w-16 h-1 bg-gradient-to-r from-gray-600 via-gray-800 to-yellow-600 mx-auto rounded-full"></div>
                       </div>
                       <div className="space-y-6">
                         {category.packages.map((pkg, pkgIndex) => (
-                          <div key={pkgIndex} className="group p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 border border-gray-100">
+                          <div
+                            key={pkgIndex}
+                            className="group p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 border border-gray-100"
+                          >
                             <div className="flex justify-between items-center">
                               <div className="flex-1">
-                                <h5 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-gray-900">{pkg.name}</h5>
-                                <p className="text-sm text-gray-600 group-hover:text-gray-700">{pkg.details}</p>
-                              </div>                              <div className="ml-4">
+                                <h5 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-gray-900">
+                                  {pkg.name}
+                                </h5>
+                                <p className="text-sm text-gray-600 group-hover:text-gray-700">
+                                  {pkg.details}
+                                </p>
+                              </div>{" "}
+                              <div className="ml-4">
                                 <span className="inline-block bg-gradient-to-r from-gray-800 via-black to-yellow-700 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md">
                                   {pkg.price}
                                 </span>
@@ -601,131 +660,250 @@ const PricingPage = () => {
                     </div>
                   ))}
                 </div>
-              </div>              {/* Extras Section */}
+              </div>{" "}
+              {/* Extras Section */}
               <div className="w-full mb-16">
                 <div className="text-center mb-12">
                   <h3 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-black bg-clip-text text-transparent">
                     ➕ Extras & Add-ons
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">Additional services to enhance your photography package</p>
-                </div>                {/* Enhanced Extras Grid */}
-                <div className="max-w-7xl mx-auto">                  {/* First row - 3 items */}
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Additional services to enhance your photography package
+                  </p>
+                </div>{" "}
+                {/* Enhanced Extras Grid */}
+                <div className="max-w-7xl mx-auto">
+                  {" "}
+                  {/* First row - 3 items */}
                   <div className="flex flex-wrap justify-center gap-6 mb-6">
                     {extras.slice(0, 3).map((extra, index) => (
-                      <div key={index} className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96">
+                      <div
+                        key={index}
+                        className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96"
+                      >
                         <RevealOnScroll delay={index * 0.1}>
                           <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
                             {/* Background gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50"></div>
-                            
+
                             {/* Icon section */}
                             <div className="relative z-10 p-6 text-center">
                               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                 {/* Dynamic icon based on item type */}
-                                {extra.item.includes('Album') && (
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                {extra.item.includes("Album") && (
+                                  <svg
+                                    className="w-8 h-8 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                    />
                                   </svg>
                                 )}
-                                {extra.item.includes('Cards') && (
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                {extra.item.includes("Cards") && (
+                                  <svg
+                                    className="w-8 h-8 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
                                   </svg>
                                 )}
-                                {extra.item.includes('Enlargements') && (
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                {extra.item.includes("Enlargements") && (
+                                  <svg
+                                    className="w-8 h-8 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                    />
                                   </svg>
                                 )}
-                                {extra.item.includes('Board') && (
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                {extra.item.includes("Board") && (
+                                  <svg
+                                    className="w-8 h-8 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                                    />
                                   </svg>
                                 )}
-                                {!extra.item.includes('Album') && !extra.item.includes('Cards') && !extra.item.includes('Enlargements') && !extra.item.includes('Board') && (
-                                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                  </svg>
-                                )}
+                                {!extra.item.includes("Album") &&
+                                  !extra.item.includes("Cards") &&
+                                  !extra.item.includes("Enlargements") &&
+                                  !extra.item.includes("Board") && (
+                                    <svg
+                                      className="w-8 h-8 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M12 4v16m8-8H4"
+                                      />
+                                    </svg>
+                                  )}
                               </div>
-                              
+
                               <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-200">
                                 {extra.item}
                               </h4>
-                              
+
                               <div className="mt-4">
                                 <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-300">
                                   {extra.price}
                                 </div>
                               </div>
                             </div>
-                            
+
                             {/* Decorative elements */}
                             <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-200/30 rounded-full blur-sm"></div>
                             <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gray-300/40 rounded-full blur-sm"></div>
-                            
+
                             {/* Hover overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                           </div>
                         </RevealOnScroll>
                       </div>
-                    ))}                  </div>
-                    {/* Second row - 2 items centered */}
+                    ))}{" "}
+                  </div>
+                  {/* Second row - 2 items centered */}
                   {extras.length > 3 && (
                     <div className="flex justify-center gap-6 flex-wrap">
                       {extras.slice(3).map((extra, index) => (
-                        <div key={index + 3} className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96">
+                        <div
+                          key={index + 3}
+                          className="w-full sm:w-96 md:w-96 lg:w-96 max-w-96"
+                        >
                           <RevealOnScroll delay={(index + 3) * 0.1}>
                             <div className="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
                               {/* Background gradient */}
                               <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 opacity-50"></div>
-                              
+
                               {/* Icon section */}
                               <div className="relative z-10 p-6 text-center">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                   {/* Dynamic icon based on item type */}
-                                  {extra.item.includes('Album') && (
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                  {extra.item.includes("Album") && (
+                                    <svg
+                                      className="w-8 h-8 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                      />
                                     </svg>
                                   )}
-                                  {extra.item.includes('Cards') && (
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                  {extra.item.includes("Cards") && (
+                                    <svg
+                                      className="w-8 h-8 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                      />
                                     </svg>
                                   )}
-                                  {extra.item.includes('Enlargements') && (
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  {extra.item.includes("Enlargements") && (
+                                    <svg
+                                      className="w-8 h-8 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                      />
                                     </svg>
                                   )}
-                                  {extra.item.includes('Board') && (
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                  {extra.item.includes("Board") && (
+                                    <svg
+                                      className="w-8 h-8 text-white"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                                      />
                                     </svg>
                                   )}
-                                  {!extra.item.includes('Album') && !extra.item.includes('Cards') && !extra.item.includes('Enlargements') && !extra.item.includes('Board') && (
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                    </svg>
-                                  )}
+                                  {!extra.item.includes("Album") &&
+                                    !extra.item.includes("Cards") &&
+                                    !extra.item.includes("Enlargements") &&
+                                    !extra.item.includes("Board") && (
+                                      <svg
+                                        className="w-8 h-8 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth={2}
+                                          d="M12 4v16m8-8H4"
+                                        />
+                                      </svg>
+                                    )}
                                 </div>
-                                
+
                                 <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors duration-200">
                                   {extra.item}
                                 </h4>
-                                
+
                                 <div className="mt-4">
                                   <div className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-300">
                                     {extra.price}
                                   </div>
                                 </div>
                               </div>
-                              
+
                               {/* Decorative elements */}
                               <div className="absolute -top-2 -right-2 w-8 h-8 bg-gray-200/30 rounded-full blur-sm"></div>
                               <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-gray-300/40 rounded-full blur-sm"></div>
-                              
+
                               {/* Hover overlay */}
                               <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                             </div>
@@ -735,26 +913,41 @@ const PricingPage = () => {
                     </div>
                   )}
                 </div>
-                
                 {/* Call to Action */}
                 <div className="text-center mt-12">
-                  <div className="inline-block p-6 bg-white rounded-2xl shadow-lg border border-gray-100">                    <h4 className="text-xl font-bold text-gray-800 mb-3">Need Something Custom?</h4>
+                  <div className="inline-block p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
+                    {" "}
+                    <h4 className="text-xl font-bold text-gray-800 mb-3">
+                      Need Something Custom?
+                    </h4>
                     <p className="text-gray-600 mb-4 max-w-md">
-                      Don&apos;t see what you&apos;re looking for? We offer custom add-ons and services tailored to your unique requirements.
+                      Don&apos;t see what you&apos;re looking for? We offer
+                      custom add-ons and services tailored to your unique
+                      requirements.
                     </p>
                     <button className="bg-gradient-to-r from-gray-800 to-black text-white font-semibold px-6 py-3 rounded-xl hover:from-gray-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                       <span className="flex items-center">
-                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        <svg
+                          className="w-4 h-4 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                          />
                         </svg>
                         Contact Us
                       </span>
                     </button>
                   </div>
                 </div>
-              </div></div>
+              </div>
+            </div>
           </RevealOnScroll>
-          
           {/* Terms & Conditions */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white my-6 sm:my-8 md:my-10">
@@ -764,7 +957,10 @@ const PricingPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <ul className="list-disc list-inside text-gray-600 text-sm sm:text-base space-y-2">
-                    <li>Only selected images will be shared on social media (no exceptions)</li>
+                    <li>
+                      Only selected images will be shared on social media (no
+                      exceptions)
+                    </li>
                     <li>Enlargements delivered 2 weeks post-event</li>
                     <li>Booking: LKR 20,000 non-refundable advance</li>
                     <li>Extra hour coverage: LKR 10,000/hour</li>
@@ -774,18 +970,26 @@ const PricingPage = () => {
                 <div>
                   <ul className="list-disc list-inside text-gray-600 text-sm sm:text-base space-y-2">
                     <li>Outstation charges apply</li>
-                    <li>Delivery Timeline: 4 months (Wedding), 3 months (Engagement), 2 months (Preshoot)</li>
-                    <li>Reserve a table for the photography team at the reception</li>
+                    <li>
+                      Delivery : 4 months (Wedding), 3 months
+                      (Engagement), 2 months (Preshoot)
+                    </li>
+                    <li>
+                      Reserve a table for the photography team at the reception
+                    </li>
                   </ul>
                 </div>
               </div>
 
               {/* Important Notes */}
               <div className="mt-8 p-4 bg-gray-50 rounded-lg border-l-4 border-gray-600">
-                <h3 className="font-semibold text-gray-800 mb-2">Important Notes:</h3>
+                <h3 className="font-semibold text-gray-800 mb-2">
+                  Important Notes:
+                </h3>
                 <p className="text-gray-600 text-sm">
-                  All packages are customizable based on your specific requirements. 
-                  Contact us to discuss modifications or create a personalized package that fits your needs and budget.
+                  All packages are customizable based on your specific
+                  requirements. Contact us to discuss modifications or create a
+                  personalized package that fits your needs and budget.
                 </p>
               </div>
 
@@ -995,7 +1199,11 @@ const PricingPage = () => {
                 <p className="text-sm mb-6 drop-shadow-md opacity-90">
                   Let&apos;s discuss how we can perfectly document your special
                   day with our photography services.
-                </p>                <button className="bg-white text-black px-6 py-3 rounded-lg text-sm hover:bg-gray-100 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold" onClick={() => navigate("/contactus")}>
+                </p>{" "}
+                <button
+                  className="bg-white text-black px-6 py-3 rounded-lg text-sm hover:bg-gray-100 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-semibold"
+                  onClick={() => navigate("/contactus")}
+                >
                   Contact Us Now
                 </button>
               </div>

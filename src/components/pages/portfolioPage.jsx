@@ -210,14 +210,14 @@ const PortfolioPage = () => {
             <TextTransition text="PORTFOLIO" />
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
-            Capturing life&apos;s most precious moments with passion, artistry, and timeless elegance
+            Capturing life&apos;s precious moments with passion and timeless elegance
           </p>
-          <div className="mt-12">
+          {/* <div className="mt-12">
             <button className="group relative px-8 py-4 bg-white text-black font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-500 overflow-hidden">
               <span className="relative z-10">Explore Our Work</span>
               <div className="absolute inset-0 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
-          </div>
+          </div> */}
         </div>
         
         {/* Scroll indicator */}

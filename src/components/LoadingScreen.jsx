@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import logoLoder from "../assets/logoLoader.png";
+import logoLoder from "../assets/logoA.png";
 
 export const LoadingScreen = ({ onComplete }) => {
   useEffect(() => {

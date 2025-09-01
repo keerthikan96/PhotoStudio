@@ -1,6 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { FaPlus, FaMinus, FaQuestionCircle, FaCamera, FaUsers, FaPhone, FaCog, FaSearch } from "react-icons/fa";
+import {
+  FaPlus,
+  FaMinus,
+  FaQuestionCircle,
+  FaCamera,
+  FaUsers,
+  FaPhone,
+  FaCog,
+  FaSearch,
+} from "react-icons/fa";
 import PageTransition from "../transitions/PageTransition";
 import { PagesUI } from "../PagesUI";
 import TextTransition from "../TextTransition";
@@ -23,7 +32,9 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => {
         className="flex justify-between items-center w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200"
         onClick={toggle}
       >
-        <span className="text-gray-800 font-medium pr-4 leading-relaxed">{question}</span>
+        <span className="text-gray-800 font-medium pr-4 leading-relaxed">
+          {question}
+        </span>
         <div className="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
           {isOpen ? (
             <FaMinus className="text-gray-600 text-sm" />
@@ -32,9 +43,11 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => {
           )}
         </div>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      }`}>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div className="px-6 pb-6 text-gray-600 leading-relaxed">
           <p>{answer}</p>
         </div>
@@ -75,7 +88,9 @@ const FAQSection = ({ title, faqs, icon, bgImage, description }) => {
                   {icon}
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
+                  <h2 className="text-2xl font-bold text-white mb-1">
+                    {title}
+                  </h2>
                   <p className="text-white/80 text-sm">{description}</p>
                 </div>
               </div>
@@ -242,8 +257,12 @@ const FaqPage = () => {
       answer:
         "Yes, we cover weddings throughout Sri Lanka, from Jaffna to Galle, and from Trincomalee to Colombo. We have extensive experience shooting at popular wedding venues including hotels, beaches, and traditional settings across the island.",
     },
-  ];  return (
-    <div id="faq" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+  ];
+  return (
+    <div
+      id="faq"
+      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100"
+    >
       {/* Background Pattern */}
       <div
         className="fixed inset-0 opacity-5"
@@ -253,7 +272,8 @@ const FaqPage = () => {
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
         }}
-      ></div>      {/* Modern Hero Section */}
+      ></div>{" "}
+      {/* Modern Hero Section */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
@@ -263,11 +283,11 @@ const FaqPage = () => {
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
-        
+
         {/* Floating elements for modern touch */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-          <div className="relative z-10 text-center text-white px-4 max-w-5xl">
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl">
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
               <FaQuestionCircle className="mr-2" />
@@ -278,11 +298,11 @@ const FaqPage = () => {
             <TextTransition text="FAQ" />
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
-            Find answers to all your photography questions and discover how we capture life&apos;s most precious moments
+             Find answers to common questions about our photography
           </p>
-          
+
           {/* Quick Stats */}
-          <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+          {/* <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold">500+</div>
               <div className="text-sm opacity-80">Questions Answered</div>
@@ -295,19 +315,28 @@ const FaqPage = () => {
               <div className="text-2xl md:text-3xl font-bold">98%</div>
               <div className="text-sm opacity-80">Satisfaction Rate</div>
             </div>
-          </div>
+          </div> */}
         </div>
-        
+
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
           <div className="animate-bounce">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
             </svg>
           </div>
         </div>
       </div>
-
       {/* Main Content wrapped in PagesUI */}
       <PagesUI
         title="FAQ"
@@ -321,48 +350,50 @@ const FaqPage = () => {
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
                   Everything You Need to Know
-                </h2>                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  We&apos;ve compiled answers to the most common questions about our photography services, 
-                  pricing, and booking process to help you make an informed decision.
+                </h2>{" "}
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  We&apos;ve compiled answers to the most common questions about
+                  our photography services, pricing, and booking process to help
+                  you make an informed decision.
                 </p>
               </div>
             </RevealOnScroll>
 
             {/* FAQ Sections with Icons and Images */}
-            <FAQSection 
-              title="Photography Services" 
+            <FAQSection
+              title="Photography Services"
               faqs={photographyFAQs}
               icon={<FaCamera className="text-white text-lg" />}
               bgImage={photographyImage}
               description="Learn about our photography styles and expertise"
             />
-            
-            <FAQSection 
-              title="Pricing & Packages" 
+
+            <FAQSection
+              title="Pricing & Packages"
               faqs={pricingFAQs}
               icon={<FaCog className="text-white text-lg" />}
               bgImage={pricingImage}
               description="Understand our pricing structure and package details"
             />
-            
-            <FAQSection 
-              title="Booking Process" 
+
+            <FAQSection
+              title="Booking Process"
               faqs={bookingFAQs}
               icon={<FaUsers className="text-white text-lg" />}
               bgImage={bookingImage}
               description="Everything about booking and consultation process"
             />
-            
-            <FAQSection 
-              title="General Information" 
+
+            <FAQSection
+              title="General Information"
               faqs={miscFAQs}
               icon={<FaQuestionCircle className="text-white text-lg" />}
               bgImage={miscImage}
               description="Additional details about our services and policies"
             />
-            
-            <FAQSection 
-              title="Contact & Support" 
+
+            <FAQSection
+              title="Contact & Support"
               faqs={contactFAQs}
               icon={<FaPhone className="text-white text-lg" />}
               bgImage={contactImage}
@@ -386,8 +417,9 @@ const FaqPage = () => {
                   Still Have Questions?
                 </h3>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  Our team is here to help you with any specific questions about your photography needs. 
-                  Get in touch for a personalized consultation.
+                  Our team is here to help you with any specific questions about
+                  your photography needs. Get in touch for a personalized
+                  consultation.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -406,7 +438,7 @@ const FaqPage = () => {
                     Book Consultation
                   </a>
                 </div>
-                
+
                 {/* Contact Info Cards */}
                 <div className="grid md:grid-cols-3 gap-6 mt-12">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
@@ -415,15 +447,37 @@ const FaqPage = () => {
                     <p className="text-sm opacity-90">+94 77 XXX XXXX</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
-                    <svg className="w-6 h-6 text-2xl mb-3 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg
+                      className="w-6 h-6 text-2xl mb-3 mx-auto"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                     <h4 className="font-semibold mb-2">Email Us</h4>
-                    <p className="text-sm opacity-90">info@chamodhphotography.lk</p>
+                    <p className="text-sm opacity-90">
+                      info@chamodhphotography.lk
+                    </p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
-                    <svg className="w-6 h-6 text-2xl mb-3 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-6 h-6 text-2xl mb-3 mx-auto"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                     <h4 className="font-semibold mb-2">Response Time</h4>
                     <p className="text-sm opacity-90">Within 24 hours</p>

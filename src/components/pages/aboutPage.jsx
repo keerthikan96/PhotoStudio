@@ -122,10 +122,11 @@ function AboutPage() {
           {/* Studio Story Section */}
           <RevealOnScroll>
             <div className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto p-4 sm:p-6 md:p-8 bg-white">
-              <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
                   <TextTransition text="Our Studio Story" />
                 </h2>
+              <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                
                 <div className="grid md:grid-cols-3 gap-8 items-center">
                   <div className="flex flex-col items-center justify-center md:col-span-1 order-1 md:order-1">
                     <img

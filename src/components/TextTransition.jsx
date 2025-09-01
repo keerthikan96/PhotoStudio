@@ -27,7 +27,7 @@ const TextTransition = ({ text}) => {
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
                   transitionDelay: `${currentCharIndex * 40}ms`,
-                  marginRight: '0.05em'
+                  marginRight: '0.02em'
                 }}
               >
                 {char}
@@ -41,7 +41,7 @@ const TextTransition = ({ text}) => {
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
                 transitionDelay: `${charIndex++ * 40}ms`,
-                marginRight: '0.25em'
+                marginRight: '0.05em'
               }}
             >
               &nbsp;

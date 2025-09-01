@@ -25,8 +25,17 @@ import image8 from "../../assets/Images/image8.jpg";
 
 const ContactUs = () => {
   // Array of portfolio images
-  const portfolioImages = [image1, image2, image3, image4, image5, image6, image7, image8];
-  
+  const portfolioImages = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+  ];
+
   const [otpSent, setOtpSent] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -161,31 +170,30 @@ const ContactUs = () => {
         <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-white/20 rounded-full animate-bounce delay-1000"></div>
         {/* Modern Floating Cards */}
         <div className="absolute top-20 left-10 w-40 h-40 bg-white/5 backdrop-blur-sm rounded-3xl rotate-12 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 backdrop-blur-sm rounded-3xl -rotate-12 animate-pulse delay-1000"></div>        {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">          <div className="space-y-6">
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/5 backdrop-blur-sm rounded-3xl -rotate-12 animate-pulse delay-1000"></div>{" "}
+        {/* Hero Content */}
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          {" "}
+          <div className="space-y-6">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider uppercase">
-                Get In Touch
+                SHARE YOUR VISION
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight">
-              <TextTransition text="GET IN " />
-              <span className="font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                TOUCH
-              </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight mb-6 tracking-tight">
+            <TextTransition text="GET STARTED" />
             </h1>{" "}
             <p className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed opacity-90">
-              Let&apos;s create something extraordinary together. Every great
-              project starts with a conversation.
+             Let&apos;s create something extraordinary. Every project starts with a chat.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white/20 transition-all duration-300 font-medium">
                 Schedule a Call
               </button>
               <button className="bg-white text-gray-900 px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 font-medium">
                 View Portfolio
               </button>
-            </div>
+            </div> */}
           </div>
         </div>{" "}
         {/* Scroll indicator */}
@@ -228,18 +236,18 @@ const ContactUs = () => {
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   Visit Our Studio
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  CD Photography Studio
-                  <br />
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {/* CD Photography Studio
+                  <br /> */}
                   No. 4/7/1 Suhada Mawatha,
                   <br />
                   Ganemulla 11020
                   <br />
                   Colombo, Sri Lanka
                 </p>
-                <button className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                <a href="https://www.google.com/maps?q=CD+Photography+Studio,+No.+4/7/1+Suhada+Mawatha,+Ganemulla+11020,+Colombo,+Sri+Lanka" target="_blank" rel="noopener noreferrer" className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
                   Get Directions →
-                </button>
+                </a>
               </div>
             </div>
 
@@ -263,12 +271,12 @@ const ContactUs = () => {
                   Ready to discuss your project? Send us an email and we&apos;ll
                   get back to you within 24 hours.
                 </p>
-                <p className="text-lg font-semibold text-gray-800">
+                {/* <p className="text-lg font-semibold text-gray-800">
                   chamodh@gmail.com
-                </p>
-                <button className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                </p> */}
+                <a href="mailto:chamodh@gmail.com" className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
                   Send Email →
-                </button>
+                </a>
               </div>
             </div>
 
@@ -289,15 +297,14 @@ const ContactUs = () => {
                   Call Us
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Prefer to talk? Give us a call and let&apos;s discuss your
-                  photography needs directly.
+                  Prefer to talk? Give us a call and let&apos;s discuss your photography needs directly and personally.
                 </p>
-                <p className="text-lg font-semibold text-gray-800">
+                {/* <p className="text-lg font-semibold text-gray-800">
                   +94 76658 1620
-                </p>
-                <button className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
+                </p> */}
+                <a href="tel:+94766581620" className="mt-6 text-gray-700 font-semibold hover:text-gray-900 transition-colors">
                   Call Now →
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -381,9 +388,9 @@ const ContactUs = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          disabled={isLoading || isVerified}
+                          disabled={isLoading}
                         />
-                        <button
+                        {/* <button
                           type="button"
                           className={`${
                             isVerified
@@ -394,7 +401,7 @@ const ContactUs = () => {
                           disabled={isLoading || isVerified}
                         >
                           {isVerified ? "Verified ✓" : "Verify"}
-                        </button>
+                        </button> */}
                       </div>
                     </div>
 
@@ -546,9 +553,10 @@ const ContactUs = () => {
                     </div>
                   </div>
                 </div>
-              </div>{" "}              {/* Quick Actions */}
+              </div>{" "}
+              {/* Quick Actions */}
               <div className="grid grid-cols-1 gap-4">
-                <div className="group bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-6 text-white hover:from-gray-900 hover:to-black transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="https://www.google.com/maps/search/?api=1&query=Chamodh+Delpearachchi+Photography+Colombo+Sri+Lanka" target="_blank" rel="noopener noreferrer" className="group bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-6 text-white hover:from-gray-900 hover:to-black transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-semibold mb-2">Get Directions</h4>
@@ -560,9 +568,9 @@ const ContactUs = () => {
                       <span className="text-xl">🗺️</span>
                     </div>
                   </div>
-                </div>
+                </a>
 
-                <div className="group bg-gradient-to-r from-gray-700 to-gray-800 rounded-3xl p-6 text-white hover:from-gray-800 hover:to-gray-900 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="tel:+94766581620" className="group bg-gradient-to-r from-gray-700 to-gray-800 rounded-3xl p-6 text-white hover:from-gray-800 hover:to-gray-900 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-semibold mb-2">Quick Call</h4>
@@ -572,9 +580,9 @@ const ContactUs = () => {
                       <span className="text-xl">📞</span>
                     </div>
                   </div>
-                </div>
+                </a>
 
-                <div className="group bg-gradient-to-r from-gray-600 to-gray-700 rounded-3xl p-6 text-white hover:from-gray-700 hover:to-gray-800 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="https://wa.me/94766581620" target="_blank" rel="noopener noreferrer" className="group bg-gradient-to-r from-gray-600 to-gray-700 rounded-3xl p-6 text-white hover:from-gray-700 hover:to-gray-800 transition-all duration-300 cursor-pointer transform hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-semibold mb-2">WhatsApp</h4>
@@ -584,7 +592,7 @@ const ContactUs = () => {
                       <span className="text-xl">💬</span>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -598,14 +606,17 @@ const ContactUs = () => {
                 </h2>
                 <div className="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Stay connected with our latest captures, behind-the-scenes moments, and photography inspiration
+                  Stay connected with our latest captures, behind-the-scenes
+                  moments, and photography inspiration
                 </p>
               </div>
 
               {/* Social Media Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/ChamodhDelpearachchi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black rounded-3xl p-8 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl text-center"
                 >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -613,13 +624,19 @@ const ContactUs = () => {
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
                       <i className="fa-brands fa-facebook text-white text-2xl"></i>
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">Facebook</h3>
-                    <p className="text-gray-300 text-sm">Latest updates & events</p>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      Facebook
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      Latest updates & events
+                    </p>
                   </div>
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.instagram.com/chamodh_delpearachchi/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 rounded-3xl p-8 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl text-center"
                 >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -627,13 +644,19 @@ const ContactUs = () => {
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
                       <i className="fa-brands fa-instagram text-white text-2xl"></i>
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">Instagram</h3>
-                    <p className="text-gray-300 text-sm">Daily stories & captures</p>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      Instagram
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      Daily stories & captures
+                    </p>
                   </div>
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.pinterest.com/chamodhdelpearachchi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 rounded-3xl p-8 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl text-center"
                 >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -641,22 +664,32 @@ const ContactUs = () => {
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
                       <i className="fa-brands fa-pinterest text-white text-2xl"></i>
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">Pinterest</h3>
-                    <p className="text-gray-300 text-sm">Creative inspiration</p>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      Pinterest
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      Creative inspiration
+                    </p>
                   </div>
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@chamoddelpearachchi"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black rounded-3xl p-8 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl text-center"
                 >
                   <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative">
                     <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
-                      <i className="fa-brands fa-youtube text-white text-2xl"></i>
+                      <i className="fa-brands fa-tiktok text-white text-2xl"></i>
                     </div>
-                    <h3 className="text-white font-semibold text-lg mb-2">YouTube</h3>
-                    <p className="text-gray-300 text-sm">Video content & tutorials</p>
+                    <h3 className="text-white font-semibold text-lg mb-2">
+                      TikTok
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      Video content & tutorials
+                    </p>
                   </div>
                 </a>
               </div>
@@ -715,7 +748,8 @@ const ContactUs = () => {
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                 Get inspired by our latest photography projects
               </p>
-            </div>            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            </div>{" "}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {portfolioImages.map((image, index) => (
                 <div
                   key={index}
@@ -733,7 +767,6 @@ const ContactUs = () => {
                 </div>
               ))}
             </div>
-
             <div className="text-center mt-12">
               <button className="bg-gradient-to-r from-gray-900 to-black text-white px-12 py-4 rounded-full text-lg font-semibold hover:from-gray-800 hover:to-gray-900 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                 View Full Portfolio

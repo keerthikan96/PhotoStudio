@@ -817,7 +817,7 @@ export const Home = () => {
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiCamera className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                      <HiCamera className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-700" />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
@@ -833,7 +833,7 @@ export const Home = () => {
 
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiHeart className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                      <HiHeart className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-700" />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
@@ -849,7 +849,7 @@ export const Home = () => {
 
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiStar className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                      <HiStar className="w-4 h-4 sm:w-6 sm:h-6 text-zinc-700" />
                     </div>
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
