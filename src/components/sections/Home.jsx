@@ -321,10 +321,12 @@ export const Home = () => {
           <RevealOnScroll>
             {" "}
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6">
-                WELCOME TO CHAMODH DELPEARACHCHI PHOTOGRAPHY
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight title-wrap">
+                <span className="block sm:inline">WELCOME TO</span>
+                <span className="block sm:inline"> CHAMODH DELPEARACHCHI</span>
+                <span className="block sm:inline"> PHOTOGRAPHY</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                 Where passion meets artistry, creating timeless memories that
                 last forever
               </p>
@@ -346,27 +348,27 @@ export const Home = () => {
                     special day uniquely yours.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8">
                   {" "}
                   <div className="text-center group">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                       500+
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs sm:text-sm text-gray-600">
                       Weddings Captured
                     </div>
                   </div>
                   <div className="text-center group">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center justify-center group-hover:text-blue-600 transition-colors duration-300">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 flex items-center justify-center group-hover:text-blue-600 transition-colors duration-300">
                       4.9 <HiStar className="ml-1 text-yellow-400" />
                     </div>
-                    <div className="text-sm text-gray-600">Client Rating</div>
+                    <div className="text-xs sm:text-sm text-gray-600">Client Rating</div>
                   </div>
                   <div className="text-center group">
-                    <div className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                       8+
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs sm:text-sm text-gray-600">
                       Years Experience
                     </div>
                   </div>
@@ -443,10 +445,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 sm:mb-6 leading-tight">
                 OUR PHOTOGRAPHY SERVICES
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
                 From intimate ceremonies to grand celebrations, we capture every
                 precious moment
               </p>
@@ -583,10 +585,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
               RECENT WORK
               </h2>{" "}
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                 A glimpse into the beautiful moments we&apos;ve captured
                 recently
               </p>
@@ -667,10 +669,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 sm:mb-6 leading-tight">
                 Featured Photography
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
                 A curated selection of our most beloved captures that tell
                 extraordinary stories
               </p>
@@ -724,10 +726,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
-                Complete Photography Services
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
+                COMPLETE PHOTOGRAPHY SERVICES
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed px-4">
                 From intimate portraits to grand celebrations, we offer
                 comprehensive photography solutions
               </p>
@@ -800,28 +802,28 @@ export const Home = () => {
             </RevealOnScroll>
 
             <RevealOnScroll>
-              <div className="text-white space-y-8">
+              <div className="text-white space-y-6 sm:space-y-8">
                 <div>
-                  <h2 className="text-4xl lg:text-5xl font-light mb-6">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light mb-4 sm:mb-6 leading-tight">
                     Meet Chamodh Delpearachchi
                   </h2>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                     With over 8 years of experience capturing life&apos;s most
                     precious moments, Chamodh brings an artistic eye and
                     passionate heart to every photography session.
                   </p>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiCamera className="w-6 h-6 text-white" />
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                      <HiCamera className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
                         Artistic Vision
                       </h3>
-                      <p className="text-gray-300">
+                      <p className="text-sm sm:text-base text-gray-300">
                         Every photograph is crafted with meticulous attention to
                         detail, ensuring each image tells a unique and
                         compelling story.
@@ -829,15 +831,15 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiHeart className="w-6 h-6 text-white" />
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                      <HiHeart className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
                         Passionate Approach
                       </h3>
-                      <p className="text-gray-300">
+                      <p className="text-sm sm:text-base text-gray-300">
                         Photography isn&apos;t just a profession—it&apos;s a
                         passion that drives the pursuit of perfection in every
                         frame captured.
@@ -845,15 +847,15 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
-                      <HiStar className="w-6 h-6 text-white" />
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0">
+                      <HiStar className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
                         Client Excellence
                       </h3>
-                      <p className="text-gray-300">
+                      <p className="text-sm sm:text-base text-gray-300">
                         Committed to exceeding expectations with personalized
                         service and creating lasting relationships with every
                         client.
@@ -893,10 +895,10 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RevealOnScroll>
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight">
                 EXTENDED PORTFOLIO GALLERY
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed px-4">
                 Explore our comprehensive collection showcasing the breadth and
                 depth of our photography expertise
               </p>
@@ -1069,13 +1071,13 @@ export const Home = () => {
                   Professional Photography
                 </span>
               </div>
-              <h2 className="text-4xl lg:text-6xl font-extralight text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extralight text-white leading-tight">
                 YOUR STORY
                 <span className="block font-light italic text-gray-200">
                   AWAITS
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
                 Transform your precious moments into timeless memories with our
                 professional photography services.
               </p>

@@ -112,7 +112,7 @@ const PhotographyServices = () => {
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               At{" "}
               <span className="font-bold text-black">
-                Chamochi Delpearachchi Photography
+                Chamodh Delpearachchi Photography
               </span>
               , we craft visual stories that transcend time. Each frame is
               meticulously composed to capture the essence of your most precious

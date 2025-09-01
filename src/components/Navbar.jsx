@@ -101,11 +101,11 @@ export const Navbar = ({ setMenuOpen }) => {
           <div className="w-full max-w-none">
             <div className="flex justify-between items-center h-20 px-8 sm:px-12 py-3">
               {/* Logo */}
-              <div className="flex items-center pt-0">
+              <div className="flex items-center pt-5">
                 <img
                   src={logosinhala}
                   alt="Logo"
-                  className="w-48 sm:w-56 md:w-64 lg:w-72 h-auto max-h-16 object-contain"
+                  className="w-48 sm:w-72 md:w-72 lg:w-96 h-auto max-h-32 object-contain"
                 />
               </div>
               <div className="hidden md:flex items-center space-x-12">
