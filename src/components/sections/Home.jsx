@@ -321,7 +321,7 @@ export const Home = () => {
           <RevealOnScroll>
             {" "}
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight title-wrap">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-gray-900 mb-4 sm:mb-6 leading-tight title-wrap whitespace-nowrap ">
                 <span className="block sm:inline">WELCOME TO</span>
                 <span className="block sm:inline"> CHAMODH DELPEARACHCHI</span>
                 <span className="block sm:inline"> PHOTOGRAPHY</span>
@@ -448,7 +448,7 @@ export const Home = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white mb-4 sm:mb-6 leading-tight">
                 OUR PHOTOGRAPHY SERVICES
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg lg:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 whitespace-nowrap ">
                 From intimate ceremonies to grand celebrations, we capture every
                 precious moment
               </p>

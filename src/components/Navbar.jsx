@@ -108,7 +108,7 @@ export const Navbar = ({ setMenuOpen }) => {
                   <img
                     src={logosinhala}
                     alt="Logo"
-                    className="w-48 sm:w-72 md:w-72 lg:w-96 h-auto max-h-32 object-contain"
+                    className="w-32 sm:w-48 md:w-56 lg:w-64 h-auto max-h-24 object-contain"
                   />
                 </Link>
               </div>
